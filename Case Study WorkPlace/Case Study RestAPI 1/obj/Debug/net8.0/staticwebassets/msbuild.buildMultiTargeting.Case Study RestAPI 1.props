@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Case Study RestAPI 1.props" />
+</Project>

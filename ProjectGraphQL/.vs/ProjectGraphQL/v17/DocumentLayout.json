@@ -1,0 +1,495 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|c:\\users\\kfayazuddin\\mylearnings\\projectgraphql\\types\\ordertype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|solutionrelative:types\\ordertype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|c:\\users\\kfayazuddin\\mylearnings\\projectgraphql\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|solutionrelative:models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|c:\\users\\kfayazuddin\\mylearnings\\projectgraphql\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|c:\\users\\kfayazuddin\\mylearnings\\projectgraphql\\types\\reviewtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|solutionrelative:types\\reviewtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|c:\\users\\kfayazuddin\\mylearnings\\projectgraphql\\types\\query.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|solutionrelative:types\\query.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|c:\\users\\kfayazuddin\\mylearnings\\projectgraphql\\types\\producttype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|solutionrelative:types\\producttype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|c:\\users\\kfayazuddin\\mylearnings\\projectgraphql\\models\\wishlistitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|solutionrelative:models\\wishlistitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|c:\\users\\kfayazuddin\\mylearnings\\projectgraphql\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|solutionrelative:models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|c:\\users\\kfayazuddin\\mylearnings\\projectgraphql\\types\\mutation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|solutionrelative:types\\mutation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|c:\\users\\kfayazuddin\\mylearnings\\projectgraphql\\types\\customertype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|solutionrelative:types\\customertype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|c:\\users\\kfayazuddin\\mylearnings\\projectgraphql\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|solutionrelative:models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|c:\\users\\kfayazuddin\\mylearnings\\projectgraphql\\types\\orderitemtype .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|solutionrelative:types\\orderitemtype .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|c:\\users\\kfayazuddin\\mylearnings\\projectgraphql\\types\\categorytype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|solutionrelative:types\\categorytype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|c:\\users\\kfayazuddin\\mylearnings\\projectgraphql\\types\\addresstype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|solutionrelative:types\\addresstype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|c:\\users\\kfayazuddin\\mylearnings\\projectgraphql\\types\\paymenttype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|solutionrelative:types\\paymenttype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|c:\\users\\kfayazuddin\\mylearnings\\projectgraphql\\models\\shopeasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|solutionrelative:models\\shopeasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|c:\\users\\kfayazuddin\\mylearnings\\projectgraphql\\models\\wishlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|solutionrelative:models\\wishlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|c:\\users\\kfayazuddin\\mylearnings\\projectgraphql\\models\\shipment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|solutionrelative:models\\shipment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|c:\\users\\kfayazuddin\\mylearnings\\projectgraphql\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|solutionrelative:models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|c:\\users\\kfayazuddin\\mylearnings\\projectgraphql\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|solutionrelative:models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|c:\\users\\kfayazuddin\\mylearnings\\projectgraphql\\models\\discount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|solutionrelative:models\\discount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|c:\\users\\kfayazuddin\\mylearnings\\projectgraphql\\models\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|solutionrelative:models\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|c:\\users\\kfayazuddin\\mylearnings\\projectgraphql\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|solutionrelative:models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|c:\\users\\kfayazuddin\\mylearnings\\projectgraphql\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|solutionrelative:models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|c:\\users\\kfayazuddin\\mylearnings\\projectgraphql\\models\\address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|solutionrelative:models\\address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|c:\\users\\kfayazuddin\\mylearnings\\projectgraphql\\types\\discounttype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|solutionrelative:types\\discounttype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|c:\\users\\kfayazuddin\\mylearnings\\projectgraphql\\types\\cartitemtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|solutionrelative:types\\cartitemtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|c:\\users\\kfayazuddin\\mylearnings\\projectgraphql\\projectgraphql.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{281A56D9-69D6-4E43-ABAC-0DD77502C33A}|ProjectGraphQL.csproj|solutionrelative:projectgraphql.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OrderType.cs",
+              "DocumentMoniker": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Types\\OrderType.cs",
+              "RelativeDocumentMoniker": "Types\\OrderType.cs",
+              "ToolTip": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Types\\OrderType.cs",
+              "RelativeToolTip": "Types\\OrderType.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-12T17:56:26.165Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ReviewType.cs",
+              "DocumentMoniker": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Types\\ReviewType.cs",
+              "RelativeDocumentMoniker": "Types\\ReviewType.cs",
+              "ToolTip": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Types\\ReviewType.cs",
+              "RelativeToolTip": "Types\\ReviewType.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAQwBMAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-12T17:14:49.781Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Mutation.cs",
+              "DocumentMoniker": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Types\\Mutation.cs",
+              "RelativeDocumentMoniker": "Types\\Mutation.cs",
+              "ToolTip": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Types\\Mutation.cs",
+              "RelativeToolTip": "Types\\Mutation.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAAABIAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-12T16:51:58.039Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "OrderItemType .cs",
+              "DocumentMoniker": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Types\\OrderItemType .cs",
+              "RelativeDocumentMoniker": "Types\\OrderItemType .cs",
+              "ToolTip": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Types\\OrderItemType .cs",
+              "RelativeToolTip": "Types\\OrderItemType .cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-12T16:47:52.286Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CategoryType.cs",
+              "DocumentMoniker": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Types\\CategoryType.cs",
+              "RelativeDocumentMoniker": "Types\\CategoryType.cs",
+              "ToolTip": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Types\\CategoryType.cs",
+              "RelativeToolTip": "Types\\CategoryType.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-12T16:47:50.843Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "PaymentType.cs",
+              "DocumentMoniker": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Types\\PaymentType.cs",
+              "RelativeDocumentMoniker": "Types\\PaymentType.cs",
+              "ToolTip": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Types\\PaymentType.cs",
+              "RelativeToolTip": "Types\\PaymentType.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-12T16:33:44.487Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "Models\\Product.cs",
+              "ToolTip": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Models\\Product.cs",
+              "RelativeToolTip": "Models\\Product.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAAAB0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-12T16:33:27.641Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Shipment.cs",
+              "DocumentMoniker": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Models\\Shipment.cs",
+              "RelativeDocumentMoniker": "Models\\Shipment.cs",
+              "ToolTip": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Models\\Shipment.cs",
+              "RelativeToolTip": "Models\\Shipment.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-12T16:33:26.043Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Payment.cs",
+              "DocumentMoniker": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Models\\Payment.cs",
+              "RelativeDocumentMoniker": "Models\\Payment.cs",
+              "ToolTip": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Models\\Payment.cs",
+              "RelativeToolTip": "Models\\Payment.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-12T16:33:24.516Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Discount.cs",
+              "DocumentMoniker": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Models\\Discount.cs",
+              "RelativeDocumentMoniker": "Models\\Discount.cs",
+              "ToolTip": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Models\\Discount.cs",
+              "RelativeToolTip": "Models\\Discount.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-12T16:33:23.133Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "Models\\Category.cs",
+              "ToolTip": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Models\\Category.cs",
+              "RelativeToolTip": "Models\\Category.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-12T16:33:17.521Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Cart.cs",
+              "DocumentMoniker": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Models\\Cart.cs",
+              "RelativeDocumentMoniker": "Models\\Cart.cs",
+              "ToolTip": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Models\\Cart.cs",
+              "RelativeToolTip": "Models\\Cart.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-12T16:33:13.705Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AddressType.cs",
+              "DocumentMoniker": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Types\\AddressType.cs",
+              "RelativeDocumentMoniker": "Types\\AddressType.cs",
+              "ToolTip": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Types\\AddressType.cs",
+              "RelativeToolTip": "Types\\AddressType.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAQwBQAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-12T16:22:05.613Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProductType.cs",
+              "DocumentMoniker": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Types\\ProductType.cs",
+              "RelativeDocumentMoniker": "Types\\ProductType.cs",
+              "ToolTip": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Types\\ProductType.cs",
+              "RelativeToolTip": "Types\\ProductType.cs",
+              "ViewState": "AQIAACgAAAAAAAAAAAAQwA4AAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-12T16:19:26.45Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "DiscountType.cs",
+              "DocumentMoniker": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Types\\DiscountType.cs",
+              "RelativeDocumentMoniker": "Types\\DiscountType.cs",
+              "ToolTip": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Types\\DiscountType.cs",
+              "RelativeToolTip": "Types\\DiscountType.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-12T16:19:21.116Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "CartItemType.cs",
+              "DocumentMoniker": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Types\\CartItemType.cs",
+              "RelativeDocumentMoniker": "Types\\CartItemType.cs",
+              "ToolTip": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Types\\CartItemType.cs",
+              "RelativeToolTip": "Types\\CartItemType.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-12T11:26:13.911Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAADEAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-11T11:55:56.282Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Query.cs",
+              "DocumentMoniker": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Types\\Query.cs",
+              "RelativeDocumentMoniker": "Types\\Query.cs",
+              "ToolTip": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Types\\Query.cs",
+              "RelativeToolTip": "Types\\Query.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-11T11:26:15.756Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CustomerType.cs",
+              "DocumentMoniker": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Types\\CustomerType.cs",
+              "RelativeDocumentMoniker": "Types\\CustomerType.cs",
+              "ToolTip": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Types\\CustomerType.cs",
+              "RelativeToolTip": "Types\\CustomerType.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-11T11:20:44.471Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Address.cs",
+              "DocumentMoniker": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Models\\Address.cs",
+              "RelativeDocumentMoniker": "Models\\Address.cs",
+              "ToolTip": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Models\\Address.cs",
+              "RelativeToolTip": "Models\\Address.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAA3wA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-11T11:20:36.525Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "WishlistItem.cs",
+              "DocumentMoniker": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Models\\WishlistItem.cs",
+              "RelativeDocumentMoniker": "Models\\WishlistItem.cs",
+              "ToolTip": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Models\\WishlistItem.cs",
+              "RelativeToolTip": "Models\\WishlistItem.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-11T11:20:33.739Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Wishlist.cs",
+              "DocumentMoniker": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Models\\Wishlist.cs",
+              "RelativeDocumentMoniker": "Models\\Wishlist.cs",
+              "ToolTip": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Models\\Wishlist.cs",
+              "RelativeToolTip": "Models\\Wishlist.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-11T11:20:31.725Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ShopeaseContext.cs",
+              "DocumentMoniker": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Models\\ShopeaseContext.cs",
+              "RelativeDocumentMoniker": "Models\\ShopeaseContext.cs",
+              "ToolTip": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Models\\ShopeaseContext.cs",
+              "RelativeToolTip": "Models\\ShopeaseContext.cs",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAYwE0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-11T11:20:24.898Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Review.cs",
+              "DocumentMoniker": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Models\\Review.cs",
+              "RelativeDocumentMoniker": "Models\\Review.cs",
+              "ToolTip": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Models\\Review.cs",
+              "RelativeToolTip": "Models\\Review.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAzwAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-11T11:20:22.194Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "Models\\Order.cs",
+              "ToolTip": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Models\\Order.cs",
+              "RelativeToolTip": "Models\\Order.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-11T11:20:19.512Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Inventory.cs",
+              "DocumentMoniker": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Models\\Inventory.cs",
+              "RelativeDocumentMoniker": "Models\\Inventory.cs",
+              "ToolTip": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Models\\Inventory.cs",
+              "RelativeToolTip": "Models\\Inventory.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-11T11:20:17.212Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Models\\Customer.cs",
+              "RelativeDocumentMoniker": "Models\\Customer.cs",
+              "ToolTip": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\Models\\Customer.cs",
+              "RelativeToolTip": "Models\\Customer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-11T11:19:21.063Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "ProjectGraphQL.csproj",
+              "DocumentMoniker": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\ProjectGraphQL.csproj",
+              "RelativeDocumentMoniker": "ProjectGraphQL.csproj",
+              "ToolTip": "C:\\Users\\KFayazUddin\\MyLearnings\\ProjectGraphQL\\ProjectGraphQL.csproj",
+              "RelativeToolTip": "ProjectGraphQL.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-08-11T11:19:10.912Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
