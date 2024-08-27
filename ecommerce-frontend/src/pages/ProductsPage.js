@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { FaStar } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for redirection
 
 function ProductsPage() {
   const [products, setProducts] = useState([]);
   const [reviews, setReviews] = useState({});
   const [ratings, setRatings] = useState({});
   const [newReview, setNewReview] = useState('');
+  const navigate = useNavigate(); // Initialize navigate
 
   // Sample products array
   const sampleProducts = [
@@ -62,9 +64,9 @@ function ProductsPage() {
 
     try {
       // Update the sample data to simulate adding a review
-      setProducts(products.map(product => 
-        product.id === productId ? 
-          { ...product, reviews: [...product.reviews, { id: product.reviews.length + 1, content: review, rating }] } 
+      setProducts(products.map(product =>
+        product.id === productId
+          ? { ...product, reviews: [...product.reviews, { id: product.reviews.length + 1, content: review, rating }] }
           : product
       ));
       alert('Review added successfully');
@@ -77,8 +79,10 @@ function ProductsPage() {
 
   const handleAddToWishlist = async (productId) => {
     try {
+      navigate('/wishlist'); 
       await axios.post(`/api/products/${productId}/wishlist`);
       alert('Added to wishlist');
+      navigate('/wishlist');  
     } catch (error) {
       alert('Error adding to wishlist');
     }
@@ -90,6 +94,18 @@ function ProductsPage() {
 
   const handleRatingChange = (productId, ratingValue) => {
     setRatings({ ...ratings, [productId]: ratingValue });
+  };
+
+  const handleAddToCart = async (productId) => {
+    try {
+      navigate('/cart');// just for sake of understanding, I have added
+      // Assuming you have an API to handle cart operations
+      await axios.post(`/api/products/${productId}/cart`);
+      navigate('/cart'); // Redirect to the Cart page
+      alert('Added to cart');
+    } catch (error) {
+      alert('Error adding to cart');
+    }
   };
 
   return (
@@ -143,11 +159,21 @@ function ProductsPage() {
                         onClick={() => handleRatingChange(product.id, ratingValue)}
                         style={{ display: 'none' }}
                       />
-                      <FaStar
+                      {<FaStar
+                      
                         color={ratingValue <= (ratings[product.id] || 0) ? "#ffc107" : "#e4e5e9"}
                         size={30}
                         style={{ cursor: 'pointer' }}
-                      />
+                      /> }
+
+
+{/* <FaStar
+  color={ratingValue <= (ratings[product.id] || 0) ? "#ffc107" : "#e4e5e9"}
+  size={30}
+  style={{ cursor: 'pointer', display: 'inline-block' }}
+/> */}
+
+
                     </label>
                   );
                 })}
@@ -157,8 +183,11 @@ function ProductsPage() {
                 value={newReview}
                 onChange={handleReviewChange}
               />
-              <button onClick={() => handleAddReview(product.id)}>Add Review</button>
-              <button onClick={() => handleAddToWishlist(product.id)}>Add to Wishlist</button>
+              <div>
+                <button onClick={() => handleAddReview(product.id)}>Add Review</button>
+                <button onClick={() => handleAddToWishlist(product.id)}>Add to Wishlist</button>
+                <button onClick={() => handleAddToCart(product.id)}>Add to Cart</button> {/* Add to Cart button */}
+              </div>
             </div>
           </div>
         ))

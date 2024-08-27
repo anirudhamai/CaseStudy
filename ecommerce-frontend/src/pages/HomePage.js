@@ -1,3 +1,4 @@
+// src/pages/HomePage.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './HomePage.css'; // For custom styles
@@ -20,12 +21,11 @@ function HomePage() {
           <input type="text" placeholder="Search..." />
         </div>
         <div className="user-links">
-          <Link to="/login">Login</Link> | <Link to="/logout">Logout</Link>
+          <Link to="/login">Login</Link> | <Link to="/logout">Logout</Link> | 
+          <Link to="/myorders">Orders</Link> 
         </div>
         <div className="cart-icon">
-          <Link to="/cart">
-            <span>Cart (0)</span>
-          </Link>
+          <Link to="/cart"><span>Cart (0)</span></Link>
         </div>
       </header>
 

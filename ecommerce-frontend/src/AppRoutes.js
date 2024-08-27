@@ -1,3 +1,4 @@
+// src/AppRoutes.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
@@ -6,8 +7,11 @@ import AdminPage from './pages/AdminPage';
 import ProductsPage from './pages/ProductsPage';
 import UserPage from './pages/UserPage';
 import HomePage from './pages/HomePage';
-import CartPage from './pages/CartPage'; // Import CartPage component
+import OrdersPage from './pages/OrdersPage';
+import PaymentPage from './pages/PaymentPage';
 import Layout from './components/Layout';
+import CartPage from './pages/CartPage';
+import WishlistPage from './pages/WishlistPage';
 
 function AppRoutes() {
   return (
@@ -41,10 +45,35 @@ function AppRoutes() {
           }
         />
         <Route
+          path="/myorders"
+          element={
+            <Layout>
+              <OrdersPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="/payment"
+          element={
+            <Layout>
+              <PaymentPage />
+            </Layout>
+          }
+        />
+        <Route
           path="/cart"
           element={
             <Layout>
               <CartPage />
+            </Layout>
+          }
+        />
+
+        <Route
+          path="/wishlist"
+          element={
+            <Layout>
+              <WishlistPage />
             </Layout>
           }
         />
