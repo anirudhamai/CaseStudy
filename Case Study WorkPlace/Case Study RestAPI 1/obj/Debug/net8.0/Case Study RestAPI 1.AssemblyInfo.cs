@@ -15,7 +15,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Case Study RestAPI 1")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< Updated upstream
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+990b47360681dc8a0483b29d6f97617b74d5892d")]
+>>>>>>> Stashed changes
 [assembly: System.Reflection.AssemblyProductAttribute("Case Study RestAPI 1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Case Study RestAPI 1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

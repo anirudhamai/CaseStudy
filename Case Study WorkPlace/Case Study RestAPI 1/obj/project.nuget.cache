@@ -1,5 +1,6 @@
 {
   "version": 2,
+<<<<<<< Updated upstream
   "dgSpecHash": "afEAJuLX7Bk=",
   "success": true,
   "projectFilePath": "C:\\Users\\AnirudhaBhat\\Desktop\\Trials\\Case Study WorkPlace\\Case Study RestAPI 1\\Case Study RestAPI 1.csproj",
@@ -7,6 +8,15 @@
     "C:\\Users\\AnirudhaBhat\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\AnirudhaBhat\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\AnirudhaBhat\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.7\\microsoft.aspnetcore.authentication.jwtbearer.8.0.7.nupkg.sha512",
+=======
+  "dgSpecHash": "3SowXi8YfW0=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\Case Study RestAPI 1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\AnirudhaBhat\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
+    "C:\\Users\\AnirudhaBhat\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
+    "C:\\Users\\AnirudhaBhat\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.8\\microsoft.aspnetcore.authentication.jwtbearer.8.0.8.nupkg.sha512",
+>>>>>>> Stashed changes
     "C:\\Users\\AnirudhaBhat\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\8.0.7\\microsoft.aspnetcore.jsonpatch.8.0.7.nupkg.sha512",
     "C:\\Users\\AnirudhaBhat\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\8.0.7\\microsoft.aspnetcore.mvc.newtonsoftjson.8.0.7.nupkg.sha512",
     "C:\\Users\\AnirudhaBhat\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

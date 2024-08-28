@@ -34,7 +34,7 @@ namespace DBLibrary.Repo
                 .Include(c => c.Orders)
                 .Include(c => c.Reviews)
                 .ToList()
-                .Find(c => c.UserId==id);
+                .Find(c => c.UserId == id);
         }
 
         public void AddCustomer(Customer c)

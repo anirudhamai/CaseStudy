@@ -11,6 +11,8 @@ public partial class Customer
 
     public string Email { get; set; } = null!;
 
+    public string Password { get; set; } = null!;
+
     public DateOnly CreatedAt { get; set; }
 
     public virtual ICollection<Address> Addresses { get; set; } = new List<Address>();

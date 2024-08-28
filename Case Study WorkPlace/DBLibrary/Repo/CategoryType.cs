@@ -12,7 +12,7 @@ namespace DBLibrary.Repo
         }
         public IEnumerable<Category> GetCategory()
         {
-            return _context.Categories.Include(c => c.Products).ToList();
+            return _context.Categories.ToList();
         }
         public Category GetCategoryById(int id)
         {
