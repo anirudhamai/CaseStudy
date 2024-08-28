@@ -20,7 +20,7 @@ namespace DBLibrary.Repo
         {
             return _context.WishlistItems
                 .Include(w => w.Product)
-//                .Include(w => w.Wishlist)
+                .Include(w => w.Wishlist)
                 .ToList();
         }
 

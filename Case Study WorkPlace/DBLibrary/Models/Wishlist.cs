@@ -9,7 +9,7 @@ public partial class Wishlist
 
     public int UserId { get; set; }
 
-    public virtual Customer User { get; set; } = null!;
+    public virtual Customer? User { get; set; }
 
-    public virtual ICollection<WishlistItem> WishlistItems { get; set; } = new List<WishlistItem>();
+    public virtual ICollection<WishlistItem>? WishlistItems { get; set; } = new List<WishlistItem>();
 }

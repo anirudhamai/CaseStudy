@@ -9,12 +9,22 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+using Microsoft.AspNetCore.Cryptography.KeyDerivation;
+using System.Security.Cryptography;
+
 >>>>>>> Stashed changes
 
 
 namespace Case_Study_RestAPI_1.Controllers
 {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+    //[Authorize]
+>>>>>>> Stashed changes
 =======
     //[Authorize]
 >>>>>>> Stashed changes
@@ -25,10 +35,13 @@ namespace Case_Study_RestAPI_1.Controllers
     {
         private readonly ICustomer _int1;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         public CustomerController(ICustomer icontext)
         {
             _int1 = icontext;
 =======
+=======
+>>>>>>> Stashed changes
         private readonly IAddress _int2;
         private readonly IConfiguration _config;
         public CustomerController(ICustomer icontext, IAddress iaddr, IConfiguration config)
@@ -36,6 +49,9 @@ namespace Case_Study_RestAPI_1.Controllers
             _int1 = icontext;
             _config = config;
             _int2 = iaddr;
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         }
         // GET: api/<CustomerController>
@@ -58,6 +74,10 @@ namespace Case_Study_RestAPI_1.Controllers
         [AllowAnonymous]
         public void Post([FromBody] Customer c)
         {
+
+
+            int hashed = c.Password.GetHashCode();
+            c.Password = hashed.ToString();
             _int1.AddCustomer(c);
         }
 
@@ -85,7 +105,11 @@ namespace Case_Study_RestAPI_1.Controllers
             using (var context = new ShopeaseContext())
             {
                 // Validate user from the database
+<<<<<<< Updated upstream
                 var dbUser = await context.Customers.FirstOrDefaultAsync<Customer>((u => u.Password == customer.Password && u.Email == customer.email));
+=======
+                var dbUser = await context.Customers.FirstOrDefaultAsync<Customer>((u => u.Password == customer.Password.GetHashCode().ToString() && u.Email == customer.email));
+>>>>>>> Stashed changes
 
                 if (dbUser != null)
                 {
@@ -93,6 +117,7 @@ namespace Case_Study_RestAPI_1.Controllers
                     var claims = new List<Claim>
                     {
                         new Claim(JwtRegisteredClaimNames.Sub, dbUser.UserName),
+<<<<<<< Updated upstream
                         new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
                     };
 
@@ -101,6 +126,13 @@ namespace Case_Study_RestAPI_1.Controllers
 
                     */
                     // Generate JSON Web Token with the valid details and return
+=======
+                        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                        new Claim(ClaimTypes.Role, "User")
+                    };
+                    */
+
+>>>>>>> Stashed changes
                     var key = Encoding.UTF8.GetBytes(_config["JWT:Key"]);
                     var tokenDescriptor = new SecurityTokenDescriptor
                     {

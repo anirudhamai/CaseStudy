@@ -10,7 +10,11 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Case_Study_RestAPI_1
 build_property.RootNamespace = Case_Study_RestAPI_1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 build_property.ProjectDir = C:\Users\AnirudhaBhat\Desktop\Trials\Case Study WorkPlace\Case Study RestAPI 1\
+=======
+build_property.ProjectDir = C:\Users\AnirudhaBhat\Desktop\Case_study\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\
+>>>>>>> Stashed changes
 =======
 build_property.ProjectDir = C:\Users\AnirudhaBhat\Desktop\Case_study\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\
 >>>>>>> Stashed changes
@@ -20,7 +24,11 @@ build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 build_property.MSBuildProjectDirectory = C:\Users\AnirudhaBhat\Desktop\Trials\Case Study WorkPlace\Case Study RestAPI 1
+=======
+build_property.MSBuildProjectDirectory = C:\Users\AnirudhaBhat\Desktop\Case_study\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1
+>>>>>>> Stashed changes
 =======
 build_property.MSBuildProjectDirectory = C:\Users\AnirudhaBhat\Desktop\Case_study\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1
 >>>>>>> Stashed changes

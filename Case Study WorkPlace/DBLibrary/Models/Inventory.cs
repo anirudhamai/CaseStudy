@@ -9,5 +9,5 @@ public partial class Inventory
 
     public int StockQuantity { get; set; }
 
-    public virtual Product Product { get; set; } = null!;
+    public virtual Product? Product { get; set; } = null!;
 }

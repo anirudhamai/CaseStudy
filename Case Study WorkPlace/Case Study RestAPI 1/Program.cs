@@ -3,11 +3,15 @@ using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 using System.Security.Claims;
 using System.Text;
 >>>>>>> Stashed changes
 using System.Text.Json.Serialization;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -37,6 +41,7 @@ builder.Services.AddAuthentication(options =>
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 >>>>>>> Stashed changes
 builder.Services.AddEndpointsApiExplorer();
+<<<<<<< Updated upstream
 builder.Services.AddSwaggerGen();
 builder.Services.AddDBLibrary("connectionString");
 //builder.Services.AddControllers().AddNewtonsoftJson(options =>
@@ -45,6 +50,9 @@ builder.Services.AddControllers().AddJsonOptions(x => {
     x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
     x.JsonSerializerOptions.MaxDepth = 64; 
 });
+=======
+builder.Services.AddDBLibrary(builder.Configuration.GetConnectionString("Constr"));
+>>>>>>> Stashed changes
 builder.Services.AddSwaggerGen(options =>
 {
     options.InferSecuritySchemes();
@@ -65,6 +73,7 @@ builder.Services.Configure<SwaggerGeneratorOptions>(options =>
 });
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 builder.Services.AddAuthorization();
 builder.Services.AddAuthentication("Bearer").AddJwtBearer();
 =======
@@ -77,6 +86,8 @@ builder.Services.AddAuthorization(options =>
 //builder.Services.AddAuthentication("Bearer").AddJwtBearer();
 >>>>>>> Stashed changes
 
+=======
+>>>>>>> Stashed changes
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
@@ -97,13 +108,25 @@ if (app.Environment.IsDevelopment())
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
 app.UseCors();
+=======
+>>>>>>> Stashed changes
 app.UseRouting();
 app.UseAuthentication();
 >>>>>>> Stashed changes
 app.UseAuthorization();
+<<<<<<< Updated upstream
 
 app.MapControllers();
 
+=======
+app.UseCors();
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});
+>>>>>>> Stashed changes
 app.Run();

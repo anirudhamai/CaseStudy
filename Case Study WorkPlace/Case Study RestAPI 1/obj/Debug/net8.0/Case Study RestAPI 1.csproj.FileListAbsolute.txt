@@ -233,4 +233,7 @@ C:\Users\AnirudhaBhat\Desktop\Case_study\CaseStudy\Case Study WorkPlace\Case Stu
 C:\Users\AnirudhaBhat\Desktop\Case_study\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\obj\Debug\net8.0\Case Study RestAPI 1.pdb
 C:\Users\AnirudhaBhat\Desktop\Case_study\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\obj\Debug\net8.0\Case Study RestAPI 1.genruntimeconfig.cache
 C:\Users\AnirudhaBhat\Desktop\Case_study\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\obj\Debug\net8.0\ref\Case Study RestAPI 1.dll
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

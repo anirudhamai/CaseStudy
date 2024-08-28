@@ -7,6 +7,10 @@ using Microsoft.AspNetCore.Mvc;
 namespace Case_Study_RestAPI_1.Controllers
 {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+    [Authorize(Roles = "User")]
+>>>>>>> Stashed changes
 =======
     [Authorize(Roles = "User")]
 >>>>>>> Stashed changes

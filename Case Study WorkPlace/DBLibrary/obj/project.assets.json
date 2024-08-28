@@ -4113,11 +4113,19 @@
     "version": "1.0.0",
     "restore": {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "projectUniqueName": "C:\\Users\\AnirudhaBhat\\Desktop\\Trials\\Case Study WorkPlace\\DBLibrary\\DBLibrary.csproj",
       "projectName": "DBLibrary",
       "projectPath": "C:\\Users\\AnirudhaBhat\\Desktop\\Trials\\Case Study WorkPlace\\DBLibrary\\DBLibrary.csproj",
       "packagesPath": "C:\\Users\\AnirudhaBhat\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\AnirudhaBhat\\Desktop\\Trials\\Case Study WorkPlace\\DBLibrary\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\DBLibrary.csproj",
+      "projectName": "DBLibrary",
+      "projectPath": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\DBLibrary.csproj",
+      "packagesPath": "C:\\Users\\AnirudhaBhat\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\obj\\",
+>>>>>>> Stashed changes
 =======
       "projectUniqueName": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\DBLibrary.csproj",
       "projectName": "DBLibrary",

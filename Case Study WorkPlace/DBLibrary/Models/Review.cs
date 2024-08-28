@@ -17,7 +17,7 @@ public partial class Review
 
     public DateOnly ReviewDate { get; set; }
 
-    public virtual Product Product { get; set; } = null!;
+    public virtual Product? Product { get; set; } = null!;
 
-    public virtual Customer User { get; set; } = null!;
+    public virtual Customer? User { get; set; } = null!;
 }

@@ -15,11 +15,11 @@ public partial class Order
 
     public decimal TotalAmount { get; set; }
 
-    public virtual ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
+    public virtual ICollection<OrderItem>? OrderItems { get; set; } = new List<OrderItem>();
 
-    public virtual ICollection<Payment> Payments { get; set; } = new List<Payment>();
+    public virtual ICollection<Payment>? Payments { get; set; } = new List<Payment>();
 
-    public virtual ICollection<Shipment> Shipments { get; set; } = new List<Shipment>();
+    public virtual ICollection<Shipment>? Shipments { get; set; } = new List<Shipment>();
 
-    public virtual Customer User { get; set; } = null!;
+    public virtual Customer? User { get; set; } = null!;
 }

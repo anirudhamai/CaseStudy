@@ -44,4 +44,7 @@ C:\Users\AnirudhaBhat\Desktop\Case_study\CaseStudy\Case Study WorkPlace\DBLibrar
 C:\Users\AnirudhaBhat\Desktop\Case_study\CaseStudy\Case Study WorkPlace\DBLibrary\obj\Debug\net8.0\DBLibrary.pdb
 C:\Users\AnirudhaBhat\Desktop\Case_study\CaseStudy\Case Study WorkPlace\DBLibrary\obj\Debug\net8.0\DBLibrary.genruntimeconfig.cache
 C:\Users\AnirudhaBhat\Desktop\Case_study\CaseStudy\Case Study WorkPlace\DBLibrary\obj\Debug\net8.0\ref\DBLibrary.dll
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

@@ -3142,11 +3142,19 @@
     "version": "1.0.0",
     "restore": {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "projectUniqueName": "C:\\Users\\AnirudhaBhat\\Desktop\\Trials\\Case Study WorkPlace\\Case Study RestAPI 1\\Case Study RestAPI 1.csproj",
       "projectName": "Case Study RestAPI 1",
       "projectPath": "C:\\Users\\AnirudhaBhat\\Desktop\\Trials\\Case Study WorkPlace\\Case Study RestAPI 1\\Case Study RestAPI 1.csproj",
       "packagesPath": "C:\\Users\\AnirudhaBhat\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\AnirudhaBhat\\Desktop\\Trials\\Case Study WorkPlace\\Case Study RestAPI 1\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\Case Study RestAPI 1.csproj",
+      "projectName": "Case Study RestAPI 1",
+      "projectPath": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\Case Study RestAPI 1.csproj",
+      "packagesPath": "C:\\Users\\AnirudhaBhat\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\obj\\",
+>>>>>>> Stashed changes
 =======
       "projectUniqueName": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\Case Study RestAPI 1.csproj",
       "projectName": "Case Study RestAPI 1",
@@ -3176,8 +3184,13 @@
           "targetAlias": "net8.0",
           "projectReferences": {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             "C:\\Users\\AnirudhaBhat\\Desktop\\Trials\\Case Study WorkPlace\\DBLibrary\\DBLibrary.csproj": {
               "projectPath": "C:\\Users\\AnirudhaBhat\\Desktop\\Trials\\Case Study WorkPlace\\DBLibrary\\DBLibrary.csproj"
+=======
+            "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\DBLibrary.csproj": {
+              "projectPath": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\DBLibrary.csproj"
+>>>>>>> Stashed changes
 =======
             "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\DBLibrary.csproj": {
               "projectPath": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\DBLibrary.csproj"

@@ -11,5 +11,5 @@ public partial class Discount
 
     public decimal DiscountPercentage { get; set; }
 
-    public virtual Product Product { get; set; } = null!;
+    public virtual Product? Product { get; set; } = null!;
 }

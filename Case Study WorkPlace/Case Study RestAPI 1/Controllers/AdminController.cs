@@ -21,7 +21,10 @@ namespace Case_Study_RestAPI_1.Controllers
             _config = conf;
         }
 
+<<<<<<< Updated upstream
         [AllowAnonymous]
+=======
+>>>>>>> Stashed changes
         [HttpPost]
         public async Task<IActionResult> Authenticate([FromBody] CustomerCredentials customer)
         {
@@ -32,6 +35,7 @@ namespace Case_Study_RestAPI_1.Controllers
                 {
                     return Unauthorized("Invalid username/password!!!");
                 }
+<<<<<<< Updated upstream
                 var claims = new List<Claim>
                 {
                     new Claim(JwtRegisteredClaimNames.Sub, "admin"),
@@ -39,6 +43,14 @@ namespace Case_Study_RestAPI_1.Controllers
                 };
 
                 claims.Add(new Claim(ClaimTypes.Role, "Admin"));
+=======
+                /*var claims = new List<Claim>
+                {
+                    new Claim(JwtRegisteredClaimNames.Sub, "Admin"),
+                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                    new Claim(ClaimTypes.Role, "Admin")
+                };*/
+>>>>>>> Stashed changes
                     // Generate JSON Web Token with the valid details and return
                 var key = Encoding.UTF8.GetBytes(_config["JWT:Key"]);
                 var tokenDescriptor = new SecurityTokenDescriptor

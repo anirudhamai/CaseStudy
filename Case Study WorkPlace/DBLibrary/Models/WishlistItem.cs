@@ -11,7 +11,7 @@ public partial class WishlistItem
 
     public int ProductId { get; set; }
 
-    public virtual Product Product { get; set; } = null!;
+    public virtual Product? Product { get; set; } 
 
-    public virtual Wishlist Wishlist { get; set; } = null!;
+    public virtual Wishlist? Wishlist { get; set; } 
 }

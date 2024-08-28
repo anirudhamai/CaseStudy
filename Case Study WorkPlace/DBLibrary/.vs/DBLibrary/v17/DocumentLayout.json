@@ -1,6 +1,7 @@
 {
   "Version": 1,
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   "WorkspaceRootPath": "C:\\Users\\AnirudhaBhat\\Desktop\\Trials\\Case Study WorkPlace\\DBLibrary\\",
   "Documents": [],
 =======
@@ -63,6 +64,41 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{C4FD171F-21EA-4AA4-8BF5-3D7AEBF6759E}|..\\Case Study RestAPI 1\\Case Study RestAPI 1.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\case study restapi 1\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+=======
+  "WorkspaceRootPath": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C4FD171F-21EA-4AA4-8BF5-3D7AEBF6759E}|..\\Case Study RestAPI 1\\Case Study RestAPI 1.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\case study restapi 1\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4FD171F-21EA-4AA4-8BF5-3D7AEBF6759E}|..\\Case Study RestAPI 1\\Case Study RestAPI 1.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\case study restapi 1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4FD171F-21EA-4AA4-8BF5-3D7AEBF6759E}|..\\Case Study RestAPI 1\\Case Study RestAPI 1.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\case study restapi 1\\controllers\\wishlistitemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4FD171F-21EA-4AA4-8BF5-3D7AEBF6759E}|..\\Case Study RestAPI 1\\Case Study RestAPI 1.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\case study restapi 1\\controllers\\wishlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\dblibrary\\repo\\wishlisttype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|solutionrelative:repo\\wishlisttype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\dblibrary\\repo\\wishlistitemtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|solutionrelative:repo\\wishlistitemtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4FD171F-21EA-4AA4-8BF5-3D7AEBF6759E}|..\\Case Study RestAPI 1\\Case Study RestAPI 1.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\case study restapi 1\\controllers\\addresscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4FD171F-21EA-4AA4-8BF5-3D7AEBF6759E}|..\\Case Study RestAPI 1\\Case Study RestAPI 1.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\case study restapi 1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4FD171F-21EA-4AA4-8BF5-3D7AEBF6759E}|..\\Case Study RestAPI 1\\Case Study RestAPI 1.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\case study restapi 1\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4FD171F-21EA-4AA4-8BF5-3D7AEBF6759E}|..\\Case Study RestAPI 1\\Case Study RestAPI 1.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\case study restapi 1\\controllers\\shipmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> Stashed changes
     }
   ],
 >>>>>>> Stashed changes
@@ -73,6 +109,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
           "SelectedChildIndex": -1,
           "Children": [
@@ -92,11 +129,40 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-25T16:34:34.355Z",
               "IsPinned": true,
+=======
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "WishlistType.cs",
+              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Repo\\WishlistType.cs",
+              "RelativeDocumentMoniker": "Repo\\WishlistType.cs",
+              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Repo\\WishlistType.cs",
+              "RelativeToolTip": "Repo\\WishlistType.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T18:43:26.451Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "WishlistItemType.cs",
+              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Repo\\WishlistItemType.cs",
+              "RelativeDocumentMoniker": "Repo\\WishlistItemType.cs",
+              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Repo\\WishlistItemType.cs",
+              "RelativeToolTip": "Repo\\WishlistItemType.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T18:40:53.079Z",
+>>>>>>> Stashed changes
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+<<<<<<< Updated upstream
               "Title": "ReviewController.cs",
               "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\Controllers\\ReviewController.cs",
               "RelativeDocumentMoniker": "..\\Case Study RestAPI 1\\Controllers\\ReviewController.cs",
@@ -105,11 +171,22 @@
               "ViewState": "AQIAABAAAAAAAAAAAAAQwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-27T19:11:29.344Z",
+=======
+              "Title": "WishlistItemController.cs",
+              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\Controllers\\WishlistItemController.cs",
+              "RelativeDocumentMoniker": "..\\Case Study RestAPI 1\\Controllers\\WishlistItemController.cs",
+              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\Controllers\\WishlistItemController.cs",
+              "RelativeToolTip": "..\\Case Study RestAPI 1\\Controllers\\WishlistItemController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAkAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T18:40:45.785Z",
+>>>>>>> Stashed changes
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+<<<<<<< Updated upstream
               "Title": "Review.cs",
               "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Models\\Review.cs",
               "RelativeDocumentMoniker": "Models\\Review.cs",
@@ -118,10 +195,34 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-27T19:04:36.953Z",
+=======
+              "Title": "WishlistController.cs",
+              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\Controllers\\WishlistController.cs",
+              "RelativeDocumentMoniker": "..\\Case Study RestAPI 1\\Controllers\\WishlistController.cs",
+              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\Controllers\\WishlistController.cs",
+              "RelativeToolTip": "..\\Case Study RestAPI 1\\Controllers\\WishlistController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T18:40:44.221Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\appsettings.json",
+              "RelativeDocumentMoniker": "..\\Case Study RestAPI 1\\appsettings.json",
+              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\appsettings.json",
+              "RelativeToolTip": "..\\Case Study RestAPI 1\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-08-28T18:17:57.75Z",
+>>>>>>> Stashed changes
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+<<<<<<< Updated upstream
               "DocumentIndex": 4,
               "Title": "CategoryType.cs",
               "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Repo\\CategoryType.cs",
@@ -131,10 +232,22 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-27T18:29:14.187Z",
+=======
+              "DocumentIndex": 6,
+              "Title": "AddressController.cs",
+              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\Controllers\\AddressController.cs",
+              "RelativeDocumentMoniker": "..\\Case Study RestAPI 1\\Controllers\\AddressController.cs",
+              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\Controllers\\AddressController.cs",
+              "RelativeToolTip": "..\\Case Study RestAPI 1\\Controllers\\AddressController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T17:58:43.051Z",
+>>>>>>> Stashed changes
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< Updated upstream
               "DocumentIndex": 5,
               "Title": "Category.cs",
               "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Models\\Category.cs",
@@ -144,11 +257,36 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-27T18:28:58.706Z",
+=======
+              "DocumentIndex": 0,
+              "Title": "CustomerController.cs",
+              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\Controllers\\CustomerController.cs",
+              "RelativeDocumentMoniker": "..\\Case Study RestAPI 1\\Controllers\\CustomerController.cs",
+              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\Controllers\\CustomerController.cs",
+              "RelativeToolTip": "..\\Case Study RestAPI 1\\Controllers\\CustomerController.cs",
+              "ViewState": "AQIAAEAAAAAAAAAAAAAowFAAAACRAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T17:57:56.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "..\\Case Study RestAPI 1\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "..\\Case Study RestAPI 1\\Controllers\\AdminController.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAQwCoAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T17:42:05.542Z",
+>>>>>>> Stashed changes
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
+<<<<<<< Updated upstream
               "Title": "service_extension.cs",
               "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Extensions\\service_extension.cs",
               "RelativeDocumentMoniker": "Extensions\\service_extension.cs",
@@ -301,6 +439,42 @@
               "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
             },
             {
+=======
+              "Title": "ShipmentController.cs",
+              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\Controllers\\ShipmentController.cs",
+              "RelativeDocumentMoniker": "..\\Case Study RestAPI 1\\Controllers\\ShipmentController.cs",
+              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\Controllers\\ShipmentController.cs",
+              "RelativeToolTip": "..\\Case Study RestAPI 1\\Controllers\\ShipmentController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T17:43:29.663Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\Program.cs",
+              "RelativeDocumentMoniker": "..\\Case Study RestAPI 1\\Program.cs",
+              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\Program.cs",
+              "RelativeToolTip": "..\\Case Study RestAPI 1\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T17:30:24.108Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 643,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+>>>>>>> Stashed changes
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },

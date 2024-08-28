@@ -13,5 +13,5 @@ public partial class Payment
 
     public decimal Amount { get; set; }
 
-    public virtual Order Order { get; set; } = null!;
+    public virtual Order? Order { get; set; } = null!;
 }

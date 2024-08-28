@@ -15,13 +15,13 @@ public partial class Customer
 
     public DateOnly CreatedAt { get; set; }
 
-    public virtual ICollection<Address> Addresses { get; set; } = new List<Address>();
+    public virtual ICollection<Address>? Addresses { get; set; } = new List<Address>();
 
-    public virtual ICollection<Cart> Carts { get; set; } = new List<Cart>();
+    public virtual ICollection<Cart>? Carts { get; set; } = new List<Cart>();
 
-    public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
+    public virtual ICollection<Order>? Orders { get; set; } = new List<Order>();
 
-    public virtual ICollection<Review> Reviews { get; set; } = new List<Review>();
+    public virtual ICollection<Review>? Reviews { get; set; } = new List<Review>();
 
-    public virtual ICollection<Wishlist> Wishlists { get; set; } = new List<Wishlist>();
+    public virtual ICollection<Wishlist>? Wishlists { get; set; } = new List<Wishlist>();
 }

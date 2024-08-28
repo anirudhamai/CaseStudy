@@ -6,6 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Case_Study_RestAPI_1.Controllers
 {
+<<<<<<< Updated upstream
+=======
+    //[Authorize]
+>>>>>>> Stashed changes
     [Route("api/[controller]")]
     [ApiController]
     public class WishlistController : ControllerBase

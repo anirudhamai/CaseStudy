@@ -21,7 +21,7 @@ public partial class Address
 
     public string? PostalCode { get; set; }
 
-    public virtual ICollection<Shipment> Shipments { get; set; } = new List<Shipment>();
+    public virtual ICollection<Shipment>? Shipments { get; set; } = new List<Shipment>();
 
-    public virtual Customer User { get; set; } = null!;
+    public virtual Customer? User { get; set; } = null!;
 }
