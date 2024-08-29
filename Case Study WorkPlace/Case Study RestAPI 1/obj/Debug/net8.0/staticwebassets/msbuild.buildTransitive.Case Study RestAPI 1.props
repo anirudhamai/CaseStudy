@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\Case Study RestAPI 1.props" />
-</Project>
