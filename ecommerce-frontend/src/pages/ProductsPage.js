@@ -31,7 +31,7 @@ function ProductsPage() {
         }
         });
         
-        console.log(response.data.$values[0]);
+        //console.log(response.data.$values[0]);
         setProducts(response.data.$values);
         
         } 
@@ -109,6 +109,13 @@ function ProductsPage() {
     width: '800px'
   };
 
+  const [reviewsResponse, setRespReviews] = useState([]);
+
+  const handleReviewAdd = (product) => {
+    setRespReviews( product.reviews.$values);
+    console.log(reviewsResponse);
+  };
+
   return (
     <div>
       <h2>Products</h2>
@@ -121,10 +128,10 @@ function ProductsPage() {
             <p>{product.category}</p>
             <p>${product.price}</p>
 
-            {/* Display existing reviews */}
+            {handleReviewAdd(product)}
             <div>
               <h4>Reviews:</h4>
-              {product.reviews.$values.length === 0 ? (
+              {reviewsResponse.$values.length === 0 ? (
                 <p>No reviews yet</p>
               ) : (
                 product.reviews.$values.map((review) => (
@@ -138,6 +145,7 @@ function ProductsPage() {
                 ))
               )}
             </div>
+
 
             {/* Add new review */}
             <div>

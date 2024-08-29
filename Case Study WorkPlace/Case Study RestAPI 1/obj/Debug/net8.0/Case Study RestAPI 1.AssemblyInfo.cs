@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Case Study RestAPI 1")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bb94ce01b3060ac5a42889cbe047bde7c86caa1b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bbc2ea68926f78ef73fa724ffcb0e38d282ea954")]
 [assembly: System.Reflection.AssemblyProductAttribute("Case Study RestAPI 1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Case Study RestAPI 1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
