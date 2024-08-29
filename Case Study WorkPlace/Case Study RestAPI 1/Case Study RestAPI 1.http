@@ -1,6 +1,0 @@
-@Case_Study_RestAPI_1_HostAddress = http://localhost:5120
-
-GET {{Case_Study_RestAPI_1_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
