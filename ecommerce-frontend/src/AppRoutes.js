@@ -12,6 +12,7 @@ import PaymentPage from './pages/PaymentPage';
 import Layout from './components/Layout';
 import CartPage from './pages/CartPage';
 import WishlistPage from './pages/WishlistPage';
+import AddressPage from './pages/AddressPage';
 
 function AppRoutes() {
   return (
@@ -20,6 +21,9 @@ function AppRoutes() {
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
+
+        <Route path="/address" element={<AddressPage />} />
+
         <Route
           path="/admin"
           element={
@@ -37,7 +41,7 @@ function AppRoutes() {
           }
         />
         <Route
-          path="/user"
+          path="/profile"
           element={
             <Layout>
               <UserPage />

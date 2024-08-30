@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { FaStar } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate for redirection
+import { useNavigate } from 'react-router-dom';
+import './WishlistPage.css'; // Import the CSS file for styling
 
 function WishlistPage() {
   const [wishlist, setWishlist] = useState([]);
-  const navigate = useNavigate(); // Initialize navigate
+  const [cart, setCart] = useState([]);
+  const navigate = useNavigate();
 
   // Sample wishlist data
   const sampleWishlist = [
@@ -44,31 +46,56 @@ function WishlistPage() {
     }
   };
 
+  const handleAddToCart = async (product) => {
+    try {
+      // Simulate adding a product to the cart
+      setCart([...cart, product]);
+      alert('Added to cart');
+    } catch (error) {
+      alert('Error adding to cart');
+    }
+  };
+
   return (
-    <div>
-      <h2>Wishlist</h2>
+    <div className="wishlist-container">
+      <h2 className="wishlist-title">Your Wishlist</h2>
       {wishlist.length === 0 ? (
-        <p>Your wishlist is empty</p>
+        <p className="empty-message">Your wishlist is empty</p>
       ) : (
-        wishlist.map((product) => (
-          <div key={product.id} style={{ marginBottom: '20px', border: '1px solid #ddd', padding: '10px' }}>
-            <h3>{product.name}</h3>
-            <p>{product.description}</p>
-            <p>${product.price}</p>
-            <img src={product.image} alt={product.name} style={{ width: '150px', height: '150px', objectFit: 'cover' }} />
-            <div>
-              {[...Array(5)].map((_, index) => (
-                <FaStar
-                  key={index}
-                  color={index + 1 <= product.rating ? "#ffc107" : "#e4e5e9"}
-                  size={20}
-                />
-              ))}
+        <div className="wishlist-items">
+          {wishlist.map((product) => (
+            <div key={product.id} className="wishlist-item">
+              <img src={product.image} alt={product.name} className="wishlist-item-image" />
+              <div className="wishlist-item-details">
+                <h3 className="wishlist-item-name">{product.name}</h3>
+                <p className="wishlist-item-description">{product.description}</p>
+                <p className="wishlist-item-price">${product.price.toFixed(2)}</p>
+                <div className="wishlist-item-rating">
+                  {[...Array(5)].map((_, index) => (
+                    <FaStar
+                      key={index}
+                      color={index + 1 <= product.rating ? "#ffc107" : "#e4e5e9"}
+                      size={20}
+                    />
+                  ))}
+                </div>
+                <div className="wishlist-item-actions">
+                  <button className="wishlist-item-add" onClick={() => handleAddToCart(product)}>
+                    Add to Cart
+                  </button>
+                  <div className="wishlist-item-actions-bottom">
+                    <button className="wishlist-item-remove" onClick={() => handleRemoveFromWishlist(product.id)}>
+                      Remove from Wishlist
+                    </button>
+                    <button className="wishlist-item-view" onClick={() => navigate(`/products/${product.id}`)}>
+                      View Details
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
-            <button onClick={() => handleRemoveFromWishlist(product.id)}>Remove from Wishlist</button>
-            <button onClick={() => navigate(`/products/${product.id}`)}>View Details</button>
-          </div>
-        ))
+          ))}
+        </div>
       )}
     </div>
   );

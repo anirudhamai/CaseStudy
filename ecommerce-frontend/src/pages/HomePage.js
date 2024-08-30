@@ -68,17 +68,18 @@ function HomePage() {
           <Link to="/login" className="login-button">Login</Link>
           {showLoginDropdown && (
             <div className="login-dropdown">
-              <Link to="/signup">New Customer? Sign-up</Link>
+              <Link to="/register">New Customer? Sign-up</Link>
               <Link to="/profile">My Profile</Link>
-              <Link to="/wishlist">Wish List</Link>
-              <Link to="/orders">Orders</Link>
+              <Link to="/myorders">Orders</Link>
+              <Link to="/wishlist">WishList</Link>
+              
             </div>
           )}
         </div>
 
         <div className="cart-icon">
           <Link to="/wishlist">
-            <FaHeart /> <span>Wish List</span>
+            <FaHeart /> <span>WishList</span>
           </Link>
         </div>
 

@@ -1,5 +1,4 @@
-// src/pages/OrdersPage.js
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './OrdersPage.css'; // For custom styles
 
@@ -29,8 +28,8 @@ function OrdersPage() {
   ]);
 
   return (
-    <div>
-      <h2>Orders</h2>
+    <div className="orders-container">
+      <h2 className="page-title">Orders</h2>
       <table className="orders-table">
         <thead>
           <tr>
@@ -51,7 +50,7 @@ function OrdersPage() {
               <td>${order.totalPrice.toFixed(2)}</td>
               <td>{order.status}</td>
               <td>
-                <Link to={`/orders/${order.id}`}>View Details</Link>
+                <Link to={`/orders/${order.id}`} className="details-link">View Details</Link>
               </td>
             </tr>
           ))}
