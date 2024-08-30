@@ -1,4 +1,4 @@
-/* src/pages/CartPage.css */
+/* src/pages/CartPage.css
 .cart-container {
     padding: 20px;
   }
@@ -34,5 +34,44 @@
   
   .buy-now-button:hover {
     background-color: #0056b3;
+  }
+   */
+
+
+   .cart-container {
+    padding: 20px;
+  }
+  
+  .cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .cart-item-image {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+  }
+  
+  .cart-item-details {
+    flex: 1;
+  }
+  
+  .cart-total {
+    margin-top: 20px;
+  }
+  
+  .buy-now-button {
+    padding: 10px 20px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .buy-now-button:hover {
+    background-color: #e64a19;
   }
   

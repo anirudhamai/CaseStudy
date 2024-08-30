@@ -8,7 +8,7 @@ function HomePage() {
     <div>
       <header className="header">
         <div className="logo">
-          <h1>MyStore</h1>
+          <h1>ShopEase</h1>
         </div>
         <nav className="nav">
           <ul>
@@ -35,21 +35,21 @@ function HomePage() {
           <div className="product">
             <img src="https://via.placeholder.com/150" alt="Product 1" />
             <h3>Product 1</h3>
-            <p>$29.99</p>
+            <p>₹29.99</p>
             <p>Short description of product 1.</p>
             <Link to="/products/1">View Details</Link>
           </div>
           <div className="product">
             <img src="https://via.placeholder.com/150" alt="Product 2" />
             <h3>Product 2</h3>
-            <p>$49.99</p>
+            <p>₹49.99</p>
             <p>Short description of product 2.</p>
             <Link to="/products/2">View Details</Link>
           </div>
           <div className="product">
             <img src="https://via.placeholder.com/150" alt="Product 3" />
             <h3>Product 3</h3>
-            <p>$19.99</p>
+            <p>₹19.99</p>
             <p>Short description of product 3.</p>
             <Link to="/products/3">View Details</Link>
           </div>
