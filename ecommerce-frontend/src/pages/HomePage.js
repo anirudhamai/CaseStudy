@@ -1,81 +1,142 @@
-// src/pages/HomePage.js
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './HomePage.css'; // For custom styles
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import './HomePage.css';
+import { FaSearch, FaHeart, FaShoppingCart } from 'react-icons/fa'; // Correct imports
+import Categories from '../pages/Categories'; // Import the Categories component
+import SliderComponent from '../pages/SliderComponent'; // Import the Slider component
+
+// Example product data
+const productData = [
+  { id: 1, name: 'Product 1', price: '₹29.99', imgSrc: 'https://via.placeholder.com/300x200?text=Product+1' },
+  { id: 2, name: 'Product 2', price: '₹19.99', imgSrc: 'https://via.placeholder.com/300x200?text=Product+2' },
+  { id: 3, name: 'Product 3', price: '₹39.99', imgSrc: 'https://via.placeholder.com/300x200?text=Product+3' },
+  { id: 4, name: 'Product 4', price: '₹49.99', imgSrc: 'https://via.placeholder.com/300x200?text=Product+4' },
+];
 
 function HomePage() {
+  const [showLoginDropdown, setShowLoginDropdown] = useState(false);
+  const [searchCategory, setSearchCategory] = useState('');
+  const navigate = useNavigate();
+
+  const toggleLoginDropdown = () => {
+    setShowLoginDropdown(!showLoginDropdown);
+  };
+
+  const handleMouseLeave = () => {
+    setShowLoginDropdown(false);
+  };
+
+  const handleCategoryChange = (event) => {
+    const selectedCategory = event.target.value;
+    setSearchCategory(selectedCategory);
+    
+    if (selectedCategory) {
+      navigate(`/category/${selectedCategory}`);
+    }
+  };
+
   return (
     <div>
       <header className="header">
         <div className="logo">
-          <h1>ShopEase</h1>
+          <img src="https://via.placeholder.com/120x50" alt="Company Logo" />
         </div>
-        <nav className="nav">
-          <ul>
-            <li><Link to="/category1">Category 1</Link></li>
-            <li><Link to="/category2">Category 2</Link></li>
-            <li><Link to="/category3">Category 3</Link></li>
-          </ul>
-        </nav>
+
         <div className="search-bar">
-          <input type="text" placeholder="Search..." />
+          <select 
+            className="category-dropdown" 
+            value={searchCategory}
+            onChange={handleCategoryChange}
+          >
+            <option value="" disabled>Select Category</option>
+            <option value="groceries">Groceries</option>
+            <option value="electronics">Electronics</option>
+            <option value="fashion">Fashion</option>
+            <option value="entertainment">Entertainment</option>
+          </select>
+          <input type="text" placeholder="Search..." aria-label="Search" />
+          <button className="search-icon" aria-label="Search">
+            <FaSearch />
+          </button>
         </div>
-        <div className="user-links">
-          <Link to="/login">Login</Link> | <Link to="/logout">Logout</Link> | 
-          <Link to="/myorders">Orders</Link> 
+
+        <div 
+          className="login-container" 
+          onMouseEnter={toggleLoginDropdown} 
+          onMouseLeave={handleMouseLeave}
+        >
+          <Link to="/login" className="login-button">Login</Link>
+          {showLoginDropdown && (
+            <div className="login-dropdown">
+              <Link to="/signup">New Customer? Sign-up</Link>
+              <Link to="/profile">My Profile</Link>
+              <Link to="/wishlist">Wish List</Link>
+              <Link to="/orders">Orders</Link>
+            </div>
+          )}
         </div>
+
         <div className="cart-icon">
-          <Link to="/cart"><span>Cart (0)</span></Link>
+          <Link to="/wishlist">
+            <FaHeart /> <span>Wish List</span>
+          </Link>
+        </div>
+
+        <div className="cart-icon">
+          <Link to="/cart">
+            <FaShoppingCart /> <span>Cart</span>
+          </Link>
         </div>
       </header>
 
-      <section className="featured-products">
-        <h2>Featured Products</h2>
-        <div className="products">
-          <div className="product">
-            <img src="https://via.placeholder.com/150" alt="Product 1" />
-            <h3>Product 1</h3>
-            <p>₹29.99</p>
-            <p>Short description of product 1.</p>
-            <Link to="/products/1">View Details</Link>
+      <Categories />
+      
+      <SliderComponent />
+
+      {/* Product Sections */}
+      <section className="product-sections">
+        <div className="product-row">
+          <h2>Best Deals of the Day</h2>
+          <div className="products">
+            {productData.map(product => (
+              <div key={product.id} className="product-card">
+                <img src={product.imgSrc} alt={product.name} />
+                <div className="product-info">
+                  <h3>{product.name}</h3>
+                  <p className="price">{product.price}</p>
+                  <button className="buy-now">Buy Now</button>
+                  <div className="product-actions">
+                    <button className="wish-list"><FaHeart /> Add to Wish List</button>
+                    <button className="add-to-cart"><FaShoppingCart /> Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
-          <div className="product">
-            <img src="https://via.placeholder.com/150" alt="Product 2" />
-            <h3>Product 2</h3>
-            <p>₹49.99</p>
-            <p>Short description of product 2.</p>
-            <Link to="/products/2">View Details</Link>
-          </div>
-          <div className="product">
-            <img src="https://via.placeholder.com/150" alt="Product 3" />
-            <h3>Product 3</h3>
-            <p>₹19.99</p>
-            <p>Short description of product 3.</p>
-            <Link to="/products/3">View Details</Link>
+        </div>
+
+        <div className="product-row">
+          <h2>More Than 50% Off</h2>
+          <div className="products">
+            {productData.map(product => (
+              <div key={product.id} className="product-card">
+                <img src={product.imgSrc} alt={product.name} />
+                <div className="product-info">
+                  <h3>{product.name}</h3>
+                  <p className="price">{product.price}</p>
+                  <button className="buy-now">Buy Now</button>
+                  <div className="product-actions">
+                    <button className="wish-list"><FaHeart /> Add to Wish List</button>
+                    <button className="add-to-cart"><FaShoppingCart /> Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="category-showcase">
-        <h2>Main Categories</h2>
-        <div className="categories">
-          <div className="category">
-            <img src="https://via.placeholder.com/150" alt="Category 1" />
-            <h3>Category 1</h3>
-            <Link to="/category1">Shop Now</Link>
-          </div>
-          <div className="category">
-            <img src="https://via.placeholder.com/150" alt="Category 2" />
-            <h3>Category 2</h3>
-            <Link to="/category2">Shop Now</Link>
-          </div>
-          <div className="category">
-            <img src="https://via.placeholder.com/150" alt="Category 3" />
-            <h3>Category 3</h3>
-            <Link to="/category3">Shop Now</Link>
-          </div>
-        </div>
-      </section>
+      {/* Other sections like featured products, etc. */}
     </div>
   );
 }
