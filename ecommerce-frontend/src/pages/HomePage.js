@@ -135,9 +135,28 @@ function HomePage() {
             ))}
           </div>
         </div>
-      </section>
 
-      {/* Other sections like featured products, etc. */}
+        {/* Featured Products Section */}
+        <div className="product-row">
+          <h2>Featured Products</h2>
+          <div className="products">
+            {productData.map(product => (
+              <div key={product.id} className="product-card">
+                <img src={product.imgSrc} alt={product.name} />
+                <div className="product-info">
+                  <h3>{product.name}</h3>
+                  <p className="price">{product.price}</p>
+                  <button className="buy-now">Buy Now</button>
+                  <div className="product-actions">
+                    <button className="wish-list"><FaHeart /> Add to Wish List</button>
+                    <button className="add-to-cart"><FaShoppingCart /> Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

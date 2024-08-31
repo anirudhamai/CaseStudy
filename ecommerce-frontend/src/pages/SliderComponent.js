@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import './SliderComponent.css'; // Ensure styles are correctly applied
 
 const categories = [
-  { name: 'Groceries', imgSrc: 'https://i.pinimg.com/736x/4f/37/9e/4f379e5ca791838e4735e0458b66df40.jpg', path: '/category/groceries' },
+  { name: 'Groceries', imgSrc: 'https://via.placeholder.com/1200x675?text=Groceries', path: '/category/groceries' },
   { name: 'Electronics', imgSrc: 'https://via.placeholder.com/1200x675?text=Electronics', path: '/category/electronics' },
   { name: 'Fashion', imgSrc: 'https://via.placeholder.com/1200x675?text=Fashion', path: '/category/fashion' },
   { name: 'Entertainment', imgSrc: 'https://via.placeholder.com/1200x675?text=Entertainment', path: '/category/entertainment' }

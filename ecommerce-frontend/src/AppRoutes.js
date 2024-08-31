@@ -1,10 +1,11 @@
 // src/AppRoutes.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { CartProvider } from './context/CartContext';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import AdminPage from './pages/AdminPage';
-import ProductsPage from './pages/ProductsPage';
+import ElectronicsPage from './pages/ElectronicsPage';
 import UserPage from './pages/UserPage';
 import HomePage from './pages/HomePage';
 import OrdersPage from './pages/OrdersPage';
@@ -14,8 +15,11 @@ import CartPage from './pages/CartPage';
 import WishlistPage from './pages/WishlistPage';
 import AddressPage from './pages/AddressPage';
 
+
+
 function AppRoutes() {
   return (
+    <CartProvider>
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -33,15 +37,15 @@ function AppRoutes() {
           }
         />
         <Route
-          path="/products"
+          path="/category/electronics"
           element={
             <Layout>
-              <ProductsPage />
+              <ElectronicsPage />
             </Layout>
           }
         />
         <Route
-          path="/profile"
+          path="/user"
           element={
             <Layout>
               <UserPage />
@@ -49,7 +53,7 @@ function AppRoutes() {
           }
         />
         <Route
-          path="/myorders"
+          path="/order-page"
           element={
             <Layout>
               <OrdersPage />
@@ -57,7 +61,7 @@ function AppRoutes() {
           }
         />
         <Route
-          path="/payment"
+          path="/payment-page"
           element={
             <Layout>
               <PaymentPage />
@@ -85,6 +89,8 @@ function AppRoutes() {
 
       </Routes>
     </Router>
+
+    </CartProvider>
   );
 }
 
