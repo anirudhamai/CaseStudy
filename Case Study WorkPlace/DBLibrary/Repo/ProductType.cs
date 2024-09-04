@@ -19,20 +19,36 @@ namespace DBLibrary.Repo
         {
             return _context.Products
                 .Include(p => p.Category)
-                .Include(p => p.Reviews)
-                .ToList();
-        }
-        public Product GetProductById(int id)
-        {
-            return _context.Products
-                .Include(p => p.Category)
-                /*
                 .Include(p => p.Inventory)
                 .Include(p => p.Discounts)
                 .Include(p => p.CartItems)
                 .Include(p => p.WishlistItems)
                 .Include(p => p.OrderItems)
-                */
+                .Include(p => p.Reviews)
+                .ToList();
+        }
+        public IEnumerable<Product> GetProductByCategory(int catId)
+        {
+            return _context.Products
+                .Include(p => p.Inventory)
+                .Include(p => p.Discounts)
+                .Include(p => p.CartItems)
+                .Include(p => p.WishlistItems)
+                .Include(p => p.OrderItems)
+                .Include(p => p.Reviews)
+                .Where(p => p.CategoryId == catId)
+                .ToList();
+        }
+
+        public Product GetProductById(int id)
+        {
+            return _context.Products
+                .Include(p => p.Category)
+                .Include(p => p.Inventory)
+                .Include(p => p.Discounts)
+                .Include(p => p.CartItems)
+                .Include(p => p.WishlistItems)
+                .Include(p => p.OrderItems)
                 .Include(p => p.Reviews)
                 .ToList()
                 .Find(p => p.ProductId==id);

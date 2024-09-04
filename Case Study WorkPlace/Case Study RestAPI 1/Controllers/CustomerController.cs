@@ -46,7 +46,7 @@ namespace Case_Study_RestAPI_1.Controllers
         [AllowAnonymous]
         public void Post([FromBody] Customer c)
         {
-            string hashed = c.Password.GetHashCode().ToString();
+            string hashed = c.Password;
             c.Password = hashed;
             _int1.AddCustomer(c);
         }
@@ -73,7 +73,7 @@ namespace Case_Study_RestAPI_1.Controllers
             using (var context = new ShopeaseContext())
             {
                 // Validate user from the database
-                var dbUser = await context.Customers.FirstOrDefaultAsync<Customer>((u => u.Password == customer.Password.GetHashCode().ToString() && u.Email == customer.email));
+                var dbUser = await context.Customers.FirstOrDefaultAsync<Customer>((u => u.Password == customer.Password && u.Email == customer.email));
 
                 if (dbUser != null)
                 {

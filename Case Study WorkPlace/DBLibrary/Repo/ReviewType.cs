@@ -18,7 +18,6 @@ namespace DBLibrary.Repo
         public IEnumerable<Review> GetReview()
         {
             return _context.Reviews
-                .Include(r => r.Product)
                 .Include(r => r.User)
                 .ToList();
         }

@@ -11,6 +11,7 @@ namespace DBLibrary.Repo
     {
         public IEnumerable<Product> GetProduct();
         public Product GetProductById(int id);
+        public IEnumerable<Product> GetProductByCategory(int catId);
         public void AddProduct(Product c);
         public void UpdateProduct(int id, Product c);
         public void DeleteProduct(int id);

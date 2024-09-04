@@ -30,6 +30,13 @@ namespace Case_Study_RestAPI_1.Controllers
             return _int1.GetProduct();
         }
 
+        [Route("getBycat/{catId}")]
+        [HttpGet]
+        public IEnumerable<Product> GetByCategory(int catId)
+        {
+            return _int1.GetProductByCategory(catId);
+        }
+
         // GET api/<ProductController>/5
         [HttpGet("{id}")]
         public Product Get(int id)

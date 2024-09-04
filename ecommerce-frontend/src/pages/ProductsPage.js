@@ -111,7 +111,12 @@ function ProductsPage() {
 
   const [reviewsResponse, setRespReviews] = useState([]);
 
+  useEffect(() => {
+    console.log('Updated reviewsResponse:', reviewsResponse);
+  }, [reviewsResponse]);
+
   const handleReviewAdd = (product) => {
+    console.log(product.reviews.$values);
     setRespReviews( product.reviews.$values);
     console.log(reviewsResponse);
   };
