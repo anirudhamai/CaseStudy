@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
+
 function LoginPage() {
   const [email, setEmail] = useState('ani@gmail.com');
   const [password, setPassword] = useState('pass26');
@@ -21,7 +22,7 @@ function LoginPage() {
       localStorage.setItem('token', token);
       // console.log(token);// Store user details
 
-      console.log(response.data.userId);
+      // console.log(response.data.userId);
       navigate('/', { state: { userId: response.data.userId } }); // Redirect to a page
     } catch (error) {
       alert('Login failed');

@@ -1,10 +1,15 @@
 import React, { useContext, useState } from 'react';
+import {useNavigate, useLocation } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
 import './CartPage.css'; // Importing custom CSS
 
 function CartPage() {
   const { cartItems, removeFromCart, updateQuantity, getTotalAmount } = useContext(CartContext);
   const [selectedItems, setSelectedItems] = useState({});
+  const location = useLocation();
+  const [ cartId, setCartId ] = useState();
+  setCartId(location.state);
+  console.log("cart id is ", cartId);
 
   const handleCheckboxChange = (productId) => {
     setSelectedItems(prevState => ({

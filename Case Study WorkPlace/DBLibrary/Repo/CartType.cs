@@ -1,4 +1,5 @@
 ﻿using DBLibrary.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -33,10 +34,21 @@ namespace DBLibrary.Repo
                 .ToList()
                 .Find(c => c.CartId == id);
         }
-        public void AddCart(Cart c)
+
+        public Cart GetCartByUserId(int id)
         {
-            _context.Carts.Add(c);
+            return _context.Carts
+                .Include(c => c.CartItems)
+                .Include(c => c.User)
+                .ToList()
+                .Find(c => c.UserId == id);
+        }
+
+        public int AddCart(Cart cart)
+        {
+            _context.Carts.Add(cart);
             _context.SaveChanges();
+            return GetCartByUserId(cart.UserId).CartId;
         }
         public void DeleteCart(int id)
         {

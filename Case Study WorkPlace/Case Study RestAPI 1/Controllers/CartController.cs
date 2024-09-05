@@ -33,9 +33,19 @@ namespace Case_Study_RestAPI_1.Controllers
 
         // POST api/<CartController>
         [HttpPost]
-        public void Post([FromBody] Cart value)
+        public int Post([FromBody] Cart value)
         {
-            _int1.AddCart(value);
+            Cart newCart = _int1.GetCartByUserId(value.UserId);
+            if (newCart == null)
+            {
+                var addedCart = _int1.AddCart(value);
+                return addedCart;
+            }
+            else
+            {
+                return newCart.CartId;
+            }
+
         }
 
         // PUT api/<CartController>/5

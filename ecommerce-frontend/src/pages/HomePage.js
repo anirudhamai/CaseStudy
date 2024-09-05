@@ -11,11 +11,14 @@ import SliderComponent from '../pages/SliderComponent'; // Import the Slider com
 function HomePage() {
 
   const [productData, setProducts] = useState([]);
-  const [userId, setUserId] = useState();
+  const [CategoryData, setCategoryData] = useState([]);
+  // const [userId, setUserId] = useState();
   const location = useLocation();
+  const userId = location.state.userId;
 
   useEffect(() => {
-    
+  // setUserId(userid);
+  // console.log("in home, " , userId);
   const fetchProducts = async () => {
     try {
       const token = localStorage.getItem('token');
@@ -52,6 +55,42 @@ function HomePage() {
   fetchProducts();
 }, []);
 
+useEffect(() => {
+  const fetchCategory = async () => {
+    try {
+      const token = localStorage.getItem('token');
+      if(!token)
+      {
+        navigate('/');
+      }
+      const url= 'http://localhost:5120/api/Category';
+      const response = await axios.get(url , {
+      headers: {
+      Authorization: `Bearer ${token}`
+      }
+      });
+      setCategoryData(response.data.$values || []);
+      } 
+      catch (error) {
+        console.log(error);
+        if(error.code == "ERR_NETWORK"){
+          alert(error.message);
+          localStorage.removeItem('token');
+          navigate('/login');
+        }
+      if(localStorage.getItem('token') && (error.response.status === 401))
+      {
+        alert("Your token expired or you are not authorized for this page");
+        localStorage.removeItem('token');
+        navigate('/login');
+      }
+      console.error('Error fetching products', error);
+    }
+  };
+  fetchCategory();
+}, []);
+
+
   const [showLoginDropdown, setShowLoginDropdown] = useState(false);
   const [searchCategory, setSearchCategory] = useState('');
   const navigate = useNavigate();
@@ -65,11 +104,11 @@ function HomePage() {
   };
 
   const handleCategoryChange = (event) => {
-    const selectedCategory = event.target.value;
+    const selectedCategoryId = event.target.value;
+    const selectedCategory = CategoryData.find(category => category.$id === selectedCategoryId);
     setSearchCategory(selectedCategory);
-    
     if (selectedCategory) {
-      navigate(`/category/${selectedCategory}`);
+      navigate(`/category/electronics`, { state: { userId: userId, categoryId: selectedCategory.categoryId, categoryName: selectedCategory.categoryName } });
     }
   };
 
@@ -87,10 +126,11 @@ function HomePage() {
             onChange={handleCategoryChange}
           >
             <option value="" disabled>Select Category</option>
-            <option value="groceries">Groceries</option>
-            <option value="electronics">Electronics</option>
-            <option value="fashion">Fashion</option>
-            <option value="entertainment">Entertainment</option>
+            {CategoryData.map(category => (
+            <option key={category.$id} value={category.$id}>
+              {category.categoryName}
+            </option>
+          ))}
           </select>
           <input type="text" placeholder="Search..." aria-label="Search" />
           <button className="search-icon" aria-label="Search">
@@ -128,7 +168,7 @@ function HomePage() {
         </div>
       </header>
 
-      <Categories userid={location.state.userId}/>
+      <Categories userId={userId}/>
       
       <SliderComponent />
 

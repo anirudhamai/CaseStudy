@@ -1,4 +1,5 @@
 ﻿using DBLibrary.Models;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,8 @@ namespace DBLibrary.Repo
     {
         public IEnumerable<Cart> GetCart();
         public Cart GetCartById(int id);
-        public void AddCart(Cart c);
+        public Cart GetCartByUserId(int id);
+        public int AddCart(Cart c);
         public void UpdateCart(int id, Cart c);
         public void DeleteCart(int id);
     }

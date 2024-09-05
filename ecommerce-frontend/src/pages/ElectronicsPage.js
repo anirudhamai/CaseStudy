@@ -3,6 +3,7 @@ import { FaStar, FaCartPlus, FaShoppingBag, FaHeart } from 'react-icons/fa';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
 import axios from 'axios';
+// import { ReactSession }  from 'react-client-session';
 
 
 
@@ -19,11 +20,10 @@ function ElectronicsPage() {
 
   useEffect(() => {
     const fetchCategoryProducts = async () => {
-      const { categoryId } = location.state;
-      setCategory(location.state.categoryName);
+      const { categoryName } = location.state;
+      setCategory(categoryName);
       const { userId } = location.state;
-      setUserid(userId.userid);
-      // console.log("elec: userid ", userid);
+      setUserid(userId);
       try {
         const token = localStorage.getItem('token');
         if(!token)
@@ -31,7 +31,7 @@ function ElectronicsPage() {
           navigate('/');
         }
 
-        const url2= `http://localhost:5120/api/Product/getBycat/${categoryId}`;
+        const url2= `http://localhost:5120/api/Product/getBycat/${location.state.categoryId}`;
         const response = await axios.get(url2 , {
         headers: {
         Authorization: `Bearer ${token}`
@@ -71,10 +71,6 @@ function ElectronicsPage() {
   const addReview = async (product, review, rating) => {
     try {
         const token = localStorage.getItem('token');
-        if(!token)
-        {
-          navigate('/');
-        }
 
         const url2= `http://localhost:5120/api/Review`;
         const reviewData={
@@ -90,7 +86,7 @@ function ElectronicsPage() {
         }
         });
         
-        setProducts(response.data.$values);
+        // setProducts(response.data.$values);
         } 
         catch (error) {
           console.log(error);
@@ -128,24 +124,33 @@ function ElectronicsPage() {
 
   const addToCart = async (product) => {
     try {
-        const token = localStorage.getItem('token');
-        if(!token)
-        {
-          navigate('/');
-        }
 
-        const url2= `http://localhost:5120/api/Cart`;
+      const token = localStorage.getItem('token');
+      const url2= `http://localhost:5120/api/Cart`;
         const cart={
           UserId: userid
         }
-        const response = await axios.get(url2 ,cart ,{
+        const response = await axios.post(url2 ,cart ,{
         headers: {
         Authorization: `Bearer ${token}`,
         'Content-Type': 'application/json'
         }
         });
-        
-        setProducts(response.data.$values);
+        const url1= `http://localhost:5120/api/CartItem`;
+        const cartItem={
+          CartId: response.data,
+          ProductId: product.productId,
+          Quantity: 1
+        }
+
+        const response2 = await axios.post(url1 ,cartItem ,{
+          headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json'
+          }
+          });
+        //console.log(response.data);
+        return response.data;
         } 
         catch (error) {
           console.log(error);
@@ -154,7 +159,7 @@ function ElectronicsPage() {
             localStorage.removeItem('token');
             navigate('/login');
           }
-        if(localStorage.getItem('token') && (error.response.status === 401))
+        if(error.response.status === 401)
         {
           alert("Your token expired or you are not authorized for this page");
           localStorage.removeItem('token');
@@ -165,9 +170,10 @@ function ElectronicsPage() {
     }
 
   const handleAddToCart = (product) => {
-    //addToCart(product);
+    var resp = addToCart(product);
     alert('Added to cart!');
-    navigate('/cart');
+    //ReactSession.set("cart", resp);
+    navigate('/cart', { state: { userId: userid, cartId: resp } });
   };
 
   const handleReviewChange = (e) => {
