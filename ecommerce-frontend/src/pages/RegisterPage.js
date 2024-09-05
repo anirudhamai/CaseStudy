@@ -4,8 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import './RegisterPage.css'; // Import your CSS file
 
 function RegisterPage() {
+  const [Fname, setFname] = useState('');
+  const [Sname, setSname] = useState('');
   const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -19,12 +20,16 @@ function RegisterPage() {
       setError('Invalid email format');
       return false;
     }
-    if (phone.length < 10) {
-      setError('Phone number must be at least 10 digits');
+    if (Fname.length < 1) {
+      setError('First Name cannot be empty');
       return false;
     }
-    if (password.length < 6) {
-      setError('Password must be at least 6 characters');
+    if (Sname.length < 1) {
+      setError('Last Name cannot be empty');
+      return false;
+    }
+    if (password.length < 3) {
+      setError('Password must be at least 3 characters');
       return false;
     }
     if (password !== confirmPassword) {
@@ -41,10 +46,14 @@ function RegisterPage() {
 
     setLoading(true);
     try {
-      // Backend required
-      // await axios.post('/api/send-otp', { email });
-      setSuccess('OTP sent to your email. Please check your inbox.');
-      setOtpSent(true);
+
+      const response = await axios.post('http://localhost:5120/api/Customer/', {
+        UserName: Fname+' '+ Sname,
+        Email: email,
+        Password: password });
+      navigate('/login');
+      // setSuccess('OTP sent to your email. Please check your inbox.');
+      // setOtpSent(true);
     } catch (error) {
       setError('Failed to send OTP. Please try again.');
     } finally {
@@ -62,21 +71,28 @@ function RegisterPage() {
       <h2 className="register-title">Register</h2>
       {error && <p className="error-message">{error}</p>}
       {success && <p className="success-message">{success}</p>}
-      {!otpSent ? (
         <form className="register-form" onSubmit={handleRegister}>
+          <input
+            type="text"
+            placeholder="First Name"
+            value={Fname}
+            onChange={(e) => setFname(e.target.value)}
+            className="form-input"
+            required
+          />
+          <input
+            type="text"
+            placeholder="Last Name"
+            value={Sname}
+            onChange={(e) => setSname(e.target.value)}
+            className="form-input"
+            required
+          />
           <input
             type="email"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="form-input"
-            required
-          />
-          <input
-            type="tel"
-            placeholder="Phone"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
             className="form-input"
             required
           />
@@ -100,7 +116,7 @@ function RegisterPage() {
             {loading ? 'Registering...' : 'Register'}
           </button>
         </form>
-      ) : (
+      {/* ) : (
         <form className="otp-form" onSubmit={handleOtpVerify}>
           <p className="otp-instruction">Please check your email for the OTP.</p>
           <input
@@ -115,7 +131,7 @@ function RegisterPage() {
             {loading ? 'Verifying...' : 'Verify OTP'}
           </button>
         </form>
-      )}
+      )} */}
     </div>
   );
 }

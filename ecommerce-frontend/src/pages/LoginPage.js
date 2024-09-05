@@ -17,10 +17,12 @@ function LoginPage() {
       // Perform authentication (replace with your actual authentication logic)
       const response = await axios.post('http://localhost:5120/api/Customer/authenticate/', {
         email: email, Password: password });
-      const token = response.data;
+      const token = response.data.token;
       localStorage.setItem('token', token);
-      console.log(token);// Store user details
-      navigate('/'); // Redirect to a page
+      // console.log(token);// Store user details
+
+      console.log(response.data.userId);
+      navigate('/', { state: { userId: response.data.userId } }); // Redirect to a page
     } catch (error) {
       alert('Login failed');
     }

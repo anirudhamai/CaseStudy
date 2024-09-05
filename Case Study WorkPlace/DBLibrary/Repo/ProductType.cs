@@ -18,7 +18,6 @@ namespace DBLibrary.Repo
         public IEnumerable<Product> GetProduct()
         {
             return _context.Products
-                .Include(p => p.Category)
                 .Include(p => p.Inventory)
                 .Include(p => p.Discounts)
                 .Include(p => p.CartItems)

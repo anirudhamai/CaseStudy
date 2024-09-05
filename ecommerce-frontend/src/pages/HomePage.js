@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import './HomePage.css';
 import axios from 'axios';
 import { FaSearch, FaHeart, FaShoppingCart } from 'react-icons/fa'; // Correct imports
@@ -11,15 +11,17 @@ import SliderComponent from '../pages/SliderComponent'; // Import the Slider com
 function HomePage() {
 
   const [productData, setProducts] = useState([]);
+  const [userId, setUserId] = useState();
+  const location = useLocation();
 
   useEffect(() => {
-  // Simulate fetching products from an API
+    
   const fetchProducts = async () => {
     try {
       const token = localStorage.getItem('token');
       if(!token)
       {
-        navigate('/');
+        navigate('/login');
       }
       const url= 'http://localhost:5120/api/Product';
       // debugger;
@@ -32,13 +34,13 @@ function HomePage() {
       //console.log(productData);
       } 
       catch (error) {
-        console.log(error);
         if(error.code == "ERR_NETWORK"){
           alert(error.message);
           localStorage.removeItem('token');
           navigate('/login');
+          console.log(error.message);
         }
-      if(localStorage.getItem('token') && (error.response.status === 401))
+      if(error.response.status === 401)
       {
         alert("Your token expired or you are not authorized for this page");
         localStorage.removeItem('token');
@@ -126,7 +128,7 @@ function HomePage() {
         </div>
       </header>
 
-      <Categories />
+      <Categories userid={location.state.userId}/>
       
       <SliderComponent />
 

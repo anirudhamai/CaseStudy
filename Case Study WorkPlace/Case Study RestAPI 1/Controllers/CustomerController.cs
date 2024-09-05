@@ -89,7 +89,10 @@ namespace Case_Study_RestAPI_1.Controllers
 
                     var tokenHandler = new JwtSecurityTokenHandler();
                     var token = tokenHandler.CreateToken(tokenDescriptor);
-                    return Ok(tokenHandler.WriteToken(token));
+                    var returndata = new returnData();
+                    returndata.userId = dbUser.UserId;
+                    returndata.token = tokenHandler.WriteToken(token);
+                    return Ok(returndata);
                 }
                 else
                 {
@@ -97,6 +100,12 @@ namespace Case_Study_RestAPI_1.Controllers
                 }
             }
         }
+    }
+
+    public class returnData
+    {
+        public int userId { get; set; }
+        public string token { get; set; }
     }
 }
 

@@ -7,11 +7,12 @@ import axios from 'axios';
 
 
 function ElectronicsPage() {
-  const { cartItems, addToCart } = useContext(CartContext);
+  //const { cartItems, addToCart } = useContext(null);
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState('');
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [ratings, setRatings] = useState({});
+  const [userid, setUserid] = useState();
   const [newReview, setNewReview] = useState('');
   const navigate = useNavigate();
   const location = useLocation();
@@ -20,6 +21,9 @@ function ElectronicsPage() {
     const fetchCategoryProducts = async () => {
       const { categoryId } = location.state;
       setCategory(location.state.categoryName);
+      const { userId } = location.state;
+      setUserid(userId.userid);
+      // console.log("elec: userid ", userid);
       try {
         const token = localStorage.getItem('token');
         if(!token)
@@ -63,6 +67,48 @@ function ElectronicsPage() {
     setSelectedProduct(product);
   };
 
+
+  const addReview = async (product, review, rating) => {
+    try {
+        const token = localStorage.getItem('token');
+        if(!token)
+        {
+          navigate('/');
+        }
+
+        const url2= `http://localhost:5120/api/Review`;
+        const reviewData={
+          UserId: userid,
+          ProductId: product,
+          Rating: rating,
+          Comment: review
+        }
+        const response = await axios.post(url2 ,reviewData ,{
+        headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json'
+        }
+        });
+        
+        setProducts(response.data.$values);
+        } 
+        catch (error) {
+          console.log(error);
+          if(error.code == "ERR_NETWORK"){
+            alert(error.message);
+            localStorage.removeItem('token');
+            navigate('/login');
+          }
+        if(localStorage.getItem('token') && (error.response.status === 401))
+        {
+          alert("Your token expired or you are not authorized for this page");
+          localStorage.removeItem('token');
+          navigate('/login');
+        }
+        console.error('Error fetching products', error);
+      }
+    }
+
   const handleAddReview = (productId) => {
     const review = newReview.trim();
     const rating = ratings[productId] || 0;
@@ -72,18 +118,54 @@ function ElectronicsPage() {
       return;
     }
 
-    setProducts(products.map(product =>
-      product.id === productId
-        ? { ...product, reviews: [...product.reviews, { id: product.reviews.length + 1, content: review, rating }] }
-        : product
-    ));
+    addReview(productId, review, rating);
+
     alert('Review added successfully!');
     setNewReview('');
     setRatings({ ...ratings, [productId]: 0 });
   };
 
+
+  const addToCart = async (product) => {
+    try {
+        const token = localStorage.getItem('token');
+        if(!token)
+        {
+          navigate('/');
+        }
+
+        const url2= `http://localhost:5120/api/Cart`;
+        const cart={
+          UserId: userid
+        }
+        const response = await axios.get(url2 ,cart ,{
+        headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json'
+        }
+        });
+        
+        setProducts(response.data.$values);
+        } 
+        catch (error) {
+          console.log(error);
+          if(error.code == "ERR_NETWORK"){
+            alert(error.message);
+            localStorage.removeItem('token');
+            navigate('/login');
+          }
+        if(localStorage.getItem('token') && (error.response.status === 401))
+        {
+          alert("Your token expired or you are not authorized for this page");
+          localStorage.removeItem('token');
+          navigate('/login');
+        }
+        console.error('Error fetching products', error);
+      }
+    }
+
   const handleAddToCart = (product) => {
-    addToCart(product);
+    //addToCart(product);
     alert('Added to cart!');
     navigate('/cart');
   };
@@ -173,7 +255,7 @@ function ElectronicsPage() {
             style={{ ...productImageStyle, ...(selectedProduct ? productImageEnlargedStyle : {}) }}
           /> */}
           <p>{selectedProduct.description}</p>
-          <p className="price" style={priceStyle}>₹{selectedProduct.price} <span className="original-price" style={originalPriceStyle}>₹{selectedProduct.originalPrice}</span> ({selectedProduct.discount}% off)</p>
+          <p className="price" style={priceStyle}>₹{selectedProduct.price} ({selectedProduct.discounts.$values.map((discount) => (<span>{discount.discountPercentage}</span>))}% off)</p>
           <div style={ratingStarsStyle}>
             {[...Array(5)].map((_, index) => (
               <FaStar
@@ -257,7 +339,7 @@ function ElectronicsPage() {
             <div key={product.$id} style={productCardStyle} onClick={() => handleProductClick(product)}>
               {/* <img src={product.image} alt={product.name} style={productImageStyle} /> */}
               <h4>{product.name}</h4>
-              <p className="price" style={priceStyle}>₹{product.price}  (1% off) </p>
+              <p className="price" style={priceStyle}>₹{product.price}  ({product.discounts.$values.map((discount) => (<span>{discount.discountPercentage}</span>))}% off) </p>
               <div style={ratingStarsStyle}>
                 {[...Array(5)].map((_, index) => (
                   <FaStar

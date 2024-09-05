@@ -11,7 +11,7 @@ public partial class Order
 
     public DateOnly OrderDate { get; set; }
 
-    public string Status { get; set; } = null!;
+    public string? Status { get; set; } = null!;
 
     public decimal TotalAmount { get; set; }
 
@@ -21,5 +21,5 @@ public partial class Order
 
     public virtual ICollection<Shipment>? Shipments { get; set; } = new List<Shipment>();
 
-    public virtual Customer User { get; set; } = null!;
+    public virtual Customer? User { get; set; } = null!;
 }

@@ -5,7 +5,7 @@ import axios from 'axios';
 
 import './Categories.css';
 
-function Categories() {
+function Categories(userid) {
 
   const [CategoryData, setCategoryData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -50,11 +50,7 @@ useEffect(() => {
   }, [CategoryData]);
 
   const navigate = useNavigate();
-  // const 
-  // const handleCategoryClick = (categoryId) => {
-  //   navigate('/category/electronics', { state: { categoryId } });
-  //   console.log("In category: ", categoryId);
-  // };
+  
 
   return (
     <div className="categories-container">
@@ -63,7 +59,7 @@ useEffect(() => {
     ) : (
       CategoryData.map((category) => (
         <div key={category.$id} className="category-item">
-          <Link to={'/category/electronics'} state={ {categoryId: category.categoryId, categoryName: category.categoryName} }>
+          <Link to={'/category/electronics'} state={ {userId: userid, categoryId: category.categoryId, categoryName: category.categoryName} }>
             <img src={category.image} alt={category.name} className="category-image" />
             <h3 className="category-name">{category.categoryName}</h3>
           </Link>
