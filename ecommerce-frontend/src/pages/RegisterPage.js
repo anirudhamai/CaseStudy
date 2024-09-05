@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import './RegisterPage.css'; // Import your CSS file
+import styles from './RegisterPage.module.css'; // Use CSS module for scoped styles
 
 function RegisterPage() {
   const [email, setEmail] = useState('');
@@ -41,8 +41,8 @@ function RegisterPage() {
 
     setLoading(true);
     try {
-      // Backend required
-      // await axios.post('/api/send-otp', { email });
+      // Mock OTP sending logic
+      await axios.post('/api/send-otp', { email });
       setSuccess('OTP sent to your email. Please check your inbox.');
       setOtpSent(true);
     } catch (error) {
@@ -58,18 +58,18 @@ function RegisterPage() {
   };
 
   return (
-    <div className="register-page">
-      <h2 className="register-title">Register</h2>
-      {error && <p className="error-message">{error}</p>}
-      {success && <p className="success-message">{success}</p>}
+    <div className={styles.container}>
+      <h2 className={styles.title}>Sign up</h2>
+      {error && <p className={styles.error}>{error}</p>}
+      {success && <p className={styles.success}>{success}</p>}
       {!otpSent ? (
-        <form className="register-form" onSubmit={handleRegister}>
+        <form className={styles.form} onSubmit={handleRegister}>
           <input
             type="email"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="form-input"
+            className={styles.input}
             required
           />
           <input
@@ -77,7 +77,7 @@ function RegisterPage() {
             placeholder="Phone"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            className="form-input"
+            className={styles.input}
             required
           />
           <input
@@ -85,7 +85,7 @@ function RegisterPage() {
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="form-input"
+            className={styles.input}
             required
           />
           <input
@@ -93,25 +93,23 @@ function RegisterPage() {
             placeholder="Confirm Password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
-            className="form-input"
+            className={styles.input}
             required
           />
-          <button type="submit" className="submit-button" disabled={loading}>
+          <button type="submit" className={styles.submitButton} disabled={loading}>
             {loading ? 'Registering...' : 'Register'}
           </button>
         </form>
       ) : (
-        <form className="otp-form" onSubmit={handleOtpVerify}>
-          <p className="otp-instruction">Please check your email for the OTP.</p>
+        <form className={styles.otpForm} onSubmit={handleOtpVerify}>
+          <p className={styles.otpInstruction}>Please check your email for the OTP.</p>
           <input
             type="text"
             placeholder="Enter OTP"
-            // value={otp}
-            // onChange={(e) => setOtp(e.target.value)}
-            className="form-input"
+            className={styles.input}
             required
           />
-          <button type="submit" className="submit-button" disabled={loading}>
+          <button type="submit" className={styles.submitButton} disabled={loading}>
             {loading ? 'Verifying...' : 'Verify OTP'}
           </button>
         </form>
@@ -121,6 +119,7 @@ function RegisterPage() {
 }
 
 export default RegisterPage;
+
 
 
 

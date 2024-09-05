@@ -14,6 +14,7 @@ import Layout from './components/Layout';
 import CartPage from './pages/CartPage';
 import WishlistPage from './pages/WishlistPage';
 import AddressPage from './pages/AddressPage';
+import ChatBot from './pages/ChatBot';
 
 
 
@@ -85,6 +86,8 @@ function AppRoutes() {
             </Layout>
           }
         />
+
+      <Route path="/chatbot" element={<ChatBot />} />
 
 
       </Routes>
