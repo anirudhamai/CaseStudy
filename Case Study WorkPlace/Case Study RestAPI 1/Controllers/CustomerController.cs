@@ -11,7 +11,7 @@ using System.Text;
 
 namespace Case_Study_RestAPI_1.Controllers
 {
-    //[Authorize]
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
 
@@ -35,7 +35,7 @@ namespace Case_Study_RestAPI_1.Controllers
 
         // GET api/<CustomerController>/5
         [HttpGet("{id}")]
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public Customer Get(int id)
         {
             return _int1.GetCustomerById(id);
@@ -83,7 +83,7 @@ namespace Case_Study_RestAPI_1.Controllers
                     {
                         Issuer = _config["JWT:Issuer"],
                         Audience = _config["JWT:Audience"],
-                        Expires = DateTime.UtcNow.AddMinutes(10),
+                        Expires = DateTime.UtcNow.AddMinutes(30),
                         SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
                     };
 

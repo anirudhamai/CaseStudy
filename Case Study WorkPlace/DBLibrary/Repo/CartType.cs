@@ -44,11 +44,11 @@ namespace DBLibrary.Repo
                 .Find(c => c.UserId == id);
         }
 
-        public int AddCart(Cart cart)
+        public Cart AddCart(Cart cart)
         {
             _context.Carts.Add(cart);
             _context.SaveChanges();
-            return GetCartByUserId(cart.UserId).CartId;
+            return cart;
         }
         public void DeleteCart(int id)
         {

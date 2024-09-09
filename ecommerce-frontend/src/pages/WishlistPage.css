@@ -1,4 +1,8 @@
 /* WishlistPage.css */
+.wishlist-background
+{
+  background: #f4f4f4; 
+}
 .wishlist-container {
     padding: 20px;
     max-width: 1200px;

@@ -23,13 +23,13 @@ namespace DBLibrary.Repo
             .ToList(); 
         }
 
-        public Address GetAddressById(int id)
+        public IEnumerable<Address> GetAddressById(int id)
         {
             return _context.Addresses
             .Include(a => a.Shipments)
             .Include(a => a.User)
-            .ToList()
-            .Find(a => a.AddressId == id);
+            .Where(a => a.UserId == id)
+            .ToList();
         }
         public void AddAddress(Address a)
         {

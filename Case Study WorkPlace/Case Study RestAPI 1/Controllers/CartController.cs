@@ -32,20 +32,22 @@ namespace Case_Study_RestAPI_1.Controllers
         }
 
         // POST api/<CartController>
-        [HttpPost]
-        public int Post([FromBody] Cart value)
+        [AllowAnonymous]
+        [HttpPost("{value}")]
+        
+        public int Post(int value)
         {
-            Cart newCart = _int1.GetCartByUserId(value.UserId);
+            Cart newCart = _int1.GetCartByUserId(value);
             if (newCart == null)
             {
-                var addedCart = _int1.AddCart(value);
-                return addedCart;
+                newCart.UserId = value;
+                var addedCart = _int1.AddCart(newCart);
+                return addedCart.CartId;
             }
             else
             {
                 return newCart.CartId;
             }
-
         }
 
         // PUT api/<CartController>/5

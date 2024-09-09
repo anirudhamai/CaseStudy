@@ -1,17 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './AddressPage.css';
+import axios from 'axios';
+import { UserContext } from '../context/UserContext';
 
 // AddressForm Component
 const AddressForm = ({ onAddAddress }) => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { userId } = useContext(UserContext);
+  const token = localStorage.getItem("token");
+
   const [address, setAddress] = useState({
-    name: '',
-    phone: '',
-    pincode: '',
-    city: '',
-    state: '',
-    houseNo: '',
-    roadName: '',
-    landmark: ''
+    UserId: userId,
+    AddressLine1: '',
+    AddressLine2: '',
+    PostalCode: '',
+    City: '',
+    Region: '',
+    Country: ''
   });
 
   const handleChange = (e) => {
@@ -22,31 +29,46 @@ const AddressForm = ({ onAddAddress }) => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     onAddAddress(address);
     setAddress({
-      name: '',
-      phone: '',
-      pincode: '',
-      city: '',
-      state: '',
-      houseNo: '',
-      roadName: '',
-      landmark: ''
+      UserId: userId,
+      AddressLine1: '',
+      AddressLine2: '',
+      PostalCode: '',
+      City: '',
+      Region: '',
+      Country: ''
     });
+    e.preventDefault();
+    try {
+      await axios.post(`http://localhost:5120/api/Address/`, address, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        }
+      });
+      alert('User details updated successfully');
+      navigate('/user');
+    } catch (error) {
+      alert('Error updating user details');
+      if (error.response.status === 401) {
+        alert("Your token expired or you are not authorized for this page");
+        localStorage.removeItem('token');
+        navigate('/login');
+      }
+    }
   };
 
   return (
     <form className="address-form" onSubmit={handleSubmit}>
-      <input name="name" placeholder="Name" value={address.name} onChange={handleChange} required />
-      <input name="phone" placeholder="Phone Number" value={address.phone} onChange={handleChange} required />
-      <input name="pincode" placeholder="Pincode" value={address.pincode} onChange={handleChange} required />
-      <input name="city" placeholder="City" value={address.city} onChange={handleChange} required />
-      <input name="state" placeholder="State" value={address.state} onChange={handleChange} required />
-      <input name="houseNo" placeholder="House No/Building Name" value={address.houseNo} onChange={handleChange} required />
-      <input name="roadName" placeholder="Road Name/Colony/Area" value={address.roadName} onChange={handleChange} required />
-      <input name="landmark" placeholder="Landmark" value={address.landmark} onChange={handleChange} />
+      <input name="AddressLine1" placeholder="Address Line 1" value={address.AddressLine1} onChange={handleChange} required />
+      <input name="AddressLine2" placeholder="Address Line 2" value={address.AddressLine2} onChange={handleChange} required />
+      <input name="PostalCode" placeholder="Pincode" value={address.PostalCode} onChange={handleChange} required />
+      <input name="City" placeholder="City" value={address.City} onChange={handleChange} required />
+      <input name="Region" placeholder="State" value={address.Region} onChange={handleChange} required />
+      <input name="Country" placeholder="Country" value={address.Country} onChange={handleChange} required />
       <button type="submit">Add Address</button>
     </form>
   );
@@ -58,16 +80,14 @@ const AddressList = ({ addresses, onSetDefault }) => (
     {addresses.map((addr, index) => (
       <li key={index}>
         <div>
-          <p><strong>Name:</strong> {addr.name}</p>
-          <p><strong>Phone:</strong> {addr.phone}</p>
-          <p><strong>Pincode:</strong> {addr.pincode}</p>
+          <p><strong>AddressLine1:</strong> {addr.addressLine1}</p>
+          <p><strong>AddressLine2:</strong> {addr.addressLine2}</p>
+          <p><strong>Pincode:</strong> {addr.postalCode}</p>
           <p><strong>City:</strong> {addr.city}</p>
-          <p><strong>State:</strong> {addr.state}</p>
-          <p><strong>House No/Building Name:</strong> {addr.houseNo}</p>
-          <p><strong>Road Name/Colony/Area:</strong> {addr.roadName}</p>
-          <p><strong>Landmark:</strong> {addr.landmark}</p>
-          <button 
-            className={addr.isDefault ? 'default' : ''} 
+          <p><strong>State:</strong> {addr.region}</p>
+          <p><strong>Country:</strong> {addr.country}</p>
+          <button
+            className={addr.isDefault ? 'default' : ''}
             onClick={() => onSetDefault(index)}
           >
             {addr.isDefault ? 'Default' : 'Set as Default'}
@@ -82,6 +102,21 @@ const AddressList = ({ addresses, onSetDefault }) => (
 const AddressPage = () => {
   const [addresses, setAddresses] = useState([]);
   const [defaultAddressIndex, setDefaultAddressIndex] = useState(null);
+  const { userId } = useContext(UserContext);
+  const token = localStorage.getItem("token");
+
+  useEffect(() => {
+    const fetchAddress = async () => {
+      const response = await axios.get(`http://localhost:5120/api/Address/${userId}`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+      setAddresses(response.data.$values);
+    };
+    fetchAddress();
+  }, userId);
+
 
   const addAddress = (newAddress) => {
     setAddresses([...addresses, { ...newAddress, isDefault: defaultAddressIndex === addresses.length }]);

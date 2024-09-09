@@ -10,7 +10,7 @@ namespace DBLibrary.Repo
     public interface IAddress
     {
         public IEnumerable<Address> GetAddress();
-        public Address GetAddressById(int id);
+        public IEnumerable<Address> GetAddressById(int id);
         public void AddAddress(Address c);
         public void UpdateAddress(int id, Address c);
         public void DeleteAddress(int id);

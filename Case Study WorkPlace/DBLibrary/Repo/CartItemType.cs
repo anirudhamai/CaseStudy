@@ -20,21 +20,25 @@ namespace DBLibrary.Repo
             return _context.CartItems
 //                .Include(c => c.Carts)
                 .Include(c => c.Product)
+                .Include(c => c.Product.Inventory)
                 .ToList();
         }
 
-        public CartItem GetCartItemById(int id)
+        public IEnumerable<CartItem> GetCartItemById(int id)
         {
             return _context.CartItems
-                //                .Include(c => c.Carts)
                 .Include(c => c.Product)
-                .ToList()
-                .Find(c => c.CartItemId == id);
+                .Include(c => c.Product.Inventory)
+                .Where(c => c.CartId == id)
+                .ToList();
         }
 
         public void AddCartItem(CartItem c)
         {
             _context.CartItems.Add(c);
+            var inventoryObj = _context.Inventories.Where(i => i.ProductId == c.ProductId).First();
+            inventoryObj.StockQuantity = inventoryObj.StockQuantity - c.Quantity;
+            _context.Inventories.Update(inventoryObj);
             _context.SaveChanges();
         }
         public void DeleteCartItem(int id)
@@ -43,9 +47,12 @@ namespace DBLibrary.Repo
             _context.CartItems.Remove(c);
             _context.SaveChanges();
         }
-        public void UpdateCartItem(int id, CartItem c)
+        public void UpdateCartItem(CartItem c)
         {
             _context.CartItems.Update(c);
+            //var inventoryObj = _context.Inventories.Where(i => i.ProductId == c.ProductId).First();
+            //inventoryObj.StockQuantity = inventoryObj.StockQuantity - c.Quantity;
+            //_context.Inventories.Update(inventoryObj);
             _context.SaveChanges();
         }
 

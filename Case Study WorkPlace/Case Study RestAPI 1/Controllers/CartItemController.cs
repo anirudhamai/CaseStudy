@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Case_Study_RestAPI_1.Controllers
 {
-    [Authorize(Roles = "User")]
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CartItemController : ControllerBase
@@ -26,7 +26,7 @@ namespace Case_Study_RestAPI_1.Controllers
 
         // GET api/<CartItemController>/5
         [HttpGet("{id}")]
-        public CartItem Get(int id)
+        public IEnumerable<CartItem> Get(int id)
         {
             return _int1.GetCartItemById(id);
         }
@@ -35,14 +35,37 @@ namespace Case_Study_RestAPI_1.Controllers
         [HttpPost]
         public void Post([FromBody] CartItem value)
         {
-            _int1.AddCartItem(value);
+            var ifexists = _int1.GetCartItemById(value.CartId).Where(c => c.ProductId == value.ProductId);
+            Console.WriteLine("If exists: ", ifexists);
+            var cartItem = ifexists;
+            if (ifexists.Count() == 0)
+            {
+                cartItem = null;
+            }
+
+            if (cartItem != null)
+            {
+                cartItem.First().Quantity += value.Quantity;
+                //if ( (cartItem.First().Quantity + value.Quantity ) > cartItem.First().Product.Inventory.StockQuantity )
+                //{
+
+                //}
+                _int1.UpdateCartItem(cartItem.First());
+            }
+            else
+            {
+                _int1.AddCartItem(value);
+            }
         }
 
         // PUT api/<CartItemController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] CartItem value)
+        [HttpPut]
+        public void Put([FromBody] IEnumerable<CartItem> value)
         {
-            _int1.UpdateCartItem(id, value);
+            foreach (var item in value)
+            {
+                _int1.UpdateCartItem( item);
+            }
         }
 
         // DELETE api/<CartItemController>/5

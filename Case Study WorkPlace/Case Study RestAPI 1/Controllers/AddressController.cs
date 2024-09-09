@@ -27,7 +27,7 @@ namespace Case_Study_RestAPI_1.Controllers
 
         // GET api/<AddressController>/5
         [HttpGet("{id}")]
-        public Address Get(int id)
+        public IEnumerable<Address> Get(int id)
         {
             return _int1.GetAddressById(id);
         }

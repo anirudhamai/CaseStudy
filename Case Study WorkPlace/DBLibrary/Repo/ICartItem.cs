@@ -10,9 +10,9 @@ namespace DBLibrary.Repo
     public interface ICartItem
     {
         public IEnumerable<CartItem> GetCartItem();
-        public CartItem GetCartItemById(int id);
+        public IEnumerable<CartItem> GetCartItemById(int id);
         public void AddCartItem(CartItem c);
-        public void UpdateCartItem(int id, CartItem c);
+        public void UpdateCartItem( CartItem c);
         public void DeleteCartItem(int id);
     }
 }

@@ -21,6 +21,12 @@ namespace DBLibrary.Repo
                 .ToList()
                 .Find(c => c.CategoryId==id);
         }
+        public IEnumerable<Category> GetTop5Category()
+        {
+            return _context.Categories
+                .Include(c => c.Products)
+                .ToList();
+        }
         public void AddCategory(Category c)
         {
             _context.Categories.Add(c);

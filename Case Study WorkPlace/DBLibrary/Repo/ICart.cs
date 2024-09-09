@@ -13,7 +13,7 @@ namespace DBLibrary.Repo
         public IEnumerable<Cart> GetCart();
         public Cart GetCartById(int id);
         public Cart GetCartByUserId(int id);
-        public int AddCart(Cart c);
+        public Cart AddCart(Cart c);
         public void UpdateCart(int id, Cart c);
         public void DeleteCart(int id);
     }
