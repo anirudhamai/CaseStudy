@@ -57,6 +57,7 @@ function WishlistPage() {
   };
 
   return (
+    <div className="wishlist-background">
     <div className="wishlist-container">
       <h2 className="wishlist-title">Your Wishlist</h2>
       {wishlist.length === 0 ? (
@@ -97,6 +98,7 @@ function WishlistPage() {
           ))}
         </div>
       )}
+    </div>
     </div>
   );
 }

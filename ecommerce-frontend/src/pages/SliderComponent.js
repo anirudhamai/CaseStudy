@@ -1,13 +1,17 @@
 import React from 'react';
 import Slider from 'react-slick';
 import { useNavigate } from 'react-router-dom';
+import slider2 from "../assets/images/slider 2.jpg";
+import slider3 from "../assets/images/slider 3.jpg";
+import slider4 from "../assets/images/slider 4.jpg";
+import slider5 from "../assets/images/slider 5.jpg";
 import './SliderComponent.css'; // Ensure styles are correctly applied
 
 const categories = [
-  { name: 'Groceries', imgSrc: 'https://via.placeholder.com/1200x675?text=Groceries', path: '/category/groceries' },
-  { name: 'Electronics', imgSrc: 'https://via.placeholder.com/1200x675?text=Electronics', path: '/category/electronics' },
-  { name: 'Fashion', imgSrc: 'https://via.placeholder.com/1200x675?text=Fashion', path: '/category/fashion' },
-  { name: 'Entertainment', imgSrc: 'https://via.placeholder.com/1200x675?text=Entertainment', path: '/category/entertainment' }
+  { name: 'Groceries', imgSrc: slider2, path: '/category/groceries' },
+  { name: 'Electronics', imgSrc: slider3, path: '/category/electronics' },
+  { name: 'Fashion', imgSrc: slider4, path: '/category/fashion' },
+  { name: 'Entertainment', imgSrc: slider5, path: '/category/entertainment' }
 ];
 
 function SliderComponent() {
@@ -16,12 +20,12 @@ function SliderComponent() {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 10,
+    speed: 1000,  // Slightly slower for smoother transitions
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
     autoplay: true,
-    autoplaySpeed: 1500,
+    autoplaySpeed: 2000,  // Slightly slower autoplay
     pauseOnHover: true,
     draggable: true,
   };

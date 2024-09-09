@@ -16,7 +16,7 @@
 .title {
   font-size: 36px;
   font-weight: 700;
-  background: linear-gradient(to right, #a25eea, #f06b8e); /* Gradient color for title */
+  background: linear-gradient(to right, #ffffff, #ffffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 30px;
@@ -62,7 +62,7 @@
 }
 
 .input:focus {
-  border-color: #1c92d2;
+  border-color: #1000f3;
   outline: none;
 }
 
@@ -72,7 +72,7 @@
   padding: 12px;
   border-radius: 8px;
   border: none;
-  background-color: #1c92d2;
+  background-color: #1000f3;
   color: #fff;
   font-size: 16px;
   cursor: pointer;

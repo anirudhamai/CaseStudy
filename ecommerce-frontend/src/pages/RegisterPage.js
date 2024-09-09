@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import styles from './RegisterPage.module.css'; // Use CSS module for scoped styles
+import './RegisterPage.css'; // Import your CSS file
 
 function RegisterPage() {
   const [email, setEmail] = useState('');
@@ -41,8 +41,8 @@ function RegisterPage() {
 
     setLoading(true);
     try {
-      // Mock OTP sending logic
-      await axios.post('/api/send-otp', { email });
+      // Backend required
+      // await axios.post('/api/send-otp', { email });
       setSuccess('OTP sent to your email. Please check your inbox.');
       setOtpSent(true);
     } catch (error) {
@@ -58,18 +58,18 @@ function RegisterPage() {
   };
 
   return (
-    <div className={styles.container}>
-      <h2 className={styles.title}>Sign up</h2>
-      {error && <p className={styles.error}>{error}</p>}
-      {success && <p className={styles.success}>{success}</p>}
+    <div className="container">
+      <h2 className="title">Register</h2>
+      {error && <p className="error">{error}</p>}
+      {success && <p className="success">{success}</p>}
       {!otpSent ? (
-        <form className={styles.form} onSubmit={handleRegister}>
+        <form className="form" onSubmit={handleRegister}>
           <input
             type="email"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className={styles.input}
+            className="input"
             required
           />
           <input
@@ -77,7 +77,7 @@ function RegisterPage() {
             placeholder="Phone"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            className={styles.input}
+            className="input"
             required
           />
           <input
@@ -85,7 +85,7 @@ function RegisterPage() {
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className={styles.input}
+            className="input"
             required
           />
           <input
@@ -93,23 +93,25 @@ function RegisterPage() {
             placeholder="Confirm Password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
-            className={styles.input}
+            className="input"
             required
           />
-          <button type="submit" className={styles.submitButton} disabled={loading}>
+          <button type="submit" className="submitButton" disabled={loading}>
             {loading ? 'Registering...' : 'Register'}
           </button>
         </form>
       ) : (
-        <form className={styles.otpForm} onSubmit={handleOtpVerify}>
-          <p className={styles.otpInstruction}>Please check your email for the OTP.</p>
+        <form className="form otpForm" onSubmit={handleOtpVerify}>
+          <p className="otpInstruction">Please check your email for the OTP.</p>
           <input
             type="text"
             placeholder="Enter OTP"
-            className={styles.input}
+            // value={otp}
+            // onChange={(e) => setOtp(e.target.value)}
+            className="input"
             required
           />
-          <button type="submit" className={styles.submitButton} disabled={loading}>
+          <button type="submit" className="submitButton" disabled={loading}>
             {loading ? 'Verifying...' : 'Verify OTP'}
           </button>
         </form>
@@ -129,35 +131,134 @@ export default RegisterPage;
 
 
 
+//------------------------------------------------------------------------------------------------------------------
+
+// import React, { useState } from 'react';
+// import axios from 'axios';
+// import { useNavigate } from 'react-router-dom';
+// import './RegisterPage.css'; // Import your CSS file
+
+// function RegisterPage() {
+//   const [email, setEmail] = useState('');
+//   const [phone, setPhone] = useState('');
+//   const [password, setPassword] = useState('');
+//   const [confirmPassword, setConfirmPassword] = useState('');
+//   const [loading, setLoading] = useState(false);
+//   const [error, setError] = useState('');
+//   const [success, setSuccess] = useState('');
+//   const [otpSent, setOtpSent] = useState(false);
+//   const navigate = useNavigate();
+
+//   const validateForm = () => {
+//     if (!email.includes('@')) {
+//       setError('Invalid email format');
+//       return false;
+//     }
+//     if (phone.length < 10) {
+//       setError('Phone number must be at least 10 digits');
+//       return false;
+//     }
+//     if (password.length < 6) {
+//       setError('Password must be at least 6 characters');
+//       return false;
+//     }
+//     if (password !== confirmPassword) {
+//       setError('Passwords do not match');
+//       return false;
+//     }
+//     setError('');
+//     return true;
+//   };
+
+//   const handleRegister = async (e) => {
+//     e.preventDefault();
+//     if (!validateForm()) return;
+
+//     setLoading(true);
+//     try {
+//       // Backend required
+//       // await axios.post('/api/send-otp', { email });
+//       setSuccess('OTP sent to your email. Please check your inbox.');
+//       setOtpSent(true);
+//     } catch (error) {
+//       setError('Failed to send OTP. Please try again.');
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
+
+//   const handleOtpVerify = async (e) => {
+//     e.preventDefault();
+//     // Add OTP verification logic here
+//   };
+
+//   return (
+//     <div className="register-page">
+//       <h2 className="register-title">Register</h2>
+//       {error && <p className="error-message">{error}</p>}
+//       {success && <p className="success-message">{success}</p>}
+//       {!otpSent ? (
+//         <form className="register-form" onSubmit={handleRegister}>
+//           <input
+//             type="email"
+//             placeholder="Email"
+//             value={email}
+//             onChange={(e) => setEmail(e.target.value)}
+//             className="form-input"
+//             required
+//           />
+//           <input
+//             type="tel"
+//             placeholder="Phone"
+//             value={phone}
+//             onChange={(e) => setPhone(e.target.value)}
+//             className="form-input"
+//             required
+//           />
+//           <input
+//             type="password"
+//             placeholder="Password"
+//             value={password}
+//             onChange={(e) => setPassword(e.target.value)}
+//             className="form-input"
+//             required
+//           />
+//           <input
+//             type="password"
+//             placeholder="Confirm Password"
+//             value={confirmPassword}
+//             onChange={(e) => setConfirmPassword(e.target.value)}
+//             className="form-input"
+//             required
+//           />
+//           <button type="submit" className="submit-button" disabled={loading}>
+//             {loading ? 'Registering...' : 'Register'}
+//           </button>
+//         </form>
+//       ) : (
+//         <form className="otp-form" onSubmit={handleOtpVerify}>
+//           <p className="otp-instruction">Please check your email for the OTP.</p>
+//           <input
+//             type="text"
+//             placeholder="Enter OTP"
+//             // value={otp}
+//             // onChange={(e) => setOtp(e.target.value)}
+//             className="form-input"
+//             required
+//           />
+//           <button type="submit" className="submit-button" disabled={loading}>
+//             {loading ? 'Verifying...' : 'Verify OTP'}
+//           </button>
+//         </form>
+//       )}
+//     </div>
+//   );
+// }
+
+// export default RegisterPage;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//===================================================================================================================
 
 // import React, { useState } from 'react';
 // import axios from 'axios';

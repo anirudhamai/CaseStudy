@@ -8,7 +8,7 @@ const ChatHeader = () => {
                 {/*<img src="/path-to-avatar.jpg" alt="Shopsy Avatar" />*/}
             </div>
             <div className="chat-info">
-                <h2>Shopsy</h2>
+                <h2>ShopEase</h2>
                 <p>Online</p>
             </div>
         </div>
@@ -16,3 +16,4 @@ const ChatHeader = () => {
 };
 
 export default ChatHeader;
+    
