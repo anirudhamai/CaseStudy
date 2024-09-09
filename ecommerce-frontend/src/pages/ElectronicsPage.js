@@ -313,6 +313,7 @@ function ElectronicsPage() {
     const fetchCategoryProducts = async () => {
       const { categoryId } = location.state;
       setCategory(location.state.categoryName);
+      console.log(categoryId, category);
       try {
         const token = localStorage.getItem('token');
         if (!token) {
