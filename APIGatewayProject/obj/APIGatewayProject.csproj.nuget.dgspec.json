@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\KFayazUddin\\MyLearnings\\APIGatewayProject\\APIGatewayProject.csproj": {}
+    "C:\\casegateway\\CaseStudy\\APIGatewayProject\\APIGatewayProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\KFayazUddin\\MyLearnings\\APIGatewayProject\\APIGatewayProject.csproj": {
+    "C:\\casegateway\\CaseStudy\\APIGatewayProject\\APIGatewayProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\KFayazUddin\\MyLearnings\\APIGatewayProject\\APIGatewayProject.csproj",
+        "projectUniqueName": "C:\\casegateway\\CaseStudy\\APIGatewayProject\\APIGatewayProject.csproj",
         "projectName": "APIGatewayProject",
-        "projectPath": "C:\\Users\\KFayazUddin\\MyLearnings\\APIGatewayProject\\APIGatewayProject.csproj",
-        "packagesPath": "C:\\Users\\KFayazUddin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\KFayazUddin\\MyLearnings\\APIGatewayProject\\obj\\",
+        "projectPath": "C:\\casegateway\\CaseStudy\\APIGatewayProject\\APIGatewayProject.csproj",
+        "packagesPath": "C:\\Users\\SamhithaP\\.nuget\\packages\\",
+        "outputPath": "C:\\casegateway\\CaseStudy\\APIGatewayProject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\KFayazUddin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\SamhithaP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
