@@ -261,7 +261,7 @@
 //modified
 
 import React, { useState, useEffect, useContext } from 'react';
-import { FaStar, FaCartPlus, FaShoppingBag, FaHeart } from 'react-icons/fa';
+import { FaStar, FaCartPlus, FaShoppingBag, FaHeart,FaShareAlt } from 'react-icons/fa';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
 import { UserContext } from '../context/UserContext';
@@ -403,6 +403,8 @@ function ElectronicsPage() {
     return (total / reviews.$values.length).toFixed(1);
   };
 
+
+
   return (
     <div className="electronics-page">
       <h2 className="page-title">{category}</h2>
@@ -410,6 +412,9 @@ function ElectronicsPage() {
         <div className="product-details">
           <button className="back-button" onClick={() => setSelectedProduct(null)}>← Back to Products</button>
           <div className="product-detail-container">
+            
+            
+            
             <div className="product-image-container">
               <img
                 src = {mac}
@@ -419,33 +424,85 @@ function ElectronicsPage() {
               />
               <div className="product-actions">
                 <button className="action-button cart-button" onClick={() => handleAddToCart(selectedProduct)}>
-                  <FaCartPlus className="icon" /> Add to Cart
+                 <h3><FaCartPlus className="icon" /> Add to Cart</h3> 
                 </button>
                 <button className="action-button buy-button" onClick={() => alert('Buy Now clicked')}>
-                  <FaShoppingBag className="icon" /> Buy Now
+                <h3><FaShoppingBag className="icon" /> Buy Now</h3>
                 </button>
               </div>
+
+               <FaShareAlt
+                  className="share-icon"
+                  onClick={() => alert('Share clicked')}
+                />
               <FaHeart
                 className={`wishlist-icon ${wishlist.has(selectedProduct.id) ? 'added' : ''}`}
                 onClick={() => handleAddToWishlist(selectedProduct.id)}
               />
             </div>
+
+{/* 
+<div className="product-image-container">
+      <img
+        src={selectedProduct.image} // Assuming product image is passed as props
+        alt={selectedProduct.name}
+        className="product-image-large"
+      />
+      <div className="product-actions">
+        <button className="action-button cart-button" onClick={() => handleAddToCart(selectedProduct)}>
+          <h3><FaCartPlus className="icon" /> Add to Cart</h3> 
+        </button>
+        <button className="action-button buy-button" onClick={() => alert('Buy Now clicked')}>
+          <h3><FaShoppingBag className="icon" /> Buy Now</h3>
+        </button>
+      </div>
+      <FaHeart
+        className={`wishlist-icon ${wishlist.has(selectedProduct.id) ? 'added' : ''}`}
+        onClick={() => handleAddToWishlist(selectedProduct.id)}
+      />
+      <FaShareAlt
+        className="share-icon"
+        onClick={handleShareClick}
+      />
+
+      
+      {showShareModal && (
+        <div className="share-modal">
+          <div className="modal-content">
+            <h4>Share this product:</h4>
+            <input type="text" value={productLink} readOnly />
+            <button className="copy-button" onClick={handleCopyLink}>Copy Link</button>
+            <button className="close-button" onClick={() => setShowShareModal(false)}>Close</button>
+          </div>
+        </div>
+      )}
+    </div> */}
+
+
+
+
+          
             <div className="product-info">
-              <h3>{selectedProduct.name}</h3>
+              <h1>{selectedProduct.name}</h1>
               <p className="price">₹{selectedProduct.price}</p>
               <p className="discount">Discount: {selectedProduct.discounts.$values.map((discount) => (<span key={discount.discountId}>{discount.discountPercentage}% off</span>))}</p>
-              <div className="rating-stars-style">
-                {[...Array(5)].map((_, index) => (
-                  <FaStar
-                    key={index}
-                    color={index + 1 <= Math.round(calculateAverageRating(selectedProduct.reviews)) ? "#ffc107" : "#e4e5e9"}
-                    size={20}
-                  />
-                ))}
-                <span className="rating-number">({calculateAverageRating(selectedProduct.reviews)}/5)</span>
-              </div>
+              
+              <div className="rating-stars-container">
+  <div className="rating-stars-style">
+    {[...Array(5)].map((_, index) => (
+      <FaStar
+        key={index}
+        color={index + 1 <= Math.round(calculateAverageRating(selectedProduct.reviews)) ? "#ffc107" : "#e4e5e9"}
+        size={20}
+      />
+    ))}
+    <span className="rating-number">({calculateAverageRating(selectedProduct.reviews)}/5)</span>
+  </div>
+</div>
+
+              
               <div className="reviews-section">
-                <h4>Reviews:</h4>
+                <h2>Reviews:</h2>
                 {selectedProduct.reviews.$values.length === 0 ? (
                   <p>No reviews yet.</p>
                 ) : (
@@ -494,9 +551,10 @@ function ElectronicsPage() {
                     onChange={handleReviewChange}
                     className="review-textarea"
                   />
-                  <button className="submit-review-button" onClick={() => handleAddReview(selectedProduct.id)}>Submit Review</button>
+                  <button className="submit-review-button" onClick={() => handleAddReview(selectedProduct.id)}><h4>Submit Review</h4></button>
                 </div>
               </div>
+              
             </div>
           </div>
         </div>

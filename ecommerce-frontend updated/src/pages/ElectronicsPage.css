@@ -154,7 +154,116 @@
 } */
 
 
+.icon-image-container {
+  position: relative;
+  display: inline-block;
+}
 
+.share-icon {
+  position: absolute;
+  top: 10px; /* Adjusted for spacing from the top */
+  left: 10px; /* Adjusted for spacing from the left */
+  font-size: 36px; /* Increased size for better visibility */
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s, text-shadow 0.3s; /* Added text-shadow transition */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.share-icon:hover {
+  color: #007bff;
+  transform: scale(1.2); /* Larger scale on hover */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+}
+
+.image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.wishlist-icon {
+  font-size: 36px; /* Ensure consistency if used */
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s, text-shadow 0.3s;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.wishlist-icon:hover {
+  color: #007bff;
+  transform: scale(1.2);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+}
+
+.icon-container .share-icon {
+  margin-right: 20px; /* Increased space between icons */
+}
+
+
+.product-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px; /* Adjust as needed */
+}
+
+.icons-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  z-index: 10; /* Ensure icons are above the image */
+}
+
+.share-icon,
+.wishlist-icon {
+  font-size: 24px; /* Adjust as needed */
+  color: #333; /* Adjust as needed */
+  cursor: pointer;
+}
+
+.share-icon {
+  margin-right: 10px; /* Space between share and heart icons */
+}
+
+.product-image-large {
+  width: 100%;
+  height: auto;
+  display: block; /* Ensure image is block to avoid whitespace issues */
+}
+
+.product-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.cart-button {
+  background-color: #f5f5f5;
+}
+
+.buy-button {
+  background-color: #e0e0e0;
+}
+
+.icon {
+  margin-right: 8px;
+}
 
 
 
@@ -180,19 +289,32 @@
   gap: 20px;
 }
 
+/* Back Button Style */
 .back-button {
-  background: none;
-  border: none;
-  color: #007bff;
+  background: linear-gradient(90deg, #0c43e8, #1a06d0); /* Gradient background */
+  border: 2px solid transparent;
+  color: white; /* Make the text white */
   font-size: 16px;
   cursor: pointer;
-  margin-bottom: 20px;
-  transition: color 0.3s;
+  padding: 10px 20px; /* Add padding for larger button */
+  border-radius: 8px; /* Rounded corners */
+  margin-right: auto; /* Align to the left inside a flexbox container */
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* Smooth transition */
 }
 
 .back-button:hover {
-  color: #0056b3;
+  background: linear-gradient(90deg, #1a06d0, #0c43e8); /* Reverse gradient on hover */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow for a more pronounced hover effect */
 }
+
+/* Ensure the parent container uses flexbox to align the button */
+.button-container {
+  display: flex;
+  align-items: center; /* Center the items vertically */
+  margin-bottom: 20px; /* Space below the row */
+}
+
+
 
 .product-detail-container {
   display: flex;
@@ -236,40 +358,43 @@
 }
 
 .cart-button {
-  background: linear-gradient(135deg, #ff6f61, #ff8566);
+  background: linear-gradient(135deg, #ffd59e, #ffa726); /* Light orange gradient */
   color: white;
-  padding: 12px 24px;
+  padding: 20px 40px; /* Larger button */
   border: none;
-  border-radius: 30px;
-  font-size: 16px;
+  border-radius: 50px;
+  font-size: 20px; /* Increased font size */
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
 .cart-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  background: linear-gradient(135deg, #ffe0b2, #ff9800); /* Darker on hover */
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
 }
 
 .buy-button {
-  background: linear-gradient(135deg, #4caf50, #66bb6a);
-  color: rgb(249, 170, 34);
-  padding: 12px 24px;
+  background: linear-gradient(135deg, #ff7043, #f4511e); /* Dark orange gradient */
+  color: white;
+  padding: 20px 40px; /* Larger button */
   border: none;
-  border-radius: 30px;
-  font-size: 16px;
+  border-radius: 50px;
+  font-size: 20px; /* Increased font size */
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
 .buy-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  background: linear-gradient(135deg, #ff8a65, #e64a19); /* Darker on hover */
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
 }
+
 
 
 .action-button:hover {
@@ -284,14 +409,18 @@
   background-color: #45a049;
 }
 
+
+
+
 .wishlist-icon {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+  position: absolute; /* Position the icon absolutely within the container */
+  top: 10px; /* Adjust the top position */
+  right: 10px; /* Move the icon to the right edge of the container */
   font-size: 28px;
   cursor: pointer;
   color: #ff6f61;
 }
+
 
 .wishlist-icon.added {
   color: red;
@@ -323,6 +452,13 @@
   color: #888;
 }
 
+.rating-stars-container {
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+
+}
+
 .rating-stars-style {
   display: flex;
   align-items: center;
@@ -333,8 +469,10 @@
   font-size: 16px;
 }
 
+
 .reviews-section {
   margin-top: 20px;
+  text-align: left; /* Aligns all text to the left */
 }
 
 .review-item {
@@ -344,6 +482,10 @@
 
 .add-review-section {
   margin-top: 20px;
+}
+
+.add-review-section h4 {
+  margin: 0; /* Remove default margin */
 }
 
 .review-stars-style {
@@ -383,6 +525,7 @@
 .submit-review-button:hover {
   background-color: #45a049;
 }
+
 
 .grid-style {
   display: grid;
