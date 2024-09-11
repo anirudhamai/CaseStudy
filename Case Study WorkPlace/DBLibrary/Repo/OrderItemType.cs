@@ -32,7 +32,10 @@ namespace DBLibrary.Repo
         public void AddOrderItem(OrderItem w)
         {
             OrderItem i = _context.OrderItems.Where(wi => wi.ProductId == w.ProductId && wi.OrderId == w.OrderId).First();
-            _context.OrderItems.Add(i);     
+            _context.OrderItems.Add(i);
+            var inv =_context.Inventories.ToList().Find(wi => wi.ProductId == w.ProductId);
+            inv.StockQuantity -= -w.Quantity;
+            _context.Inventories.Update(inv);
             _context.SaveChanges();
         }
         public void DeleteOrderItem(int id)

@@ -20,7 +20,9 @@ namespace DBLibrary.Repo
         {
             return _context.WishlistItems
                 .Include(w => w.Product)
-//                .Include(w => w.Wishlist)
+                .ThenInclude(w => w.Category)
+                .Include(w => w.Product.Reviews)
+                //                .Include(w => w.Wishlist)
                 .ToList();
         }
 
@@ -28,6 +30,8 @@ namespace DBLibrary.Repo
         {
             return _context.WishlistItems
                 .Include(w => w.Product)
+                .ThenInclude(w => w.Category)
+                .Include(w => w.Product.Reviews)
                 .Where(c => c.WishlistId == id)
                 .ToList();
         }
@@ -36,6 +40,8 @@ namespace DBLibrary.Repo
         {
             return _context.WishlistItems
                 .Include(w => w.Product)
+                .ThenInclude(w => w.Category)
+                .Include(w => w.Product.Reviews)
                 .Where(c => c.WishlistId == wid)
                 .ToList()
                 .Find(c => c.ProductId == pid);

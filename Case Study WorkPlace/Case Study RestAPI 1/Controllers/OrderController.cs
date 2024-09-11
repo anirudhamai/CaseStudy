@@ -14,9 +14,11 @@ namespace Case_Study_RestAPI_1.Controllers
     public class OrderController : ControllerBase
     {
         private readonly IOrder _int1;
-        public OrderController(IOrder icontext)
+        private readonly IOrderItem _int2;
+        public OrderController(IOrder icontext, IOrderItem int2)
         {
             _int1 = icontext;
+            _int2 = int2;
         }
         // GET: api/<OrderController>
         [HttpGet]
@@ -34,9 +36,15 @@ namespace Case_Study_RestAPI_1.Controllers
 
         // POST api/<OrderController>
         [HttpPost]
-        public void Post([FromBody] Order value)
+        public void Post([FromBody] OrderRequestDTO value)
         {
-            _int1.AddOrder(value);
+            var order =_int1.AddOrder(value);
+            foreach (OrderItem item in value.OrderItemlist)
+            {
+                item.OrderId = order;
+                _int2.AddOrderItem(item);
+            }
+
         }
 
         // PUT api/<OrderController>/5

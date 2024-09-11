@@ -14,6 +14,7 @@ import './ElectronicsPage.css';  // Import the CSS file
 function ElectronicsPage() {
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState('');
+  // const [selectedProductId, setselectedProductId] = useState('');
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [ratings, setRatings] = useState({});
   const [newReview, setNewReview] = useState('');
@@ -25,7 +26,9 @@ function ElectronicsPage() {
   useEffect(() => {
     const fetchCategoryProducts = async () => {
       const { categoryId } = location.state;
+      // setselectedProductId(location.state.selectedProductId);
       setCategory(location.state.categoryName);
+      // console.log(location.state.categoryName);
       try {
         const token = localStorage.getItem('token');
         if (!token) {
@@ -55,7 +58,15 @@ function ElectronicsPage() {
       }
     };
     fetchCategoryProducts();
-  }, []);
+  }, [location.state]);
+
+
+  // useEffect(() => {
+  //   if (selectedProductId != undefined) {
+  //     const pr = products.find(p => p.productId === selectedProductId);
+  //     handleProductClick(pr);
+  //   }
+  // }, selectedProductId)
 
 
   const handleProductClick = (product) => {
@@ -96,7 +107,7 @@ function ElectronicsPage() {
       }
     };
     fetchWishlistItems();
-  });
+  }, [category]);
 
 
 
@@ -290,161 +301,180 @@ function ElectronicsPage() {
           </div>
         </div>
       ) : (
-        <div className="grid-style">
-          {products.map((product) => (
-            <div key={product.$id} className="product-card-style" onClick={() => handleProductClick(product)}>
-              <img src={mac}/*{product.image}*/ alt={product.name} className="product-image-style" />
-              <h3>{product.name}</h3>
-              <p className="price">₹{product.price}</p>
-              <p className="discount"> {product.discounts.$values.map((discount) => (<span key={discount.discountId}>{discount.discountPercentage}% off</span>))}</p>
-              <div className="rating-stars-style">
-                {[...Array(5)].map((_, index) => (
-                  <FaStar
-                    key={index}
-                    color={index + 1 <= Math.round(calculateAverageRating(product.reviews)) ? "#ffc107" : "#e4e5e9"}
-                    size={20}
-                  />
+        <div>
+          {
+            products.length === 0 ? (
+              <p className="empty-message">Sorry!!! No products available. Please visit later</p>
+            ) : (
+              <div className="grid-style">
+                {products.map((product) => (
+                  <div key={product.$id} className="product-card-style" onClick={() => handleProductClick(product)}>
+                    <img src={mac}/*{product.image}*/ alt={product.name} className="product-image-style" />
+                    <h3>{product.name}</h3>
+                    <p className="price">₹{product.price}</p>
+                    <p className="discount"> {product.discounts.$values.map((discount) => (<span key={discount.discountId}>{discount.discountPercentage}% off</span>))}</p>
+                    <div className="rating-stars-style">
+                      {[...Array(5)].map((_, index) => (
+                        <FaStar
+                          key={index}
+                          color={index + 1 <= Math.round(calculateAverageRating(product.reviews)) ? "#ffc107" : "#e4e5e9"}
+                          size={20}
+                        />
+                      ))}
+                      <span className="rating-number">({calculateAverageRating(product.reviews)}/5)</span>
+                    </div>
+                    <button className="wishlist-button" onClick={(e) => { e.stopPropagation(); handleAddToWishlist(product); }}>
+                      <FaHeart className={`icon ${wishlistItems.some(wishlistItem => wishlistItem.productId === product.productId) ? 'added' : ''}`} />
+                    </button>
+                  </div>
                 ))}
-                <span className="rating-number">({calculateAverageRating(product.reviews)}/5)</span>
               </div>
-              <button className="wishlist-button" onClick={(e) => { e.stopPropagation(); handleAddToWishlist(product); }}>
-                <FaHeart className={`icon ${wishlistItems.some(wishlistItem => wishlistItem.productId === product.productId) ? 'added' : ''}`} />
-              </button>
-            </div>
-          ))}
+            )
+          }
         </div>
       )}
     </div>
   );
-
-
-  // return (
-  //   <div className="electronics-page">
-  //     <h2 className="page-title">{category}</h2>
-  //     {selectedProduct ? (
-  //       <div className="product-details">
-  //         <button className="back-button" onClick={() => setSelectedProduct(null)}>← Back to Products</button>
-  //         <div className="product-detail-container">
-  //         <div className="product-image-container">
-  //             <img
-  //               src = {mac}
-  //               //  src=  {selectedProduct.image}
-  //               alt={selectedProduct.name}
-  //               className="product-image-large"
-  //             />
-  //             <div className="product-actions">
-  //               <button className="action-button cart-button" onClick={() => handleAddToCart(selectedProduct)}>
-  //                 <FaCartPlus className="icon" /> Add to Cart
-  //               </button>
-  //               <button className="action-button buy-button" onClick={() => alert('Buy Now clicked')}>
-  //                 <FaShoppingBag className="icon" /> Buy Now
-  //               </button>
-  //             </div>
-  //             <FaHeart
-  //               className={`wishlist-icon ${wishlist.has(selectedProduct.$id) ? 'added' : ''}`}
-  //               onClick={() => handleAddToWishlist(selectedProduct.wishlistId)}
-  //             />
-  //           </div>
-  //           <div className="product-info">
-  //             <h3>{selectedProduct.name}</h3>
-  //         <p className="price">₹{selectedProduct.price} ({selectedProduct.discounts.$values.map((discount) => (<span>{discount.discountPercentage}</span>))}% off)</p>
-  //         <div className="rating-stars-style">
-  //           {[...Array(5)].map((_, index) => (
-  //             <FaStar
-  //               key={index}
-  //               color={index + 1 <= Math.round(calculateAverageRating(selectedProduct.reviews)) ? "#ffc107" : "#e4e5e9"}
-  //               size={20}
-  //             />
-  //           ))}
-  //           <span className="rating-number">({calculateAverageRating(selectedProduct.reviews)}/5)</span>
-  //         </div>
-  //         <div className="action-buttons">
-  //           <button className="cart-button" onClick={() => handleAddToCart(selectedProduct)}>
-  //             <FaCartPlus className="icon" /> Add to Cart
-  //           </button>
-  //           <button className="buy-button" onClick={() => alert('Buy Now clicked')}>
-  //             <FaShoppingBag className="icon" /> Buy Now
-  //           </button>
-  //         </div>
-
-  //         <div className="reviews-section">
-  //           <h4>Reviews:</h4>
-  //           {selectedProduct.reviews.$values.length === 0 ? (
-  //             <p>No reviews yet.</p>
-  //           ) : (
-  //             selectedProduct.reviews.$values.map((review) => (
-  //               <div key={review.$id} className="review-item">
-  //                 <p>{review.comment}</p>
-  //                 <div className="rating-stars-style">
-  //                   {[...Array(5)].map((_, index) => (
-  //                     <FaStar
-  //                       key={index}
-  //                       color={index + 1 <= review.rating ? "#ffc107" : "#e4e5e9"}
-  //                       size={20}
-  //                     />
-  //                   ))}
-  //                   <span className="rating-number">({review.rating}/5)</span>
-  //                 </div>
-  //               </div>
-  //             ))
-  //           )}
-  //         </div>
-
-  //         <div className="add-review-section">
-  //           <h4>Add a Review:</h4>
-  //           <div className="review-stars-style">
-  //             {[...Array(5)].map((_, index) => {
-  //               const ratingValue = index + 1;
-  //               return (
-  //                 <label key={index}>
-  //                   <input
-  //                     type="radio"
-  //                     name={`rating-${selectedProduct.productId}`}
-  //                     value={ratingValue}
-  //                     onClick={() => handleRatingChange(selectedProduct.productId, ratingValue)}
-  //                     style={{ display: 'none' }}
-  //                   />
-  //                   <FaStar
-  //                     color={ratingValue <= (ratings[selectedProduct.productId] || 0) ? "#ffc107" : "#e4e5e9"}
-  //                     size={30}
-  //                     style={{ cursor: 'pointer' }}
-  //                   />
-  //                 </label>
-  //               );
-  //             })}
-  //           </div>
-  //           <textarea
-  //             placeholder="Write your review here..."
-  //             value={newReview}
-  //             onChange={handleReviewChange}
-  //             className="review-textarea"
-  //           />
-  //           <button className="submit-review-button" onClick={() => handleAddReview(selectedProduct.productId)}>Submit Review</button>
-  //         </div>
-  //       </div>
-  //     ) : (
-  //       <div className="grid-style">
-  //         {products.map((product) => (
-  //           <div key={product.$id} className="product-card-style" onClick={() => handleProductClick(product)}>
-  //             {/* <img src={product.image} alt={product.name} className="product-image-style" /> */}
-  //             <h4>{product.name}</h4>
-  //             <p className="price">₹{product.price}  ({product.discounts.$values.map((discount) => (<span>{discount.discountPercentage}</span>))}% off)</p>
-  //             <div className="rating-stars-style">
-  //               {[...Array(5)].map((_, index) => (
-  //                 <FaStar
-  //                   key={index}
-  //                   color={index + 1 <= Math.round(calculateAverageRating(product.reviews)) ? "#ffc107" : "#e4e5e9"}
-  //                   size={20}
-  //                 />
-  //               ))}
-  //               <span className="rating-number">({calculateAverageRating(product.reviews)}/5)</span>
-  //             </div>
-  //           </div>
-  //         ))}
-  //       </div>
-  //     )}
-  //   </div>
-  // );
 }
 
 export default ElectronicsPage;
+
+
+
+
+
+
+
+
+
+
+
+
+
+// return (
+//   <div className="electronics-page">
+//     <h2 className="page-title">{category}</h2>
+//     {selectedProduct ? (
+//       <div className="product-details">
+//         <button className="back-button" onClick={() => setSelectedProduct(null)}>← Back to Products</button>
+//         <div className="product-detail-container">
+//         <div className="product-image-container">
+//             <img
+//               src = {mac}
+//               //  src=  {selectedProduct.image}
+//               alt={selectedProduct.name}
+//               className="product-image-large"
+//             />
+//             <div className="product-actions">
+//               <button className="action-button cart-button" onClick={() => handleAddToCart(selectedProduct)}>
+//                 <FaCartPlus className="icon" /> Add to Cart
+//               </button>
+//               <button className="action-button buy-button" onClick={() => alert('Buy Now clicked')}>
+//                 <FaShoppingBag className="icon" /> Buy Now
+//               </button>
+//             </div>
+//             <FaHeart
+//               className={`wishlist-icon ${wishlist.has(selectedProduct.$id) ? 'added' : ''}`}
+//               onClick={() => handleAddToWishlist(selectedProduct.wishlistId)}
+//             />
+//           </div>
+//           <div className="product-info">
+//             <h3>{selectedProduct.name}</h3>
+//         <p className="price">₹{selectedProduct.price} ({selectedProduct.discounts.$values.map((discount) => (<span>{discount.discountPercentage}</span>))}% off)</p>
+//         <div className="rating-stars-style">
+//           {[...Array(5)].map((_, index) => (
+//             <FaStar
+//               key={index}
+//               color={index + 1 <= Math.round(calculateAverageRating(selectedProduct.reviews)) ? "#ffc107" : "#e4e5e9"}
+//               size={20}
+//             />
+//           ))}
+//           <span className="rating-number">({calculateAverageRating(selectedProduct.reviews)}/5)</span>
+//         </div>
+//         <div className="action-buttons">
+//           <button className="cart-button" onClick={() => handleAddToCart(selectedProduct)}>
+//             <FaCartPlus className="icon" /> Add to Cart
+//           </button>
+//           <button className="buy-button" onClick={() => alert('Buy Now clicked')}>
+//             <FaShoppingBag className="icon" /> Buy Now
+//           </button>
+//         </div>
+
+//         <div className="reviews-section">
+//           <h4>Reviews:</h4>
+//           {selectedProduct.reviews.$values.length === 0 ? (
+//             <p>No reviews yet.</p>
+//           ) : (
+//             selectedProduct.reviews.$values.map((review) => (
+//               <div key={review.$id} className="review-item">
+//                 <p>{review.comment}</p>
+//                 <div className="rating-stars-style">
+//                   {[...Array(5)].map((_, index) => (
+//                     <FaStar
+//                       key={index}
+//                       color={index + 1 <= review.rating ? "#ffc107" : "#e4e5e9"}
+//                       size={20}
+//                     />
+//                   ))}
+//                   <span className="rating-number">({review.rating}/5)</span>
+//                 </div>
+//               </div>
+//             ))
+//           )}
+//         </div>
+
+//         <div className="add-review-section">
+//           <h4>Add a Review:</h4>
+//           <div className="review-stars-style">
+//             {[...Array(5)].map((_, index) => {
+//               const ratingValue = index + 1;
+//               return (
+//                 <label key={index}>
+//                   <input
+//                     type="radio"
+//                     name={`rating-${selectedProduct.productId}`}
+//                     value={ratingValue}
+//                     onClick={() => handleRatingChange(selectedProduct.productId, ratingValue)}
+//                     style={{ display: 'none' }}
+//                   />
+//                   <FaStar
+//                     color={ratingValue <= (ratings[selectedProduct.productId] || 0) ? "#ffc107" : "#e4e5e9"}
+//                     size={30}
+//                     style={{ cursor: 'pointer' }}
+//                   />
+//                 </label>
+//               );
+//             })}
+//           </div>
+//           <textarea
+//             placeholder="Write your review here..."
+//             value={newReview}
+//             onChange={handleReviewChange}
+//             className="review-textarea"
+//           />
+//           <button className="submit-review-button" onClick={() => handleAddReview(selectedProduct.productId)}>Submit Review</button>
+//         </div>
+//       </div>
+//     ) : (
+//       <div className="grid-style">
+//         {products.map((product) => (
+//           <div key={product.$id} className="product-card-style" onClick={() => handleProductClick(product)}>
+//             {/* <img src={product.image} alt={product.name} className="product-image-style" /> */}
+//             <h4>{product.name}</h4>
+//             <p className="price">₹{product.price}  ({product.discounts.$values.map((discount) => (<span>{discount.discountPercentage}</span>))}% off)</p>
+//             <div className="rating-stars-style">
+//               {[...Array(5)].map((_, index) => (
+//                 <FaStar
+//                   key={index}
+//                   color={index + 1 <= Math.round(calculateAverageRating(product.reviews)) ? "#ffc107" : "#e4e5e9"}
+//                   size={20}
+//                 />
+//               ))}
+//               <span className="rating-number">({calculateAverageRating(product.reviews)}/5)</span>
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+//     )}
+//   </div>
+// );

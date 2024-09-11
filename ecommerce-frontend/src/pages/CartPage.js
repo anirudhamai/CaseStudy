@@ -88,7 +88,7 @@ function CartPage() {
       }
     };
     fetchCartItems();
-  }, cartId);
+  }, [cartId]);
 
 
   const handleCheckboxChange = (productId) => {

@@ -38,10 +38,36 @@ namespace DBLibrary.Repo
         {
             return _context.Orders.Find(id);
         }
-        public void AddOrder(Order w)
+        public int AddOrder(OrderRequestDTO w)
         {
-            _context.Orders.Add(w);
+            var order = new Order
+            {
+                UserId = w.UserId,
+                Status = "Processing",  // Default status
+                TotalAmount = w.Amount  // Assuming this is the total amount
+            };
+            _context.Orders.Add(order);
+
+            var payment = new Payment
+            {
+                OrderId = order.OrderId,
+                PaymentMethod = w.PaymentMethod,
+                Amount = w.Amount,
+            };
+
+            _context.Payments.Add(payment);
+
+            var shipment = new Shipment
+            {
+                OrderId = order.OrderId, 
+                AddressId = w.AddressId,
+                Carrier = w.Carrier ?? "Yet to assign",
+                ShipmentDate = DateOnly.FromDateTime(DateTime.Now),
+                Status = "Processing",
+            };
+            _context.Shipments.Add(shipment);
             _context.SaveChanges();
+            return order.OrderId;
         }
         public void DeleteOrder(int id)
         {

@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 // import { UserContext } from '../context/UserContext';
 // import { CartContext } from '../context/CartContext';
 import { FaSearch, FaHeart, FaShoppingCart, FaUser } from 'react-icons/fa';
@@ -18,6 +18,7 @@ function Navbar() {
   const [filteredSuggestions, setFilteredSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
 
   useEffect(() => {
@@ -117,9 +118,15 @@ function Navbar() {
     setShowSuggestions(false); // Hide suggestions when focus is lost
   };
 
+  const gotoHome = () => {
+    if (location.pathname != '/') {
+      navigate('/')
+    }
+  }
+
   return (
     <header className="header">
-      <div className="logo">
+      <div className="logo" onClick={gotoHome}>
         <img src={logo} alt="Company Logo" />
       </div>
 

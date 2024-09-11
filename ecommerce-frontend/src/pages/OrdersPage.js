@@ -47,7 +47,7 @@ function OrdersPage() {
       }
     }
     getOrders();
-  }, userId);
+  }, [userId]);
 
 
   useEffect(() => {
@@ -57,7 +57,7 @@ function OrdersPage() {
     else {
       console.log("empty order");
     }
-  }, orders);
+  }, [orders]);
 
 
   if (!orders || orders.length === 0) {
