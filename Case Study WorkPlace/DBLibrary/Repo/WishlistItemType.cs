@@ -24,13 +24,23 @@ namespace DBLibrary.Repo
                 .ToList();
         }
 
-        public WishlistItem GetWishlistItemById(int id)
+        public IEnumerable<WishlistItem> GetWishlistItemById(int id)
         {
             return _context.WishlistItems
                 .Include(w => w.Product)
-                .ToList()
-                .Find(c => c.WishlistItemId == id);
+                .Where(c => c.WishlistId == id)
+                .ToList();
         }
+
+        public WishlistItem GetWishlistItemByCompositeId(int pid, int wid)
+        {
+            return _context.WishlistItems
+                .Include(w => w.Product)
+                .Where(c => c.WishlistId == wid)
+                .ToList()
+                .Find(c => c.ProductId == pid);
+        }
+
         public void AddWishlistItem(WishlistItem w)
         {
             _context.WishlistItems.Add(w);
@@ -38,7 +48,7 @@ namespace DBLibrary.Repo
         }
         public void DeleteWishlistItem(int id)
         {
-            WishlistItem ca = _context.WishlistItems.Find(id);
+            WishlistItem ca = _context.WishlistItems.ToList().Find(w => w.ProductId == id);
             _context.WishlistItems.Remove(ca);
             _context.SaveChanges();
         }

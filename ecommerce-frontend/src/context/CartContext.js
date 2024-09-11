@@ -15,7 +15,7 @@ export const CartProvider = ({ children }) => {
   const [updateFlag, setUpdateFlag] = useState(false);
 
   // const navigate = useNavigate();
-  const [orders, setOrders] = useState([]); // Manage orders here
+  // const [orders, setOrders] = useState([]); // Manage orders here
   const token = localStorage.getItem('token');
 
   const addItemToCart = async (product) => {
@@ -91,13 +91,10 @@ export const CartProvider = ({ children }) => {
   };
 
 
-  // const changedItem = cartItems.map( item => { if(item.cartItemId == productId){
-  //  return item;
-  // }});
-
 
   useEffect(() => {
     const updateCartItemsInServer = async () => {
+      // console.log(cartItems);
       const url1 = `http://localhost:5120/api/CartItem`;
       try {
         await axios.put(url1, cartItems, {
@@ -112,9 +109,10 @@ export const CartProvider = ({ children }) => {
         setUpdateFlag(false); // Reset flag after API call
       }
     };
-
-    updateCartItemsInServer();
-  }, [cartItems, token]);
+    if (cartItems.length != 0) {
+      updateCartItemsInServer();
+    }
+  }, [cartItems]);
 
 
   const getTotalAmount = () => {
@@ -122,16 +120,74 @@ export const CartProvider = ({ children }) => {
   };
 
 
-  const addOrder = (orderDetails) => {
-    setOrders(prevOrders => [...prevOrders, orderDetails]);
-  };
+  // const addOrder = (orderDetails) => {
+  //   setOrders(prevOrders => [...prevOrders, orderDetails]);
+  // };
 
   const clearCart = () => {
     setCartItems([]);
   };
 
+  //-----------------------------------------------------------------------------------------------------------------------------------
+  // Wishlist management:
+  // const {wishlistId} = location.state;
+
+  const { wishlistId } = useContext(UserContext);
+  const [wishlistItems, setWishlistItems] = useState([]);
+
+  const addItemToWishlist = async (product) => {
+    try {
+      const token = localStorage.getItem('token');
+      console.log(wishlistId, product.productId);
+      const url1 = `http://localhost:5120/api/WishlistItem`;
+      const wishlistItem = {
+        WishlistId: wishlistId,
+        ProductId: product.productId
+      }
+      const response2 = await axios.post(url1, wishlistItem, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        }
+      });
+      if (response2.data.status) return 1;
+    }
+    catch (error) {
+      console.log(error);
+      if (error.code == "ERR_NETWORK") {
+        alert(error.message);
+        localStorage.removeItem('token');
+      }
+      if (error.response.status === 401) {
+        alert("Your token expired or you are not authorized for this page");
+        localStorage.removeItem('token');
+      }
+      return 0;
+    }
+  }
+
+  const addToWishlist = (product) => {
+    setWishlistItems(product);
+  };
+
+  const removeFromWishlist = async (productId) => {
+    setWishlistItems(prevItems => prevItems.filter(item => item.productId !== productId));
+    await new Promise(resolve => setTimeout(resolve, 0));
+    try {
+      const url1 = `http://localhost:5120/api/WishlistItem/${productId}`;
+      await axios.delete(url1, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+    }
+    catch (error) {
+      console.error('Error updating cart items:', error);
+    }
+  };
+
   return (
-    <CartContext.Provider value={{ cartItems, orders, addItemToCart, addToCart, removeFromCart, updateQuantity, getTotalAmount, addOrder, clearCart }}>
+    <CartContext.Provider value={{ cartItems, addItemToCart, addToCart, removeFromCart, updateQuantity, getTotalAmount, clearCart, wishlistItems, addItemToWishlist, addToWishlist, removeFromWishlist }}>
       {children}
     </CartContext.Provider>
   );

@@ -11,8 +11,8 @@ import { UserContext } from '../context/UserContext';
 import { CartContext } from '../context/CartContext';
 
 function HomePage() {
-  const { userId, setUserId, cartId, setCartId } = useContext(UserContext);
-  const { addItemToCart } = useContext(CartContext);
+  const { userId, setUserId, cartId, setCartId, wishlistId, setWishlistId } = useContext(UserContext);
+  const { addItemToCart, addItemToWishlist } = useContext(CartContext);
   const [productData, setProducts] = useState([]);
   const [showChat, setShowChat] = useState(false);  // State to toggle ChatBot
   const navigate = useNavigate();
@@ -68,6 +68,21 @@ function HomePage() {
     };
     fetchCart();
 
+    const fetchWishlist = async () => {
+      if (!token) {
+        navigate('/login');
+      }
+
+      const url2 = `http://localhost:5120/api/Wishlist/${userId}`;
+      const response = await axios.post(url2, {
+        headers: {
+          Authorization: `Bearer${token}`
+        }
+      });
+      setWishlistId(response.data);
+    };
+    fetchWishlist();
+
   }, [userId]);
 
   const handleAddToCart = async (product) => {
@@ -77,9 +92,19 @@ function HomePage() {
       navigate('/login');
     }
     alert('Added to cart!');
-    //ReactSession.set("cart", resp);
     navigate('/cart');
   };
+
+  const handleAddToWishlist = async (product) => {
+    var resp = await addItemToWishlist(product);
+    if (resp == 0) {
+      navigate('/login');
+    }
+    alert('Added to Wishlist!');
+    navigate('/wishlist');
+  };
+
+
 
   return (
     <div>
@@ -98,7 +123,7 @@ function HomePage() {
                   <p className="price">{product.price}</p>
                   <button className="buy-now">Buy Now</button>
                   <div className="product-actions">
-                    <button className="wish-list">Add to Wish List</button>
+                    <button className="wish-list" onClick={() => handleAddToWishlist(product)}>Add to Wish List</button>
                     <button className="add-to-cart" onClick={() => handleAddToCart(product)}>Add to Cart</button>
                   </div>
                 </div>
@@ -118,7 +143,7 @@ function HomePage() {
                   <p className="price">{product.price}</p>
                   <button className="buy-now">Buy Now</button>
                   <div className="product-actions">
-                    <button className="wish-list">Add to Wish List</button>
+                    <button className="wish-list" onClick={() => handleAddToWishlist(product)}>Add to Wish List</button>
                     <button className="add-to-cart" onClick={() => handleAddToCart(product)} >Add to Cart</button>
                   </div>
                 </div>
@@ -138,7 +163,7 @@ function HomePage() {
                   <p className="price">{product.price}</p>
                   <button className="buy-now">Buy Now</button>
                   <div className="product-actions">
-                    <button className="wish-list">Add to Wish List</button>
+                    <button className="wish-list" onClick={() => handleAddToWishlist(product)}>Add to Wish List</button>
                     <button className="add-to-cart" onClick={() => handleAddToCart(product)}>Add to Cart</button>
                   </div>
                 </div>

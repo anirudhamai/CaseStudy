@@ -24,6 +24,16 @@ namespace DBLibrary.Repo
                 .Include(o => o.OrderItems)
                 .ToList();
         }
+        public IEnumerable<Order> GetOrderByUserId(int id)
+        {
+            return _context.Orders
+                .Include(o => o.Payments)
+                .Include(o => o.Shipments)
+                .Include(o => o.OrderItems)
+                .ThenInclude(o => o.Product)
+                .Where(o => o.UserId == id)
+                .ToList();
+        }
         public Order GetOrderById(int id)
         {
             return _context.Orders.Find(id);

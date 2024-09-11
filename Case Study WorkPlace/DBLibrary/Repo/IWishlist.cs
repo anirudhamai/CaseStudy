@@ -11,6 +11,7 @@ namespace DBLibrary.Repo
     {
         public IEnumerable<Wishlist> GetWishlist();
         public Wishlist GetWishlistById(int id);
+        public Wishlist GetWishlistByUserId(int id);
         public void AddWishlist(Wishlist c);
         public void UpdateWishlist(int id, Wishlist c);
         public void DeleteWishlist(int id);

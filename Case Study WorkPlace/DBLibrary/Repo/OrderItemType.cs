@@ -18,7 +18,6 @@ namespace DBLibrary.Repo
         public IEnumerable<OrderItem> GetOrderItem()
         {
             return _context.OrderItems
-//                .Include(o => o.Order)
                 .Include(o => o.Product)
                 .ToList();
         }
@@ -26,14 +25,14 @@ namespace DBLibrary.Repo
         public OrderItem GetOrderItemById(int id)
         {
             return _context.OrderItems
-                //                .Include(o => o.Order)
                 .Include(o => o.Product)
                 .ToList()
                 .Find(o => o.OrderItemId==id);
         }
         public void AddOrderItem(OrderItem w)
         {
-            _context.OrderItems.Add(w);
+            OrderItem i = _context.OrderItems.Where(wi => wi.ProductId == w.ProductId && wi.OrderId == w.OrderId).First();
+            _context.OrderItems.Add(i);     
             _context.SaveChanges();
         }
         public void DeleteOrderItem(int id)

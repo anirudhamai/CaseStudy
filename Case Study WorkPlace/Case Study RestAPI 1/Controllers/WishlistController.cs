@@ -33,11 +33,23 @@ namespace Case_Study_RestAPI_1.Controllers
         }
 
         // POST api/<WishlistController>
-        [HttpPost]
-        public void Post([FromBody] Wishlist value)
+        [AllowAnonymous]
+        [HttpPost("{value}")]
+        public int Post(int value)
         {
-            _int1.AddWishlist(value);
+            Wishlist newWishlist = _int1.GetWishlistByUserId(value);
+            if (newWishlist == null)
+            {
+                newWishlist = new Wishlist { UserId = value };
+                _int1.AddWishlist(newWishlist);
+                return newWishlist.WishlistId;
+            }
+            else
+            {
+                return newWishlist.WishlistId;
+            }
         }
+
 
         // PUT api/<WishlistController>/5
         [HttpPut("{id}")]

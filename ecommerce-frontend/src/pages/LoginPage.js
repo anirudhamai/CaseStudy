@@ -8,8 +8,8 @@ import './LoginPage.css'; // Import the updated CSS file
 
 const LoginPage = () => {
   const { userId, setUserId } = useContext(UserContext);
-  const [email, setEmail] = useState('ani@gmail.com');
-  const [password, setPassword] = useState('pass26');
+  const [email, setEmail] = useState('john.doe@example.com');
+  const [password, setPassword] = useState('pass1');
   const [showForgotPassword, setShowForgotPassword] = useState(false);
   const [forgotEmail, setForgotEmail] = useState('');
   const [otp, setOtp] = useState('');
@@ -193,7 +193,7 @@ const LoginPage = () => {
         <div className="signupSection">
           <p>
             Don't have an account?{' '}
-            <a href="/signup" className="signupLink">
+            <a href="/register" className="signupLink">
               Sign Up
             </a>
           </p>

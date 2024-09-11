@@ -26,7 +26,7 @@ namespace Case_Study_RestAPI_1.Controllers
 
         // GET api/<WishlistItemController>/5
         [HttpGet("{id}")]
-        public WishlistItem Get(int id)
+        public IEnumerable<WishlistItem> Get(int id)
         {
             return _int1.GetWishlistItemById(id);
         }
@@ -35,7 +35,11 @@ namespace Case_Study_RestAPI_1.Controllers
         [HttpPost]
         public void Post([FromBody] WishlistItem value)
         {
-            _int1.AddWishlistItem(value);
+            var existing = _int1.GetWishlistItemByCompositeId(value.ProductId, value.WishlistId);
+            if (existing == null)
+            {
+                _int1.AddWishlistItem(value);
+            }
         }
 
         // PUT api/<WishlistItemController>/5

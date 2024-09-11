@@ -32,6 +32,15 @@ namespace DBLibrary.Repo
                 .ToList()
                 .Find(c => c.WishlistId == id);
         }
+
+        public Wishlist GetWishlistByUserId(int id)
+        {
+            return _context.Wishlists
+                .Include(w => w.User)
+                .Include(w => w.WishlistItems)
+                .ToList()
+                .Find(c => c.UserId == id);
+        }
         public void AddWishlist(Wishlist w)
         {
             _context.Wishlists.Add(w);
