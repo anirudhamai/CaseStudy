@@ -16,7 +16,8 @@ import WishlistPage from './pages/WishlistPage';
 import AddressPage from './pages/AddressPage';
 import Navbar from './pages/Navbar';
 import ChatBot from './pages/ChatBot';
-import OrderDetails from './pages/OrderDetails';
+import order from './pages/OrderDetails'
+import OrderDetailsPage from './pages/OrderDetails';
 
 
 
@@ -94,16 +95,16 @@ function AppRoutes() {
               }
             />
 
-            <Route path="/chatbot" element={<ChatBot />} />
-
             <Route
               path="/orderdetail"
               element={
                 <Layout>
-                  <OrderDetails />
+                  <OrderDetailsPage/>
                 </Layout>
               }
             />
+
+            <Route path="/chatbot" element={<ChatBot />} />
 
           </Routes>
         </Router>

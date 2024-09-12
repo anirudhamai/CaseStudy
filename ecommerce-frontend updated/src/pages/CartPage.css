@@ -1,140 +1,170 @@
-/* Gradient background for the whole cart page */
+/* Overall Page Styling */
 .cart-page {
-  background: linear-gradient(135deg, #f3f6f6, #fafafa);
+  background: linear-gradient(135deg, #e0f7fa, #9fd7fd); /* Updated gradient */
   min-height: 100vh;
   padding: 40px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #333; /* Darker text for better contrast */
-  font-family: 'Arial', sans-serif;
+  color: #333;
+  font-family: 'Poppins', sans-serif; /* Premium font */
+  overflow: hidden; /* Prevents scrolling issues with background effects */
 }
 
+/* Page Title */
 .cart-page-title {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 30px;
-  color: #3e10d7; /* Keep title in white */
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  color: #200572;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+  animation: titleFadeIn 2s ease-out; /* Fade-in animation */
 }
 
-/* Cart Box Styling */
+@keyframes titleFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Cart Items Container */
 .cart-items-list {
-  background-color: #fff; /* Clean white background */
-  border-radius: 20px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for 3D effect */
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15); /* Deeper shadow */
   width: 100%;
-  max-width: 900px;
+  max-width: 1000px;
   padding: 20px;
   margin-bottom: 20px;
+  position: relative;
 }
 
+/* Empty Cart Message */
 .empty-cart-message {
-  font-size: 1.5rem;
-  color: #ff3b30; /* Attention-grabbing red for empty cart */
-  padding: 15px;
-  background-color: rgba(255, 59, 48, 0.1);
-  border-radius: 10px;
+  font-size: 1.8rem;
+  color: #d32f2f;
+  padding: 20px;
+  background-color: rgba(211, 47, 47, 0.1);
+  border-radius: 12px;
   text-align: center;
 }
 
+/* Cart Item */
 .cart-item {
-  padding: 15px 20px;
-  margin-bottom: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
   border-bottom: 1px solid #ddd;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+  background-color: #f9f9f9;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.cart-item:last-child {
-  border-bottom: none;
+.cart-item:hover {
+  transform: translateY(-5px); /* Slight lift effect */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15); /* Deepened shadow on hover */
 }
 
+/* Cart Item Details */
 .cart-item-details {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
 }
 
 .cart-item h4 {
-  font-size: 1.5rem;
-  margin: 0;
+  font-size: 1.6rem;
   color: #333;
 }
 
 .cart-item p {
   margin: 0;
-  color: #666; /* Subtle text for price */
+  color: #555;
 }
 
+/* Quantity Selector */
 .quantity-selector {
   display: flex;
   align-items: center;
-  gap: 10px; /* Proper gap between label and input */
+  gap: 12px;
 }
 
 .quantity-input {
-  width: 60px;
-  padding: 6px;
-  border-radius: 5px;
-  border: 1px solid #ddd;
+  width: 70px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease;
 }
 
+.quantity-input:focus {
+  border-color: #00796b; /* Color change on focus */
+}
+
+/* Checkbox and Remove Button */
 .checkbox-remove {
   display: flex;
   align-items: center;
-  gap: 20px; /* Increased gap for better alignment */
+  gap: 20px;
 }
 
 .item-checkbox {
-  transform: scale(1.3);
+  transform: scale(1.4);
   cursor: pointer;
 }
 
 .remove-button {
-  background-color: #ff4d4d;
+  background-color: #d32f2f;
   color: white;
   border: none;
-  border-radius: 8px;
-  padding: 8px 12px;
+  border-radius: 12px;
+  padding: 12px 18px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
 }
 
 .remove-button:hover {
-  background-color: #ff1a1a;
+  background-color: #c62828;
   transform: scale(1.05);
 }
 
-/* Styling the cart totals and buttons */
+/* Cart Totals and Buttons */
 .cart-totals {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 900px;
-  padding-top: 20px; /* Space above the buttons */
+  max-width: 1000px;
+  padding-top: 20px;
 }
 
 .buy-now-button {
-  background-color: #28a745;
+  background-color: #1f349f;
   color: white;
   border: none;
-  border-radius: 15px;
+  border-radius: 20px;
   padding: 15px 25px;
   font-size: 1.2rem;
   cursor: pointer;
   transition: transform 0.2s ease, background-color 0.3s ease;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
 .buy-now-button:hover {
-  background-color: #218838;
+  background-color: #2c6b2f;
   transform: translateY(-3px);
 }
 
 .buy-now-button + .buy-now-button {
-  margin-left: 20px; /* Added space between the two Buy Now buttons */
+  margin-left: 20px;
 }
 
 @media (max-width: 600px) {
@@ -155,6 +185,6 @@
 
   .buy-now-button + .buy-now-button {
     margin-left: 0;
-    margin-top: 10px; /* For mobile, vertical spacing */
+    margin-top: 10px;
   }
 }
