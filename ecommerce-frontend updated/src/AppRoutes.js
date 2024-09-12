@@ -16,6 +16,7 @@ import WishlistPage from './pages/WishlistPage';
 import AddressPage from './pages/AddressPage';
 import Navbar from './pages/Navbar';
 import ChatBot from './pages/ChatBot';
+import OrderDetails from './pages/OrderDetails';
 
 
 
@@ -94,6 +95,15 @@ function AppRoutes() {
             />
 
             <Route path="/chatbot" element={<ChatBot />} />
+
+            <Route
+              path="/orderdetail"
+              element={
+                <Layout>
+                  <OrderDetails />
+                </Layout>
+              }
+            />
 
           </Routes>
         </Router>
