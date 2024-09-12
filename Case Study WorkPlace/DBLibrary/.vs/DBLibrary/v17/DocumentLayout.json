@@ -3,89 +3,41 @@
   "WorkspaceRootPath": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\dblibrary\\repo\\wishlistitemtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|solutionrelative:repo\\wishlistitemtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\dblibrary\\repo\\wishlisttype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|solutionrelative:repo\\wishlisttype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\dblibrary\\repo\\producttype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|solutionrelative:repo\\producttype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\dblibrary\\models\\customercredentials.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|solutionrelative:models\\customercredentials.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\dblibrary\\repo\\ordertype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|solutionrelative:repo\\ordertype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{C4FD171F-21EA-4AA4-8BF5-3D7AEBF6759E}|..\\Case Study RestAPI 1\\Case Study RestAPI 1.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\case study restapi 1\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\dblibrary\\repo\\orderitemtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|solutionrelative:repo\\orderitemtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C4FD171F-21EA-4AA4-8BF5-3D7AEBF6759E}|..\\Case Study RestAPI 1\\Case Study RestAPI 1.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\case study restapi 1\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4FD171F-21EA-4AA4-8BF5-3D7AEBF6759E}|..\\Case Study RestAPI 1\\Case Study RestAPI 1.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\case study restapi 1\\controllers\\wishlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\dblibrary\\models\\wishlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|solutionrelative:models\\wishlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\dblibrary\\models\\orderitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|solutionrelative:models\\orderitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\dblibrary\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|solutionrelative:models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C4FD171F-21EA-4AA4-8BF5-3D7AEBF6759E}|..\\Case Study RestAPI 1\\Case Study RestAPI 1.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\case study restapi 1\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\dblibrary\\extensions\\service_extension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|solutionrelative:extensions\\service_extension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4FD171F-21EA-4AA4-8BF5-3D7AEBF6759E}|..\\Case Study RestAPI 1\\Case Study RestAPI 1.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\case study restapi 1\\controllers\\addresscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\dblibrary\\repo\\paymenttype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|solutionrelative:repo\\paymenttype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C4FD171F-21EA-4AA4-8BF5-3D7AEBF6759E}|..\\Case Study RestAPI 1\\Case Study RestAPI 1.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\case study restapi 1\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\dblibrary\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|solutionrelative:models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C4FD171F-21EA-4AA4-8BF5-3D7AEBF6759E}|..\\Case Study RestAPI 1\\Case Study RestAPI 1.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\case study restapi 1\\controllers\\cartitemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\dblibrary\\repo\\iwishlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|solutionrelative:repo\\iwishlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\dblibrary\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|solutionrelative:models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\dblibrary\\models\\customercredentials.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|solutionrelative:models\\customercredentials.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4FD171F-21EA-4AA4-8BF5-3D7AEBF6759E}|..\\Case Study RestAPI 1\\Case Study RestAPI 1.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\case study restapi 1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4FD171F-21EA-4AA4-8BF5-3D7AEBF6759E}|..\\Case Study RestAPI 1\\Case Study RestAPI 1.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\case study restapi 1\\controllers\\addresscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\dblibrary\\repo\\iaddress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|solutionrelative:repo\\iaddress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\dblibrary\\repo\\addresstype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|solutionrelative:repo\\addresstype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\dblibrary\\repo\\categorytype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|solutionrelative:repo\\categorytype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\dblibrary\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|solutionrelative:models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|c:\\users\\anirudhabhat\\desktop\\case_study\\casestudy\\case study workplace\\dblibrary\\models\\orderrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA311AAB-30AA-4652-87C9-C909457C3A5F}|DBLibrary.csproj|solutionrelative:models\\orderrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -100,221 +52,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "WishlistItemType.cs",
-              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Repo\\WishlistItemType.cs",
-              "RelativeDocumentMoniker": "Repo\\WishlistItemType.cs",
-              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Repo\\WishlistItemType.cs",
-              "RelativeToolTip": "Repo\\WishlistItemType.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAQwCsAAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T18:41:00.368Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "WishlistType.cs",
-              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Repo\\WishlistType.cs",
-              "RelativeDocumentMoniker": "Repo\\WishlistType.cs",
-              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Repo\\WishlistType.cs",
-              "RelativeToolTip": "Repo\\WishlistType.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAAAB4AAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T18:36:47.433Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Wishlist.cs",
-              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Models\\Wishlist.cs",
-              "RelativeDocumentMoniker": "Models\\Wishlist.cs",
-              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Models\\Wishlist.cs",
-              "RelativeToolTip": "Models\\Wishlist.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T14:11:28.019Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "WishlistController.cs",
-              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\Controllers\\WishlistController.cs",
-              "RelativeDocumentMoniker": "..\\Case Study RestAPI 1\\Controllers\\WishlistController.cs",
-              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\Controllers\\WishlistController.cs",
-              "RelativeToolTip": "..\\Case Study RestAPI 1\\Controllers\\WishlistController.cs",
-              "ViewState": "AQIAACAAAAAAAAAAAAAgwB0AAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T12:48:52.506Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "OrderItemDTO.cs",
-              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Models\\OrderItemDTO.cs",
-              "RelativeDocumentMoniker": "Models\\OrderItemDTO.cs",
-              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Models\\OrderItemDTO.cs",
-              "RelativeToolTip": "Models\\OrderItemDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T15:27:15.892Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "OrderItemType.cs",
-              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Repo\\OrderItemType.cs",
-              "RelativeDocumentMoniker": "Repo\\OrderItemType.cs",
-              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Repo\\OrderItemType.cs",
-              "RelativeToolTip": "Repo\\OrderItemType.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAADwvyUAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T12:13:55.886Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "OrderController.cs",
-              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\Controllers\\OrderController.cs",
-              "RelativeDocumentMoniker": "..\\Case Study RestAPI 1\\Controllers\\OrderController.cs",
-              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\Controllers\\OrderController.cs",
-              "RelativeToolTip": "..\\Case Study RestAPI 1\\Controllers\\OrderController.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAYwCsAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T11:36:08.461Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProductType.cs",
-              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Repo\\ProductType.cs",
-              "RelativeDocumentMoniker": "Repo\\ProductType.cs",
-              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Repo\\ProductType.cs",
-              "RelativeToolTip": "Repo\\ProductType.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAAwBsAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T15:50:14.529Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "OrderType.cs",
-              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Repo\\OrderType.cs",
-              "RelativeDocumentMoniker": "Repo\\OrderType.cs",
-              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Repo\\OrderType.cs",
-              "RelativeToolTip": "Repo\\OrderType.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAYwCIAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T11:34:46.402Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Order.cs",
-              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Models\\Order.cs",
-              "RelativeDocumentMoniker": "Models\\Order.cs",
-              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Models\\Order.cs",
-              "RelativeToolTip": "Models\\Order.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T14:10:19.023Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "PaymentType.cs",
-              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Repo\\PaymentType.cs",
-              "RelativeDocumentMoniker": "Repo\\PaymentType.cs",
-              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Repo\\PaymentType.cs",
-              "RelativeToolTip": "Repo\\PaymentType.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAAwBUAAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T12:36:40.219Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "CustomerController.cs",
-              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\Controllers\\CustomerController.cs",
-              "RelativeDocumentMoniker": "..\\Case Study RestAPI 1\\Controllers\\CustomerController.cs",
-              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\Controllers\\CustomerController.cs",
-              "RelativeToolTip": "..\\Case Study RestAPI 1\\Controllers\\CustomerController.cs",
-              "ViewState": "AQIAAEQAAAAAAAAAAAAswFcAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-09T10:13:40.204Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "CartItemController.cs",
-              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\Controllers\\CartItemController.cs",
-              "RelativeDocumentMoniker": "..\\Case Study RestAPI 1\\Controllers\\CartItemController.cs",
-              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\Controllers\\CartItemController.cs",
-              "RelativeToolTip": "..\\Case Study RestAPI 1\\Controllers\\CartItemController.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAQwCsAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T13:36:57.547Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "CartController.cs",
-              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\Controllers\\CartController.cs",
-              "RelativeDocumentMoniker": "..\\Case Study RestAPI 1\\Controllers\\CartController.cs",
-              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\Controllers\\CartController.cs",
-              "RelativeToolTip": "..\\Case Study RestAPI 1\\Controllers\\CartController.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAYwCIAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-09T03:43:37.19Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "IWishlist.cs",
-              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Repo\\IWishlist.cs",
-              "RelativeDocumentMoniker": "Repo\\IWishlist.cs",
-              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Repo\\IWishlist.cs",
-              "RelativeToolTip": "Repo\\IWishlist.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T14:39:34.878Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Cart.cs",
-              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Models\\Cart.cs",
-              "RelativeDocumentMoniker": "Models\\Cart.cs",
-              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Models\\Cart.cs",
-              "RelativeToolTip": "Models\\Cart.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T14:11:24.565Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\appsettings.json",
-              "RelativeDocumentMoniker": "..\\Case Study RestAPI 1\\appsettings.json",
-              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\appsettings.json",
-              "RelativeToolTip": "..\\Case Study RestAPI 1\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-09-10T06:15:03.549Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
               "Title": "CustomerCredentials.cs",
               "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Models\\CustomerCredentials.cs",
               "RelativeDocumentMoniker": "Models\\CustomerCredentials.cs",
@@ -322,67 +59,116 @@
               "RelativeToolTip": "Models\\CustomerCredentials.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T11:57:38.319Z"
+              "WhenOpened": "2024-09-12T17:51:58.874Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "CategoryType.cs",
-              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Repo\\CategoryType.cs",
-              "RelativeDocumentMoniker": "Repo\\CategoryType.cs",
-              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Repo\\CategoryType.cs",
-              "RelativeToolTip": "Repo\\CategoryType.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAQwBcAAAAlAAAA",
+              "DocumentIndex": 3,
+              "Title": "OrderItemType.cs",
+              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Repo\\OrderItemType.cs",
+              "RelativeDocumentMoniker": "Repo\\OrderItemType.cs",
+              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Repo\\OrderItemType.cs",
+              "RelativeToolTip": "Repo\\OrderItemType.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAA5wCkAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-09T13:51:43.47Z"
+              "WhenOpened": "2024-09-12T13:14:21.095Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "IAddress.cs",
-              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Repo\\IAddress.cs",
-              "RelativeDocumentMoniker": "Repo\\IAddress.cs",
-              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Repo\\IAddress.cs",
-              "RelativeToolTip": "Repo\\IAddress.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAjAAAA",
+              "DocumentIndex": 5,
+              "Title": "service_extension.cs",
+              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Extensions\\service_extension.cs",
+              "RelativeDocumentMoniker": "Extensions\\service_extension.cs",
+              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Extensions\\service_extension.cs",
+              "RelativeToolTip": "Extensions\\service_extension.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-09T14:41:05.658Z"
+              "WhenOpened": "2024-09-12T12:42:22.579Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Customer.cs",
-              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Models\\Customer.cs",
-              "RelativeDocumentMoniker": "Models\\Customer.cs",
-              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Models\\Customer.cs",
-              "RelativeToolTip": "Models\\Customer.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAxwAkAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-09T10:27:47.67Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 6,
               "Title": "AddressController.cs",
               "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\Controllers\\AddressController.cs",
               "RelativeDocumentMoniker": "..\\Case Study RestAPI 1\\Controllers\\AddressController.cs",
               "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\Controllers\\AddressController.cs",
               "RelativeToolTip": "..\\Case Study RestAPI 1\\Controllers\\AddressController.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAzwB0AAAAjAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-09T10:15:42.9Z"
+              "WhenOpened": "2024-09-12T12:25:46.209Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "AddressType.cs",
-              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Repo\\AddressType.cs",
-              "RelativeDocumentMoniker": "Repo\\AddressType.cs",
-              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Repo\\AddressType.cs",
-              "RelativeToolTip": "Repo\\AddressType.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAQwBkAAAAjAAAA",
+              "DocumentIndex": 1,
+              "Title": "OrderType.cs",
+              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Repo\\OrderType.cs",
+              "RelativeDocumentMoniker": "Repo\\OrderType.cs",
+              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Repo\\OrderType.cs",
+              "RelativeToolTip": "Repo\\OrderType.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAYwCEAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-09T10:15:30.023Z"
+              "WhenOpened": "2024-09-12T11:21:00.18Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "..\\Case Study RestAPI 1\\Controllers\\OrderController.cs",
+              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "..\\Case Study RestAPI 1\\Controllers\\OrderController.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAACkAAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T11:19:48.194Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "OrderRequestDTO.cs",
+              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Models\\OrderRequestDTO.cs",
+              "RelativeDocumentMoniker": "Models\\OrderRequestDTO.cs",
+              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Models\\OrderRequestDTO.cs",
+              "RelativeToolTip": "Models\\OrderRequestDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T10:05:32.524Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PaymentType.cs",
+              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Repo\\PaymentType.cs",
+              "RelativeDocumentMoniker": "Repo\\PaymentType.cs",
+              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Repo\\PaymentType.cs",
+              "RelativeToolTip": "Repo\\PaymentType.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T12:36:40.219Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CustomerController.cs",
+              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\Controllers\\CustomerController.cs",
+              "RelativeDocumentMoniker": "..\\Case Study RestAPI 1\\Controllers\\CustomerController.cs",
+              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\Case Study RestAPI 1\\Controllers\\CustomerController.cs",
+              "RelativeToolTip": "..\\Case Study RestAPI 1\\Controllers\\CustomerController.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAA3wC4AAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-09T10:13:40.204Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "OrderItem.cs",
+              "DocumentMoniker": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Models\\OrderItem.cs",
+              "RelativeDocumentMoniker": "Models\\OrderItem.cs",
+              "ToolTip": "C:\\Users\\AnirudhaBhat\\Desktop\\Case_study\\CaseStudy\\Case Study WorkPlace\\DBLibrary\\Models\\OrderItem.cs",
+              "RelativeToolTip": "Models\\OrderItem.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T12:07:04.296Z"
             }
           ]
         },

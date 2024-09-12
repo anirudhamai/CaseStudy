@@ -19,7 +19,6 @@ namespace DBLibrary.Repo
         {
             return _context.Addresses
             .Include(a => a.Shipments)
-            .Include(a => a.User)
             .ToList(); 
         }
 
@@ -27,14 +26,14 @@ namespace DBLibrary.Repo
         {
             return _context.Addresses
             .Include(a => a.Shipments)
-            .Include(a => a.User)
             .Where(a => a.UserId == id)
             .ToList();
         }
-        public void AddAddress(Address a)
+        public Address AddAddress(Address a)
         {
             _context.Addresses.Add(a);
             _context.SaveChanges();
+            return a;
         }
         public void DeleteAddress(int id)
         {

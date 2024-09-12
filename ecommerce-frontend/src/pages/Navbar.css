@@ -1,19 +1,25 @@
 .search-bar {
-  position: relative; /* Parent must be relative for child absolute positioning */
-  width: 400px; /* Adjust width of the search bar */
+  position: relative;
+  /* Parent must be relative for child absolute positioning */
+  width: 400px;
+  /* Adjust width of the search bar */
 }
 
 .suggestions-dropdown {
-  position: absolute; /* Dropdown will be positioned relative to the search bar */
-  top: 100%; /* Ensure the dropdown appears directly below the search bar */
+  position: absolute;
+  /* Dropdown will be positioned relative to the search bar */
+  top: 100%;
+  /* Ensure the dropdown appears directly below the search bar */
   left: 0;
   background-color: white;
   border: 1px solid #ddd;
-  width: 100%; /* Match the width of the search bar */
+  width: 100%;
+  /* Match the width of the search bar */
   max-height: 200px;
   overflow-y: auto;
   z-index: 1000;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a slight shadow for better visibility */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  /* Optional: Adds a slight shadow for better visibility */
 }
 
 .suggestions-dropdown li {
@@ -52,10 +58,14 @@
 }
 
 .logo img {
-  width: 80px; /* Adjust the size as needed */
-  height: 80px; /* Must be equal to width to maintain the circle shape */
-  border-radius: 50%; /* Makes the image circular */
-  object-fit: cover; /* Ensures the image covers the circle without distortion */
+  width: 80px;
+  /* Adjust the size as needed */
+  height: 80px;
+  /* Must be equal to width to maintain the circle shape */
+  border-radius: 50%;
+  /* Makes the image circular */
+  object-fit: cover;
+  /* Ensures the image covers the circle without distortion */
 }
 
 
@@ -231,7 +241,8 @@
     margin: 10px 0;
   }
 
-  .login-container, .cart-icon {
+  .login-container,
+  .cart-icon {
     margin-top: 10px;
   }
 }

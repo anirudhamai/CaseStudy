@@ -16,6 +16,7 @@ import WishlistPage from './pages/WishlistPage';
 import AddressPage from './pages/AddressPage';
 import Navbar from './pages/Navbar';
 import ChatBot from './pages/ChatBot';
+import OrderDetailsPage from './pages/OrderDetails';
 
 
 
@@ -48,14 +49,14 @@ function AppRoutes() {
                 </div>
               }
             />
-            <Route
+            {/* <Route
               path="/payment-page"
               element={
                 <div><Navbar />
                   <PaymentPage />
                 </div>
               }
-            />
+            /> */}
             <Route
               path="/cart"
               element={
@@ -84,6 +85,14 @@ function AppRoutes() {
             />
 
             <Route path="/chatbot" element={<div><Navbar /><ChatBot /></div>} />
+            <Route
+              path="/orderdetail"
+              element={
+                <div><Navbar />
+                  <OrderDetailsPage />
+                </div>
+              }
+            />
 
           </Routes>
         </Router>

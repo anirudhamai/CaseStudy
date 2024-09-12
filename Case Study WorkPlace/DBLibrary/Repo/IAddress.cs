@@ -11,7 +11,7 @@ namespace DBLibrary.Repo
     {
         public IEnumerable<Address> GetAddress();
         public IEnumerable<Address> GetAddressById(int id);
-        public void AddAddress(Address c);
+        public Address AddAddress(Address c);
         public void UpdateAddress(int id, Address c);
         public void DeleteAddress(int id);
     }

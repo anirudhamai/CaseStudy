@@ -10,10 +10,13 @@ import axios from 'axios';
 function OrdersPage() {
   const [orders, setOrders] = useState([]);
   const { userId } = useContext(UserContext);
+  const [loading, setLoading] = useState(true);
+
   const navigate = useNavigate();
 
   useEffect(() => {
     const getOrders = async () => {
+      setLoading(true);
       const token = localStorage.getItem('token');
       if (!token) {
         navigate('/login');
@@ -53,6 +56,7 @@ function OrdersPage() {
   useEffect(() => {
     if (orders.length != 0) {
       // console.log(orders);
+      setLoading(false);
     }
     else {
       console.log("empty order");
@@ -74,52 +78,56 @@ function OrdersPage() {
     <div className="background">
       <div className="order-page">
         <h2 className="page-title">Order History</h2>
-
-        <table className="orders-table">
-          <thead>
-            <tr>
-              <th>Order ID</th>
-              <th>Products</th>
-              <th>Quantity</th>
-              <th>Total Price</th>
-              <th>Payment Method</th>
-              <th>Status</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {orders.map(order => (
-              <tr key={order.$id}>
-                <td>{order.orderId}
-                  {order.orderDate}
-                </td>
-                <td>
-                  {/* {console.log(order.orderItems.$values)} */}
-                  {order.orderItems.$values.map(orderItem => (
-                    <div key={orderItem.$id} className="product-info">
-                      {orderItem.product.name} ({orderItem.quantity})
-                    </div>
-                  ))}
-                </td>
-                <td>
-                  {order.orderItems.$values.reduce((total, product) => total + product.quantity, 0)}
-                </td>
-                <td>₹{order.totalAmount.toFixed(2)}</td>
-                <td>{"Cash on delivery"/*order.paymentType*/}</td>
-                <td>
-                  <span className={`status ${order.status.toLowerCase()}`}>
-                    {order.status}
-                  </span>
-                </td>
-                <td>
-                  <Link to={`/orders/${order.id}`} className="details-link">
-                    View Details
-                  </Link>
-                </td>
+        {loading ? (
+          <div className="loading-screen">Loading...</div>
+        ) : (
+          <table className="orders-table">
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Products</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+                <th>Payment Method</th>
+                <th>Status</th>
+                <th>Actions</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {console.log(orders)}
+              {orders.map(order => (
+                <tr key={order.$id}>
+                  <td>{order.orderId}
+                    {order.orderDate}
+                  </td>
+                  <td>
+                    {/* {console.log(order.orderItems.$values)} */}
+                    {order.orderItems.$values.map(orderItem => (
+                      <div key={orderItem.$id} className="product-info">
+                        {orderItem.product.name} ({orderItem.quantity})
+                      </div>
+                    ))}
+                  </td>
+                  <td>
+                    {order.orderItems.$values.reduce((total, product) => total + product.quantity, 0)}
+                  </td>
+                  <td>₹{order.totalAmount.toFixed(2)}</td>
+                  <td>{order.payments.$values[0].paymentMethod}</td>
+                  <td>
+                    <span className={`status ${order.status.toLowerCase()}`}>
+                      {order.status}
+                    </span>
+                  </td>
+                  <td>
+                    <Link to={`/orders/${order.id}`} className="details-link">
+                      View Details
+                    </Link>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
       </div>
     </div>
   );

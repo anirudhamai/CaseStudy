@@ -34,9 +34,10 @@ namespace Case_Study_RestAPI_1.Controllers
 
         // POST api/<AddressController>
         [HttpPost]
-        public void Post([FromBody] Address value)
+        public Address Post([FromBody] Address value)
         {
-            _int1.AddAddress(value);
+            return _int1.AddAddress(value);
+
         }
 
         // PUT api/<AddressController>/5

@@ -2,8 +2,10 @@
 import React, { useState, useContext } from 'react';
 import { CartContext } from '../context/CartContext';
 import { UserContext } from '../context/UserContext';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './PaymentPage.css';  // Importing the CSS
+import axios from 'axios';
+
 
 function PaymentPage() {
   const { cartItems, clearCart, addOrder, getTotalAmount } = useContext(CartContext);
@@ -12,43 +14,67 @@ function PaymentPage() {
   const [cardDetails, setCardDetails] = useState({ cardHolder: '', cvv: '', cardNumber: '' });
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+  const token = localStorage.getItem('token');
+
+
+  const orderDTO = location.state.orderDTO;
+  const amount = location.state.totalamount;
+
 
   const handlePayment = () => {
     setLoading(true);
     if (paymentMethod === 'cod') {
-      createOrder('Cash on Delivery');
-    } else if (paymentMethod === 'upi') {
+      orderDTO.PaymentMethod = "Cash on Delivery";
+      createOrder();
+    }
+    else if (paymentMethod === 'upi') {
       if (upiId) {
-        createOrder('UPI Payment');
+        orderDTO.PaymentMethod = "UPI Payment";
+        createOrder();
       } else {
         alert('Please enter your UPI ID.');
         setLoading(false);
       }
-    } else if (paymentMethod === 'card') {
+    }
+    else if (paymentMethod === 'card') {
       if (cardDetails.cardHolder && cardDetails.cvv && cardDetails.cardNumber) {
-        createOrder('Card Payment');
+        orderDTO.PaymentMethod = "Card Payment";
+        createOrder();
       } else {
         alert('Please fill in all card details.');
         setLoading(false);
       }
-    } else {
+    }
+    else {
       alert('Please select a payment method.');
       setLoading(false);
     }
   };
 
-  const createOrder = (paymentType) => {
-    const orderDetails = {
-      id: new Date().getTime(), // Generate a unique order ID
-      products: cartItems.map(item => ({ name: item.name, quantity: item.quantity, price: item.price })),
-      totalPrice: getTotalAmount(),
-      paymentType,
-      status: 'Processing',
-    };
-
-    addOrder(orderDetails);
-    clearCart();
-    navigate('/order-page');
+  const createOrder = async () => {
+    try {
+      const url2 = `http://localhost:5120/api/Order`;
+      await axios.post(url2, orderDTO, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        }
+      });
+      clearCart();
+      navigate('/myorders');
+    }
+    catch (error) {
+      if (error.response.status === 401) {
+        alert("Your token expired or you are not authorized for this page");
+        localStorage.removeItem('token');
+        navigate('/login');
+      }
+      else {
+        alert("error. please retry logging in");
+        navigate('/login');
+      }
+    }
   };
 
   return (
@@ -57,6 +83,7 @@ function PaymentPage() {
         <h2>Select Payment Method</h2>
         <div className="payment-methods">
           <div className="payment-option">
+            <p>{amount}</p>
             <input
               type="radio"
               id="cod"

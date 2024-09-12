@@ -17,8 +17,12 @@ function Navbar() {
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredSuggestions, setFilteredSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
+  const [products, setProducts] = useState([]);
+  const [searchSuggestions, setSearchSuggetions] = useState([]);
+
   const navigate = useNavigate();
   const location = useLocation();
+  const token = localStorage.getItem('token');
 
 
   useEffect(() => {
@@ -51,6 +55,38 @@ function Navbar() {
         console.error('Error fetching products', error);
       }
     };
+
+    const fetchProducts = async () => {
+      try {
+        if (!token) {
+          navigate('/login');
+        }
+        const url = 'http://localhost:5120/api/Product';
+
+        const response = await axios.get(url, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        });
+        setProducts(response.data.$values);
+      }
+      catch (error) {
+        if (error.code == "ERR_NETWORK") {
+          alert(error.message);
+          localStorage.removeItem('token');
+          navigate('/login');
+          console.log(error.message);
+        }
+        if (error.response.status === 401) {
+          alert("Your token expired or you are not authorized for this page");
+          localStorage.removeItem('token');
+          navigate('/login');
+        }
+        console.error('Error fetching products', error);
+      }
+    };
+
+    fetchProducts();
     fetchCategory();
   }, []);
 
@@ -67,7 +103,7 @@ function Navbar() {
     const selectedCategory = CategoryData.find(category => category.$id === selectedCategoryId);
     setSearchCategory(selectedCategory);
     if (selectedCategory) {
-      navigate(`/category/electronics`, { state: { categoryId: selectedCategory.categoryId, categoryName: selectedCategory.categoryName } });
+      navigate(`/category/electronics`, { state: { selectedProductId: null, categoryId: selectedCategory.categoryId, categoryName: selectedCategory.categoryName } });
     }
   };
 
@@ -75,32 +111,17 @@ function Navbar() {
     navigate('/user');
   };
 
+  useEffect(() => {
+    setSearchSuggetions(products.map(product => product.name));
+  }, [products]);
+
   // Search suggestions list
-  const searchSuggestions = [
-    'Best mobiles under 50,000',
-    'Best phones under 10,000',
-    'Best phones under 12,000',
-    'Best phones under 15,000',
-    'Best phones under 20,000',
-    'Best phones under 25,000',
-    'Best phones under 30,000',
-    'Best TV under 50,000',
-    'Best laptops under 50,000',
-    'Best cameras under 50,000',
-    'Best refrigerators under 50,000',
-    'Best washing machines under 50,000',
-    'Best air conditioners under 50,000',
-    'Good review fans',
-    'Best headphones under 5,000',
-    'Best earphones under 5,000',
-    'Best earbuds under 5,000'
-  ];
+
 
   const handleSearchChange = (event) => {
     const searchValue = event.target.value;
     setSearchTerm(searchValue);
 
-    // Filter suggestions based on the search term
     const filtered = searchSuggestions.filter((suggestion) =>
       suggestion.toLowerCase().includes(searchValue.toLowerCase())
     );
@@ -109,9 +130,11 @@ function Navbar() {
   };
 
   const handleSuggestionClick = (suggestion) => {
+    const product = products.find(item => item.name == suggestion);
     setSearchTerm(suggestion); // Set search bar value to the clicked suggestion
     setFilteredSuggestions([]); // Clear suggestions after selection
-    setShowSuggestions(false); // Hide suggestions dropdown
+    // setShowSuggestions(false);
+    navigate('category/electronics', { state: { selectedProductId: product.productId, categoryId: product.categoryId, categoryName: product.category.categoryName } }) // Hide suggestions dropdown
   };
 
   const handleSearchBarBlur = () => {
@@ -122,6 +145,10 @@ function Navbar() {
     if (location.pathname != '/') {
       navigate('/')
     }
+  }
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
   }
 
   return (
@@ -175,7 +202,7 @@ function Navbar() {
         onMouseEnter={toggleLoginDropdown}
         onMouseLeave={handleMouseLeave}
       >
-        <Link to="/login" className="login-button">Login</Link>
+        <Link to="/login" className="login-button" onClick={handleLogout}>Logout</Link>
         {showLoginDropdown && (
           <div className="login-dropdown">
             <Link to="/register">New Customer? Sign-up</Link>

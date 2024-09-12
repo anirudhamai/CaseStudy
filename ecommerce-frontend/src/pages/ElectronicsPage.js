@@ -2,7 +2,7 @@
 
 
 import React, { useState, useEffect, useContext } from 'react';
-import { FaStar, FaCartPlus, FaShoppingBag, FaHeart } from 'react-icons/fa';
+import { FaStar, FaCartPlus, FaShoppingBag, FaHeart, FaShareAlt } from 'react-icons/fa';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
 import { UserContext } from '../context/UserContext';
@@ -10,11 +10,12 @@ import mac from "../assets/images/macbook.jpg";
 import iphone from "../assets/images/iphone.png";
 import axios from 'axios';
 import './ElectronicsPage.css';  // Import the CSS file
+import ShareButton from './share.js';
 
 function ElectronicsPage() {
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState('');
-  // const [selectedProductId, setselectedProductId] = useState('');
+  const [selectedProductId, setselectedProductId] = useState(null);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [ratings, setRatings] = useState({});
   const [newReview, setNewReview] = useState('');
@@ -22,13 +23,14 @@ function ElectronicsPage() {
   const location = useLocation();
   const { userId, cartId, wishlistId } = useContext(UserContext);
   const { wishlistItems, addItemToCart, addToWishlist, addItemToWishlist } = useContext(CartContext);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const fetchCategoryProducts = async () => {
       const { categoryId } = location.state;
-      // setselectedProductId(location.state.selectedProductId);
+      setselectedProductId(location.state.selectedProductId);
       setCategory(location.state.categoryName);
-      // console.log(location.state.categoryName);
+      // console.log(location.state.selectedProductId);
       try {
         const token = localStorage.getItem('token');
         if (!token) {
@@ -61,12 +63,13 @@ function ElectronicsPage() {
   }, [location.state]);
 
 
-  // useEffect(() => {
-  //   if (selectedProductId != undefined) {
-  //     const pr = products.find(p => p.productId === selectedProductId);
-  //     handleProductClick(pr);
-  //   }
-  // }, selectedProductId)
+  useEffect(() => {
+    if (selectedProductId != undefined) {
+      const pr = products.find(p => p.productId === selectedProductId);
+      console.log(pr);
+      handleProductClick(pr);
+    }
+  }, selectedProductId)
 
 
   const handleProductClick = (product) => {
@@ -188,6 +191,9 @@ function ElectronicsPage() {
     navigate('/cart');
   };
 
+  const handleShare = () => {
+    return (<ShareButton />);
+  }
 
   const handleReviewChange = (e) => {
     setNewReview(e.target.value);
@@ -201,6 +207,14 @@ function ElectronicsPage() {
     if (reviews.$values.length === 0) return 0;
     const total = reviews.$values.reduce((sum, review) => sum + review.rating, 0);
     return (total / reviews.$values.length).toFixed(1);
+  };
+
+  const handleOpenShareModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseShareModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -225,6 +239,16 @@ function ElectronicsPage() {
                   <FaShoppingBag className="icon" /> Buy Now
                 </button>
               </div>
+              <FaShareAlt
+                className="share-icon"
+                onClick={handleOpenShareModal}
+              />
+              {isModalOpen && (
+                <ShareButton
+                  productUrl={location.pathname}
+                  closeModal={handleCloseShareModal} // Pass the close modal handler as a prop
+                />
+              )}
               <FaHeart
                 className={`wishlist-icon ${wishlistItems.some(wishlistItem => wishlistItem.productId === selectedProduct.productId) ? 'added' : ''}`}
                 onClick={() => handleAddToWishlist(selectedProduct)}

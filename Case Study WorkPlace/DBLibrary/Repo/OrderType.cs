@@ -47,6 +47,7 @@ namespace DBLibrary.Repo
                 TotalAmount = w.Amount  // Assuming this is the total amount
             };
             _context.Orders.Add(order);
+            _context.SaveChanges();
 
             var payment = new Payment
             {

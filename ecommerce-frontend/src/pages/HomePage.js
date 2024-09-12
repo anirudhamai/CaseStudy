@@ -104,6 +104,18 @@ function HomePage() {
     navigate('/wishlist');
   };
 
+  const handleBuyNow = (p) => {
+    const cartItem = {
+      quantity: 1,
+      product: {
+        productId: p.productId,
+        name: p.name,
+        price: p.price
+      }
+    }
+    const orderProducts = [cartItem];
+    navigate('/orderdetail', { state: { selectedProducts: orderProducts, amount: p.price } });
+  }
 
 
   return (
@@ -120,8 +132,8 @@ function HomePage() {
               <div key={product.productId} className="product-card">
                 <div className="product-info">
                   <h3>{product.name}</h3>
-                  <p className="price">{product.price}</p>
-                  <button className="buy-now">Buy Now</button>
+                  <p className="price">₹{product.price}</p>
+                  <button className="buy-now" onClick={() => handleBuyNow(product)}>Buy Now</button>
                   <div className="product-actions">
                     <button className="wish-list" onClick={() => handleAddToWishlist(product)}>Add to Wish List</button>
                     <button className="add-to-cart" onClick={() => handleAddToCart(product)}>Add to Cart</button>
@@ -141,7 +153,7 @@ function HomePage() {
                 <div className="product-info">
                   <h3>{product.name}</h3>
                   <p className="price">{product.price}</p>
-                  <button className="buy-now">Buy Now</button>
+                  <button className="buy-now" onClick={() => handleBuyNow(product)}>Buy Now</button>
                   <div className="product-actions">
                     <button className="wish-list" onClick={() => handleAddToWishlist(product)}>Add to Wish List</button>
                     <button className="add-to-cart" onClick={() => handleAddToCart(product)} >Add to Cart</button>
@@ -161,7 +173,7 @@ function HomePage() {
                 <div className="product-info">
                   <h3>{product.name}</h3>
                   <p className="price">{product.price}</p>
-                  <button className="buy-now">Buy Now</button>
+                  <button className="buy-now" onClick={() => handleBuyNow(product)}>Buy Now</button>
                   <div className="product-actions">
                     <button className="wish-list" onClick={() => handleAddToWishlist(product)}>Add to Wish List</button>
                     <button className="add-to-cart" onClick={() => handleAddToCart(product)}>Add to Cart</button>

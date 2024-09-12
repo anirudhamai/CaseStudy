@@ -169,7 +169,7 @@ function WishlistPage() {
                       <button className="wishlist-item-remove" onClick={() => handleRemoveFromWishlist(wlitem.product.productId)}>
                         Remove from Wishlist
                       </button>
-                      <button className="wishlist-item-view" onClick={() => navigate(`/category/electronics`, { state: { categoryId: wlitem.product.categoryId, categoryName: wlitem.product.category.categoryName } })}>
+                      <button className="wishlist-item-view" onClick={() => navigate(`/category/electronics`, { state: { selectedProductId: wlitem.product.productId, categoryId: wlitem.product.categoryId, categoryName: wlitem.product.category.categoryName } })}>
                         View Details
                       </button>
                     </div>
