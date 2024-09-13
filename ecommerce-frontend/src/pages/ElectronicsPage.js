@@ -233,10 +233,10 @@ function ElectronicsPage() {
               />
               <div className="product-actions">
                 <button className="action-button cart-button" onClick={() => handleAddToCart(selectedProduct)}>
-                  <FaCartPlus className="icon" /> Add to Cart
+                  <h3><FaCartPlus className="icon" /> Add to Cart </h3>
                 </button>
                 <button className="action-button buy-button" onClick={() => alert('Buy Now clicked')}>
-                  <FaShoppingBag className="icon" /> Buy Now
+                  <h3><FaShoppingBag className="icon" /> Buy Now</h3>
                 </button>
               </div>
               <FaShareAlt
@@ -255,21 +255,23 @@ function ElectronicsPage() {
               />
             </div>
             <div className="product-info">
-              <h3>{selectedProduct.name}</h3>
+              <h1>{selectedProduct.name}</h1>
               <p className="price">₹{selectedProduct.price}</p>
               <p className="discount">Discount: {selectedProduct.discounts.$values.map((discount) => (<span key={discount.discountId}>{discount.discountPercentage}% off</span>))}</p>
-              <div className="rating-stars-style">
-                {[...Array(5)].map((_, index) => (
-                  <FaStar
-                    key={index}
-                    color={index + 1 <= Math.round(calculateAverageRating(selectedProduct.reviews)) ? "#ffc107" : "#e4e5e9"}
-                    size={20}
-                  />
-                ))}
-                <span className="rating-number">({calculateAverageRating(selectedProduct.reviews)}/5)</span>
+              <div className="rating-stars-container">
+                <div className="rating-stars-style">
+                  {[...Array(5)].map((_, index) => (
+                    <FaStar
+                      key={index}
+                      color={index + 1 <= Math.round(calculateAverageRating(selectedProduct.reviews)) ? "#ffc107" : "#e4e5e9"}
+                      size={20}
+                    />
+                  ))}
+                  <span className="rating-number">({calculateAverageRating(selectedProduct.reviews)}/5)</span>
+                </div>
               </div>
               <div className="reviews-section">
-                <h4>Reviews:</h4>
+                <h2>Reviews:</h2>
                 {selectedProduct.reviews.$values.length === 0 ? (
                   <p>No reviews yet.</p>
                 ) : (

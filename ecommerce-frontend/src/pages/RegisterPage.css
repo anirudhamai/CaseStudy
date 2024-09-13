@@ -172,3 +172,18 @@
     padding: 10px;
   }
 }
+
+.signupSection {
+  margin-top: 20px;
+}
+
+.signupLink {
+  color: #4169E1;
+  /* Royal blue for Sign Up */
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.signupLink:hover {
+  text-decoration: underline;
+}

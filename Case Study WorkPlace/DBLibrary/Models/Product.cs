@@ -12,6 +12,7 @@ public partial class Product
     public int CategoryId { get; set; }
 
     public decimal Price { get; set; }
+    public byte[]? Image { get; set; }
 
     public virtual ICollection<CartItem>? CartItems { get; set; } = new List<CartItem>();
 
