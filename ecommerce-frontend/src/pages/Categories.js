@@ -230,7 +230,6 @@ const Categories = () => {
             <div className="subcategory-dropdown">
               {category.subcategories.map((subcat, idx) => (
                 <Link
-                  to={`/category/electronics`}
                   key={idx}
                   className="subcategory-item"
                 >

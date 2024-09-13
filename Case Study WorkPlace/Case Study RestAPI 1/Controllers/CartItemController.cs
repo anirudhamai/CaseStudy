@@ -74,5 +74,12 @@ namespace Case_Study_RestAPI_1.Controllers
         {
             _int1.DeleteCartItem(id);
         }
+
+        [Route("multi/{id}")]
+        [HttpDelete]
+        public void DeleteMulti(int id)
+        {
+            _int1.DeleteMultiCartItem(id);
+        }
     }
 }

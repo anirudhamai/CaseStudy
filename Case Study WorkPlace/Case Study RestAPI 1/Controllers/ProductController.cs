@@ -38,11 +38,12 @@ namespace Case_Study_RestAPI_1.Controllers
         }
 
         // GET api/<ProductController>/5
+        [AllowAnonymous]
         [HttpGet("{id}")]
         public Product Get(int id)
         {
             return _int1.GetProductById(id);
-        }
+        }  
 
         // POST api/<ProductController>
         [HttpPost]
@@ -58,6 +59,11 @@ namespace Case_Study_RestAPI_1.Controllers
             _int1.UpdateProduct(id, value);
         }
 
+        [HttpPut]
+        public void PutImages(int id, string url)
+        {
+            _int1.AddImage(id, url);
+        }
         // DELETE api/<ProductController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)

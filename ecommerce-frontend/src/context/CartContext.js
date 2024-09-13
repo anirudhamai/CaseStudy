@@ -124,8 +124,21 @@ export const CartProvider = ({ children }) => {
   //   setOrders(prevOrders => [...prevOrders, orderDetails]);
   // };
 
-  const clearCart = () => {
+  const clearCart = async () => {
     setCartItems([]);
+
+    try {
+      const url1 = `http://localhost:5120/api/CartItem/multi/${cartId}`;
+      await axios.delete(url1, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+    }
+    catch (error) {
+      console.error('Error updating cart items:', error);
+    }
+
   };
 
   //-----------------------------------------------------------------------------------------------------------------------------------

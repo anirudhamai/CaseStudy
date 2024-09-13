@@ -40,8 +40,11 @@ namespace Case_Study_RestAPI_1.Controllers
             Cart newCart = _int1.GetCartByUserId(value);
             if (newCart == null)
             {
-                newCart.UserId = value;
-                var addedCart = _int1.AddCart(newCart);
+                var nc = new Cart
+                {
+                    UserId = value
+                };
+                var addedCart = _int1.AddCart(nc);
                 return addedCart.CartId;
             }
             else

@@ -31,11 +31,18 @@ function AppRoutes() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/" element={<div> <Navbar /><HomePage /> </div>} />
-            <Route path="/address" element={<div><Navbar /><AddressPage /></div>} />
+            <Route
+              path="/address"
+              element={
+                <div>
+                  <Navbar />
+                  <AddressPage />
+                </div>} />
             <Route
               path="/category/electronics"
               element={
-                <div><Navbar />
+                <div>
+                  <Navbar />
                   <ElectronicsPage />
                 </div>
               }
@@ -44,7 +51,8 @@ function AppRoutes() {
             <Route
               path="/myorders"
               element={
-                <div><Navbar />
+                <div>
+                  <Navbar />
                   <OrdersPage />
                 </div>
               }
@@ -60,7 +68,8 @@ function AppRoutes() {
             <Route
               path="/cart"
               element={
-                <div><Navbar />
+                <div>
+                  <Navbar />
                   <CartPage />
                 </div>
               }
@@ -69,7 +78,8 @@ function AppRoutes() {
             <Route
               path="/user"
               element={
-                <div><Navbar />
+                <div>
+                  <Navbar />
                   <UserPage />
                 </div>
               }
@@ -78,17 +88,25 @@ function AppRoutes() {
             <Route
               path="/wishlist"
               element={
-                <div><Navbar />
+                <div>
+                  <Navbar />
                   <WishlistPage />
                 </div>
               }
             />
 
-            <Route path="/chatbot" element={<div><Navbar /><ChatBot /></div>} />
+            <Route
+              path="/chatbot"
+              element={
+                <div>
+                  <Navbar />
+                  <ChatBot />
+                </div>} />
             <Route
               path="/orderdetail"
               element={
-                <div><Navbar />
+                <div>
+                  <Navbar />
                   <OrderDetailsPage />
                 </div>
               }

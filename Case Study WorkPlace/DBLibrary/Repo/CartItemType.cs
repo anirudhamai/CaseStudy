@@ -47,6 +47,18 @@ namespace DBLibrary.Repo
             _context.CartItems.Remove(c);
             _context.SaveChanges();
         }
+
+        public void DeleteMultiCartItem(int id)
+        {
+            IEnumerable<CartItem> c = _context.CartItems.Where( c => c.CartId == id).ToList();
+            foreach (CartItem item in c)
+            {
+                _context.CartItems.Remove(item);
+                _context.SaveChanges();
+            }
+            
+        }
+
         public void UpdateCartItem(CartItem c)
         {
             _context.CartItems.Update(c);

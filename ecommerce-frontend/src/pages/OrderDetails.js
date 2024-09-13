@@ -57,10 +57,11 @@ const OrderDetailsPage = () => {
                     }
                 });
 
+                console.log(addr);
                 setSelectedAddress(newAddress);
                 setAddresses(prevAddresses => [
                     ...prevAddresses,
-                    addr
+                    addr.data
                 ]);
                 alert('Address added succesfully');
             } catch (error) {
@@ -96,6 +97,12 @@ const OrderDetailsPage = () => {
         }
         fetchAddress();
     }, [userId]);
+
+    useEffect(() => {
+        if (addresses.length != 0) {
+            console.log(addresses.length);
+        }
+    }, addresses);
 
 
     // Fetch orderItems

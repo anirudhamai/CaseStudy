@@ -69,5 +69,11 @@ namespace DBLibrary.Repo
             _context.Products.Update(w);
             _context.SaveChanges();
         }
+
+        public void AddImage(int id, string url)
+        {
+            var sql = "UPDATE Product SET Image = (SELECT BulkColumn FROM OPENROWSET(BULK "+ url + "SINGLE_BLOB) AS ImageFile WHERE ProductId = "+ id ;
+            var rowsAffected = _context.Database.ExecuteSqlRaw(sql);
+        }
     }
 }

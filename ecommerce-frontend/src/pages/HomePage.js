@@ -131,6 +131,9 @@ function HomePage() {
             {productData.map(product => (
               <div key={product.productId} className="product-card">
                 <div className="product-info">
+                  <div className="product-image-container">
+                    <img src={`data:image/png;base64,${product.image}`}/*{mac}*/ alt={product.name} className="product-image-style" />
+                  </div>
                   <h3>{product.name}</h3>
                   <p className="price">₹{product.price}</p>
                   <button className="buy-now" onClick={() => handleBuyNow(product)}>Buy Now</button>

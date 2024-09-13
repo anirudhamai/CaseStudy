@@ -226,7 +226,7 @@ function ElectronicsPage() {
           <div className="product-detail-container">
             <div className="product-image-container">
               <img
-                src={mac}
+                src={`data:image/png;base64,${selectedProduct.image}`}
                 //  src=  {selectedProduct.image}
                 alt={selectedProduct.name}
                 className="product-image-large"
@@ -335,7 +335,7 @@ function ElectronicsPage() {
               <div className="grid-style">
                 {products.map((product) => (
                   <div key={product.$id} className="product-card-style" onClick={() => handleProductClick(product)}>
-                    <img src={mac}/*{product.image}*/ alt={product.name} className="product-image-style" />
+                    <img src={`data:image/png;base64,${product.image}`}/*{mac}*/ alt={product.name} className="product-image-style" />
                     <h3>{product.name}</h3>
                     <p className="price">₹{product.price}</p>
                     <p className="discount"> {product.discounts.$values.map((discount) => (<span key={discount.discountId}>{discount.discountPercentage}% off</span>))}</p>

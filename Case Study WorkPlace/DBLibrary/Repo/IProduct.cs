@@ -14,6 +14,7 @@ namespace DBLibrary.Repo
         public IEnumerable<Product> GetProductByCategory(int catId);
         public void AddProduct(Product c);
         public void UpdateProduct(int id, Product c);
+        public void AddImage(int id, string url);
         public void DeleteProduct(int id);
     }
 }

@@ -18,7 +18,6 @@ namespace DBLibrary.Repo
         public IEnumerable<Order> GetOrder()
         {
             return _context.Orders
-                .Include(o => o.User)
                 .Include(o => o.Payments)
                 .Include(o => o.Shipments)
                 .Include(o => o.OrderItems)
@@ -57,6 +56,7 @@ namespace DBLibrary.Repo
             };
 
             _context.Payments.Add(payment);
+            _context.SaveChanges();
 
             var shipment = new Shipment
             {
