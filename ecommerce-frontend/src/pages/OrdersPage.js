@@ -30,9 +30,7 @@ function OrdersPage() {
             Authorization: `Bearer ${token}`
           }
         });
-        // console.log(response.data.$values);
         setOrders(response.data.$values);
-        // console.log(orders);
       }
       catch (error) {
         if (error.status === 401) {
@@ -55,11 +53,10 @@ function OrdersPage() {
 
   useEffect(() => {
     if (orders.length != 0) {
-      // console.log(orders);
       setLoading(false);
     }
     else {
-      console.log("empty order");
+      // console.log("empty order");
     }
   }, [orders]);
 
@@ -86,25 +83,23 @@ function OrdersPage() {
               <tr>
                 <th>Order ID</th>
                 <th>Products</th>
-                <th>Quantity</th>
+                <th>Total Quantity</th>
                 <th>Total Price</th>
                 <th>Payment Method</th>
                 <th>Status</th>
-                <th>Actions</th>
+                <th>View PDF</th>
               </tr>
             </thead>
             <tbody>
-              {console.log(orders)}
               {orders.map(order => (
                 <tr key={order.$id}>
                   <td>{order.orderId}
                     {order.orderDate}
                   </td>
                   <td>
-                    {/* {console.log(order.orderItems.$values)} */}
                     {order.orderItems.$values.map(orderItem => (
                       <div key={orderItem.$id} className="product-info">
-                        {orderItem.product.name} ({orderItem.quantity})
+                        {orderItem.name} ({orderItem.quantity})
                       </div>
                     ))}
                   </td>

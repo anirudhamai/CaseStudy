@@ -15,15 +15,26 @@ namespace DBLibrary.Repo
         {
             _context = context;
         }
-        public IEnumerable<Product> GetProduct()
+        public IEnumerable<ProductDTO> GetProduct()
         {
             return _context.Products
-                .Include(p => p.Inventory)
-                .Include(p => p.Discounts)
-                .Include(p => p.CartItems)
-                .Include(p => p.WishlistItems)
-                .Include(p => p.OrderItems)
-                .Include(p => p.Reviews)
+                .Select( p => new ProductDTO
+                {
+                    ProductId = p.ProductId,
+                    Name = p.Name,
+                    CategoryId = p.CategoryId,
+                    Category = p.Category,
+                    CategoryName = p.Category.CategoryName,
+                    Price = p.Price,
+                    Image = p.Image,
+                    CartItems = p.CartItems,
+                    Discounts = p.Discounts,
+                    Inventory = p.Inventory,
+                    WishlistItems = p.WishlistItems,
+                    Reviews = p.Reviews,
+                    OrderItems = p.OrderItems
+
+                })
                 .ToList();
         }
         public IEnumerable<Product> GetProductByCategory(int catId)
@@ -34,7 +45,6 @@ namespace DBLibrary.Repo
                 .Include(p => p.Discounts)
                 .Include(p => p.CartItems)
                 .Include(p => p.WishlistItems)
-                .Include(p => p.OrderItems)
                 .Include(p => p.Reviews)
                 .Where(p => p.CategoryId == catId)
                 .ToList();
@@ -50,7 +60,6 @@ namespace DBLibrary.Repo
                 .Include(p => p.Discounts)
                 .Include(p => p.CartItems)
                 .Include(p => p.WishlistItems)
-                .Include(p => p.OrderItems)
                 .Include(p => p.Reviews)
                 .ToList()
                 .Find(p => p.ProductId==id);

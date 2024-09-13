@@ -24,6 +24,7 @@ function ElectronicsPage() {
   const { userId, cartId, wishlistId } = useContext(UserContext);
   const { wishlistItems, addItemToCart, addToWishlist, addItemToWishlist } = useContext(CartContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [pr, setPr] = useState(null);
 
   useEffect(() => {
     const fetchCategoryProducts = async () => {
@@ -59,17 +60,26 @@ function ElectronicsPage() {
         console.error('Error fetching products', error);
       }
     };
+
     fetchCategoryProducts();
   }, [location.state]);
 
 
   useEffect(() => {
     if (selectedProductId != undefined) {
-      const pr = products.find(p => p.productId === selectedProductId);
+      console.log(selectedProductId);
+      const prod = products.find(p => p.productId === selectedProductId);
+      console.log(products.find(p => p.productId === selectedProductId));
+      setPr(prod);
+    }
+  }, selectedProductId)
+
+  useEffect(() => {
+    if (pr != null) {
       console.log(pr);
       handleProductClick(pr);
     }
-  }, selectedProductId)
+  }, [pr]);
 
 
   const handleProductClick = (product) => {
@@ -172,6 +182,19 @@ function ElectronicsPage() {
     setRatings({ ...ratings, [productId]: 0 });
   };
 
+  const handleBuyNow = (p) => {
+    const cartItem = {
+      quantity: 1,
+      product: {
+        productId: p.productId,
+        name: p.name,
+        price: p.price
+      }
+    }
+    const orderProducts = [cartItem];
+    navigate('/orderdetail', { state: { selectedProducts: orderProducts, amount: p.price } });
+  }
+
   const handleAddToCart = async (product) => {
     var resp = await addItemToCart(product);
     if (resp == 0) {
@@ -235,7 +258,7 @@ function ElectronicsPage() {
                 <button className="action-button cart-button" onClick={() => handleAddToCart(selectedProduct)}>
                   <h3><FaCartPlus className="icon" /> Add to Cart </h3>
                 </button>
-                <button className="action-button buy-button" onClick={() => alert('Buy Now clicked')}>
+                <button className="action-button buy-button" onClick={() => handleBuyNow(selectedProduct)}>
                   <h3><FaShoppingBag className="icon" /> Buy Now</h3>
                 </button>
               </div>

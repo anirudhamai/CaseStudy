@@ -120,13 +120,13 @@ function CartPage() {
 
   const handleBuyNow = () => {
     const amt = getTotalAmount();
-    navigate('/orderdetail', { state: { selectedProducts: cartItems, amount: amt } });
+    navigate('/orderdetail', { state: { fromcart: 1, selectedProducts: cartItems, amount: amt } });
   }
 
   const handleBuyNowSelected = () => {
     const amt = calculateSelectedTotal();
     const selprods = cartItems.filter(item => selectedItems[item.cartItemId]);
-    navigate('/orderdetail', { state: { selectedProducts: selprods, amount: amt } });
+    navigate('/orderdetail', { state: { fromcart: 3, selectedProducts: selprods, amount: amt } });
   }
 
   return (

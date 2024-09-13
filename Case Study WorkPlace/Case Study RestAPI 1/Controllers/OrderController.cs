@@ -29,7 +29,7 @@ namespace Case_Study_RestAPI_1.Controllers
 
         // GET api/<OrderController>/5
         [HttpGet("{id}")]
-        public IEnumerable<Order> Get(int id)
+        public IEnumerable<OrderDTO> Get(int id)
         {
             return _int1.GetOrderByUserId(id);
         }

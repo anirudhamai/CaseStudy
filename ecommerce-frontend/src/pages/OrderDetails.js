@@ -10,12 +10,18 @@ import { CartContext } from '../context/CartContext';
 
 const OrderDetailsPage = () => {
     const { userId, setUserId } = useContext(UserContext);
-    const { clearCart } = useContext(CartContext);
+    const { clearCart, clearSelected } = useContext(CartContext);
     const [products, setProducts] = useState([]);
     const [amount, setAmount] = useState(0);
     const navigate = useNavigate();
     const location = useLocation();
+    const [fromcart, setFromCart] = useState(0);
     const token = localStorage.getItem('token');
+
+    useState(() => {
+        console.log(location.state.fromcart);
+        setFromCart(location.state.fromcart);
+    }, [location.state]);
 
     //handling address selection and adding
 
@@ -98,11 +104,6 @@ const OrderDetailsPage = () => {
         fetchAddress();
     }, [userId]);
 
-    useEffect(() => {
-        if (addresses.length != 0) {
-            console.log(addresses.length);
-        }
-    }, addresses);
 
 
     // Fetch orderItems
@@ -207,7 +208,12 @@ const OrderDetailsPage = () => {
                         'Content-Type': 'application/json'
                     }
                 });
-                clearCart();
+                if (fromcart == 1) {
+                    clearCart();
+                }
+                else if (fromcart == 3) {
+                    clearSelected(products);
+                }
                 navigate('/myorders');
             }
             catch (error) {

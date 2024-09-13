@@ -1,31 +1,27 @@
 .search-bar {
   position: relative;
-  /* Parent must be relative for child absolute positioning */
+  display: flex;
+  align-items: center;
   width: 400px;
-  /* Adjust width of the search bar */
 }
 
 .suggestions-dropdown {
   position: absolute;
-  /* Dropdown will be positioned relative to the search bar */
-  top: 100%;
-  /* Ensure the dropdown appears directly below the search bar */
+  top: 63%;
   left: 0;
   background-color: white;
   border: 1px solid #ddd;
   width: 100%;
-  /* Match the width of the search bar */
   max-height: 200px;
   overflow-y: auto;
   z-index: 1000;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  /* Optional: Adds a slight shadow for better visibility */
 }
 
 .suggestions-dropdown li {
   padding: 8px;
   cursor: pointer;
-  list-style: none;
+  /* list-style: none; */
 }
 
 .suggestions-dropdown li:hover {

@@ -25,7 +25,7 @@ namespace Case_Study_RestAPI_1.Controllers
         }
         // GET: api/<ProductController>
         [HttpGet]
-        public IEnumerable<Product> Get()
+        public IEnumerable<ProductDTO> Get()
         {
             return _int1.GetProduct();
         }

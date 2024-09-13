@@ -433,6 +433,13 @@
   background: white;
 }
 
+.product-card-style img {
+  width: 100%;
+  height: 60%;
+  display: block;
+  object-fit: cover;
+}
+
 .product-card-style:hover {
   transform: scale(1.03);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
@@ -440,7 +447,7 @@
 
 .product-image-style {
   width: 100%;
-  height: 200px;
+  height: 100%;
   object-fit: cover;
   border-bottom: 1px solid #ddd;
 }

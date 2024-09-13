@@ -105,8 +105,10 @@ function HomePage() {
   };
 
   const handleBuyNow = (p) => {
+    // const productCI = p.cartItems.$values.find(i => i.cartId == cartId);
     const cartItem = {
       quantity: 1,
+      // cartItemId: productCI.cartItemId,
       product: {
         productId: p.productId,
         name: p.name,
@@ -114,9 +116,14 @@ function HomePage() {
       }
     }
     const orderProducts = [cartItem];
-    navigate('/orderdetail', { state: { selectedProducts: orderProducts, amount: p.price } });
+    navigate('/orderdetail', { state: { fromcart: 0, selectedProducts: orderProducts, amount: p.price } });
   }
 
+
+
+  const navigateToProduct = (product) => {
+    navigate('category/electronics', { state: { selectedProductId: product.productId, categoryId: product.categoryId, categoryName: product.categoryName } });
+  }
 
   return (
     <div>
@@ -131,7 +138,7 @@ function HomePage() {
             {productData.map(product => (
               <div key={product.productId} className="product-card">
                 <div className="product-info">
-                  <img src={`data:image/png;base64,${product.image}`}/*{mac}*/ alt={product.name} className="product-image-style" />
+                  <img src={`data:image/png;base64,${product.image}`} alt={product.name} className="product-image-style" onClick={() => navigateToProduct(product)} />
                   <h3>{product.name}</h3>
                   <p className="price">₹{product.price}</p>
                   <button className="buy-now" onClick={() => handleBuyNow(product)}>Buy Now</button>

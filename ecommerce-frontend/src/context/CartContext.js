@@ -21,7 +21,7 @@ export const CartProvider = ({ children }) => {
   const addItemToCart = async (product) => {
     try {
       const token = localStorage.getItem('token');
-      console.log(token);
+      // console.log(token);
       // console.log("response", product.productId );
       const url1 = `http://localhost:5120/api/CartItem`;
       const cartItem = {
@@ -58,11 +58,11 @@ export const CartProvider = ({ children }) => {
     setCartItems(product);
   };
 
-  const removeFromCart = async (productId) => {
-    setCartItems(prevItems => prevItems.filter(item => item.cartItemId !== productId));
+  const removeFromCart = async (cartItemId) => {
+    setCartItems(prevItems => prevItems.filter(item => item.cartItemId !== cartItemId));
     await new Promise(resolve => setTimeout(resolve, 0));
     try {
-      const url1 = `http://localhost:5120/api/CartItem/${productId}`;
+      const url1 = `http://localhost:5120/api/CartItem/${cartItemId}`;
       await axios.delete(url1, {
         headers: {
           Authorization: `Bearer ${token}`
@@ -120,10 +120,6 @@ export const CartProvider = ({ children }) => {
   };
 
 
-  // const addOrder = (orderDetails) => {
-  //   setOrders(prevOrders => [...prevOrders, orderDetails]);
-  // };
-
   const clearCart = async () => {
     setCartItems([]);
 
@@ -140,6 +136,15 @@ export const CartProvider = ({ children }) => {
     }
 
   };
+
+
+
+  const clearSelected = (ps) => {
+    for (const p of ps) {
+      removeFromCart(p.cartItemId);
+    }
+  };
+
 
   //-----------------------------------------------------------------------------------------------------------------------------------
   // Wishlist management:
@@ -200,7 +205,7 @@ export const CartProvider = ({ children }) => {
   };
 
   return (
-    <CartContext.Provider value={{ cartItems, addItemToCart, addToCart, removeFromCart, updateQuantity, getTotalAmount, clearCart, wishlistItems, addItemToWishlist, addToWishlist, removeFromWishlist }}>
+    <CartContext.Provider value={{ cartItems, addItemToCart, addToCart, removeFromCart, updateQuantity, getTotalAmount, clearCart, clearSelected, wishlistItems, addItemToWishlist, addToWishlist, removeFromWishlist }}>
       {children}
     </CartContext.Provider>
   );

@@ -100,7 +100,7 @@ function Navbar() {
 
   const handleCategoryChange = (event) => {
     const selectedCategoryId = event.target.value;
-    const selectedCategory = CategoryData.find(category => category.$id === selectedCategoryId);
+    const selectedCategory = CategoryData.find(category => category.categoryId == selectedCategoryId);
     setSearchCategory(selectedCategory);
     if (selectedCategory) {
       navigate(`/category/electronics`, { state: { selectedProductId: null, categoryId: selectedCategory.categoryId, categoryName: selectedCategory.categoryName } });
@@ -130,11 +130,12 @@ function Navbar() {
   };
 
   const handleSuggestionClick = (suggestion) => {
+    console.log(suggestion);
     const product = products.find(item => item.name == suggestion);
     setSearchTerm(suggestion); // Set search bar value to the clicked suggestion
     setFilteredSuggestions([]); // Clear suggestions after selection
-    // setShowSuggestions(false);
-    navigate('category/electronics', { state: { selectedProductId: product.productId, categoryId: product.categoryId, categoryName: product.category.categoryName } }) // Hide suggestions dropdown
+    setShowSuggestions(false);
+    navigate('category/electronics', { state: { selectedProductId: product.productId, categoryId: product.categoryId, categoryName: product.categoryName } });
   };
 
   const handleSearchBarBlur = () => {
@@ -163,9 +164,9 @@ function Navbar() {
           value={searchCategory}
           onChange={handleCategoryChange}
         >
-          <option value="" disabled>Select Category</option>
+          <option value={0} >Select Category</option>
           {CategoryData.map(category => (
-            <option key={category.$id} value={category.$id}>
+            <option key={category.$id} value={category.categoryId}>
               {category.categoryName}
             </option>
           ))}
@@ -182,13 +183,13 @@ function Navbar() {
           <FaSearch />
         </button>
 
-        {/* Search Suggestions Dropdown */}
         {showSuggestions && filteredSuggestions.length > 0 && (
           <ul className="suggestions-dropdown">
             {filteredSuggestions.map((suggestion, index) => (
               <li
                 key={index}
-                onClick={() => handleSuggestionClick(suggestion)}
+                role="button"
+                onClick={() => { console.log(suggestion); handleSuggestionClick(suggestion) }}
               >
                 {suggestion}
               </li>

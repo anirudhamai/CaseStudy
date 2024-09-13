@@ -9,7 +9,7 @@ namespace DBLibrary.Repo
 {
     public interface IProduct
     {
-        public IEnumerable<Product> GetProduct();
+        public IEnumerable<ProductDTO> GetProduct();
         public Product GetProductById(int id);
         public IEnumerable<Product> GetProductByCategory(int catId);
         public void AddProduct(Product c);
