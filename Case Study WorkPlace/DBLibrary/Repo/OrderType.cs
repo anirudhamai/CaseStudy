@@ -42,8 +42,8 @@ namespace DBLibrary.Repo
             var order = new Order
             {
                 UserId = w.UserId,
-                Status = "Processing",  // Default status
-                TotalAmount = w.Amount  // Assuming this is the total amount
+                Status = "Processing",
+                TotalAmount = w.Amount 
             };
             _context.Orders.Add(order);
             _context.SaveChanges();

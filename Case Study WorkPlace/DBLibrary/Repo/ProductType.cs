@@ -29,6 +29,7 @@ namespace DBLibrary.Repo
         public IEnumerable<Product> GetProductByCategory(int catId)
         {
             return _context.Products
+                .AsNoTracking()
                 .Include(p => p.Inventory)
                 .Include(p => p.Discounts)
                 .Include(p => p.CartItems)
@@ -43,6 +44,7 @@ namespace DBLibrary.Repo
         public Product GetProductById(int id)
         {
             return _context.Products
+                .AsNoTracking()
                 .Include(p => p.Category)
                 .Include(p => p.Inventory)
                 .Include(p => p.Discounts)
