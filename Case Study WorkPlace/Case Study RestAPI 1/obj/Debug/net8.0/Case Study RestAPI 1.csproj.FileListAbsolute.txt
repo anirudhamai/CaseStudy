@@ -153,3 +153,81 @@ C:\Users\KFayazUddin\OneDrive - Planview, Inc\Desktop\GroupProject\CaseStudy\Cas
 C:\Users\KFayazUddin\OneDrive - Planview, Inc\Desktop\GroupProject\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\obj\Debug\net8.0\Case Study RestAPI 1.pdb
 C:\Users\KFayazUddin\OneDrive - Planview, Inc\Desktop\GroupProject\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\obj\Debug\net8.0\Case Study RestAPI 1.genruntimeconfig.cache
 C:\Users\KFayazUddin\OneDrive - Planview, Inc\Desktop\GroupProject\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\obj\Debug\net8.0\ref\Case Study RestAPI 1.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\appsettings.Development.json
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\appsettings.json
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\Case Study RestAPI 1.exe
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\Case Study RestAPI 1.deps.json
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\Case Study RestAPI 1.runtimeconfig.json
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\Case Study RestAPI 1.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\Case Study RestAPI 1.pdb
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\Azure.Core.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\Azure.Identity.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\Microsoft.Identity.Client.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\System.Drawing.Common.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\System.Memory.Data.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\System.Runtime.Caching.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\System.Security.Permissions.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\System.Windows.Extensions.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\DBLibrary.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\bin\Debug\net8.0\DBLibrary.pdb
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\obj\Debug\net8.0\Case Study RestAPI 1.csproj.AssemblyReference.cache
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\obj\Debug\net8.0\Case Study RestAPI 1.GeneratedMSBuildEditorConfig.editorconfig
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\obj\Debug\net8.0\Case Study RestAPI 1.AssemblyInfoInputs.cache
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\obj\Debug\net8.0\Case Study RestAPI 1.AssemblyInfo.cs
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\obj\Debug\net8.0\Case Study RestAPI 1.csproj.CoreCompileInputs.cache
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\obj\Debug\net8.0\Case Study RestAPI 1.MvcApplicationPartsAssemblyInfo.cs
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\obj\Debug\net8.0\Case Study RestAPI 1.MvcApplicationPartsAssemblyInfo.cache
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\obj\Debug\net8.0\Case Study RestAPI 1.sourcelink.json
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\obj\Debug\net8.0\staticwebassets.build.json
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\obj\Debug\net8.0\staticwebassets.development.json
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\obj\Debug\net8.0\staticwebassets\msbuild.Case Study RestAPI 1.Microsoft.AspNetCore.StaticWebAssets.props
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\obj\Debug\net8.0\staticwebassets\msbuild.build.Case Study RestAPI 1.props
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Case Study RestAPI 1.props
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Case Study RestAPI 1.props
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\obj\Debug\net8.0\staticwebassets.pack.json
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\obj\Debug\net8.0\scopedcss\bundle\Case Study RestAPI 1.styles.css
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\obj\Debug\net8.0\Case Stu.45E7E934.Up2Date
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\obj\Debug\net8.0\Case Study RestAPI 1.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\obj\Debug\net8.0\refint\Case Study RestAPI 1.dll
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\obj\Debug\net8.0\Case Study RestAPI 1.pdb
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\obj\Debug\net8.0\Case Study RestAPI 1.genruntimeconfig.cache
+C:\CaseStudyNew\CaseStudy\Case Study WorkPlace\Case Study RestAPI 1\obj\Debug\net8.0\ref\Case Study RestAPI 1.dll
