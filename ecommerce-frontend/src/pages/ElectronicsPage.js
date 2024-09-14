@@ -124,14 +124,14 @@ function ElectronicsPage() {
 
 
 
-  const addReview = async (product, review, rating) => {
+  const addReview = async (productId, review, rating) => {
     try {
       const token = localStorage.getItem('token');
 
       const url2 = `http://localhost:5120/api/Review`;
       const reviewData = {
         UserId: userId,
-        ProductId: product,
+        ProductId: productId,
         Rating: rating,
         Comment: review
       }
@@ -142,7 +142,12 @@ function ElectronicsPage() {
         }
       });
 
-      // setProducts(response.data.$values);
+      const r = response.data;
+      setProducts(products.map(product =>
+        product.id == productId
+          ? { ...product, reviews: { ...product.reviews, $values: [...product.reviews.$values, r] } }
+          : product
+      ));
     }
     catch (error) {
       console.log(error);
@@ -160,6 +165,12 @@ function ElectronicsPage() {
     }
   }
 
+
+  useEffect(() => {
+    console.log(products[0]);
+  }, products);
+
+
   const handleAddReview = (productId) => {
     const review = newReview.trim();
     const rating = ratings[productId] || 0;
@@ -168,12 +179,6 @@ function ElectronicsPage() {
       alert('Please provide both a review and a rating.');
       return;
     }
-
-    setProducts(products.map(product =>
-      product.id === productId
-        ? { ...product, reviews: [...product.reviews, { id: product.reviews.length + 1, content: review, rating }] }
-        : product
-    ));
 
     addReview(productId, review, rating);
 
@@ -210,8 +215,6 @@ function ElectronicsPage() {
       navigate('/login');
     }
     alert('Added to Wishlist!');
-    //ReactSession.set("cart", resp);
-    navigate('/cart');
   };
 
   const handleShare = () => {

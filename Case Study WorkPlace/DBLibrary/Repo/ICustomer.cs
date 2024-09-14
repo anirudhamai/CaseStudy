@@ -11,7 +11,7 @@ namespace DBLibrary.Repo
     {
         public IEnumerable<Customer> GetCustomer();
         public Customer GetCustomerById(int id);
-        public void AddCustomer(Customer c);
+        public int AddCustomer(Customer c);
         public void UpdateCustomer(int id, Customer c);
         public void DeleteCustomer(int id);
     }

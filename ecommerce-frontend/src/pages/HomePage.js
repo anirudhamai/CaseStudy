@@ -152,13 +152,14 @@ function HomePage() {
           </div>
         </div>
 
-        {/* More Than 50% Off */}
+        {/* More Than 50% Off
         <div className="product-row">
           <h2>More Than 50% Off</h2>
           <div className="products">
             {productData.map(product => (
               <div key={product.id} className="product-card">
                 <div className="product-info">
+                  <img src={`data:image/png;base64,${product.image}`} alt={product.name} className="product-image-style" onClick={() => navigateToProduct(product)} />
                   <h3>{product.name}</h3>
                   <p className="price">{product.price}</p>
                   <button className="buy-now" onClick={() => handleBuyNow(product)}>Buy Now</button>
@@ -170,7 +171,7 @@ function HomePage() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Featured Products */}
         <div className="product-row">
@@ -179,6 +180,7 @@ function HomePage() {
             {productData.map(product => (
               <div key={product.id} className="product-card">
                 <div className="product-info">
+                  <img src={`data:image/png;base64,${product.image}`} alt={product.name} className="product-image-style" onClick={() => navigateToProduct(product)} />
                   <h3>{product.name}</h3>
                   <p className="price">{product.price}</p>
                   <button className="buy-now" onClick={() => handleBuyNow(product)}>Buy Now</button>

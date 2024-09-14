@@ -304,7 +304,7 @@
   /* Move the icon to the right edge of the container */
   font-size: 28px;
   cursor: pointer;
-  color: #ff6f61;
+  color: #b9b0b0;
 }
 
 
@@ -460,4 +460,9 @@
 
 .icon {
   margin-right: 8px;
+  color: #888;
+}
+
+.icon.added {
+  color: red;
 }

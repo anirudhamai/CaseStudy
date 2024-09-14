@@ -33,9 +33,9 @@ namespace Case_Study_RestAPI_1.Controllers
 
         // POST api/<ReviewController>
         [HttpPost]
-        public void Post([FromBody] Review value)
+        public Review Post([FromBody] Review value)
         {
-            _int1.AddReview(value);
+            return _int1.AddReview(value);
         }
 
         // PUT api/<ReviewController>/5

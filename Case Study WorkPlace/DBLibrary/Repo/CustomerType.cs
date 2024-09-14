@@ -37,10 +37,19 @@ namespace DBLibrary.Repo
                 .Find(c => c.UserId == id);
         }
 
-        public void AddCustomer(Customer c)
+        public int AddCustomer(Customer customer)
         {
-            _context.Customers.Add(c);
-            _context.SaveChanges();
+            var usr = _context.Customers.ToList().Find(c => c.Email == customer.Email);
+            if (usr != null)
+            {
+                return 0;
+            }
+            else
+            {
+                _context.Customers.Add(customer);
+                _context.SaveChanges();
+                return 1;
+            }
         }
 
         public void DeleteCustomer(int id)

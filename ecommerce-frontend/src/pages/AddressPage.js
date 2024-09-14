@@ -75,7 +75,7 @@ const AddressForm = ({ onAddAddress }) => {
 };
 
 // AddressList Component
-const AddressList = ({ addresses, onSetDefault }) => (
+const AddressList = ({ addresses }) => (
   <ul className="address-list">
     {addresses.map((addr, index) => (
       <li key={index}>
@@ -86,12 +86,6 @@ const AddressList = ({ addresses, onSetDefault }) => (
           <p><strong>City:</strong> {addr.city}</p>
           <p><strong>State:</strong> {addr.region}</p>
           <p><strong>Country:</strong> {addr.country}</p>
-          <button
-            className={addr.isDefault ? 'default' : ''}
-            onClick={() => onSetDefault(index)}
-          >
-            {addr.isDefault ? 'Default' : 'Set as Default'}
-          </button>
         </div>
       </li>
     ))}
@@ -122,20 +116,12 @@ const AddressPage = () => {
     setAddresses([...addresses, { ...newAddress, isDefault: defaultAddressIndex === addresses.length }]);
   };
 
-  const setDefaultAddress = (index) => {
-    const updatedAddresses = addresses.map((addr, idx) => ({
-      ...addr,
-      isDefault: idx === index
-    }));
-    setAddresses(updatedAddresses);
-    setDefaultAddressIndex(index);
-  };
 
   return (
     <div className="address-page">
       <h1>Manage Addresses</h1>
       <AddressForm onAddAddress={addAddress} />
-      <AddressList addresses={addresses} onSetDefault={setDefaultAddress} />
+      <AddressList addresses={addresses} />
     </div>
   );
 };

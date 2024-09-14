@@ -20,11 +20,13 @@ namespace Case_Study_RestAPI_1.Controllers
         private readonly ICustomer _int1;
         private readonly IAddress _int2;
         private readonly IConfiguration _config;
-        public CustomerController(ICustomer icontext, IAddress iaddr, IConfiguration config)
+        private readonly IEmailService _emailService;
+        public CustomerController(ICustomer icontext, IAddress iaddr, IConfiguration config, IEmailService emailService)
         {
             _int1 = icontext;
             _config = config;
             _int2 = iaddr;
+            _emailService = emailService;
         }
         // GET: api/<CustomerController>
         [HttpGet]
@@ -44,11 +46,16 @@ namespace Case_Study_RestAPI_1.Controllers
         // POST api/<CustomerController>
         [HttpPost]
         [AllowAnonymous]
-        public void Post([FromBody] Customer c)
+        public async Task<int> Post([FromBody] Customer c)
         {
             string hashed = c.Password;
             c.Password = hashed;
-            _int1.AddCustomer(c);
+            int res = _int1.AddCustomer(c);
+            if (res == 1)
+            {
+                await SendEmail(c.Email);
+            }
+            return res;
         }
 
         // PUT api/<CustomerController>/5
@@ -99,6 +106,13 @@ namespace Case_Study_RestAPI_1.Controllers
                     return Unauthorized("Invalid username/password!!!");
                 }
             }
+        }
+
+        private async Task SendEmail(string email)
+        {
+            string subject = "You Registered on SHOPEASE!!";
+            string body = $"Dear User,<br/><br/>You have successfully registered.<br/> Welcome to Our family. <br/> Happy Shopease!!<br/><br/>Best regards,<br/>to SHOPEASE";
+            await _emailService.SendEmailAsync(email, subject, body);
         }
     }
 

@@ -11,7 +11,7 @@ namespace DBLibrary.Repo
     {
         public IEnumerable<Review> GetReview();
         public Review GetReviewById(int id);
-        public void AddReview(Review c);
+        public Review AddReview(Review c);
         public void UpdateReview(int id, Review c);
         public void DeleteReview(int id);
     }

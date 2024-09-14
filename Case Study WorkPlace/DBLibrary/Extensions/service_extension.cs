@@ -33,6 +33,7 @@ namespace DBLibrary.Extensions
             services.AddScoped<IShipment, ShipmentType>();
             services.AddScoped<IWishlist, WishlistType>();
             services.AddScoped<IWishlistItem, WishlistItemType>();
+            services.AddScoped<IEmailService, EmailService>();
             return services;
         }
     }

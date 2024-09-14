@@ -15,10 +15,14 @@ namespace Case_Study_RestAPI_1.Controllers
     {
         private readonly IOrder _int1;
         private readonly IOrderItem _int2;
-        public OrderController(IOrder icontext, IOrderItem int2)
+        private readonly IEmailService _emailService;
+        private readonly ICustomer _int3;
+        public OrderController(IOrder icontext, IOrderItem int2, IEmailService emailService, ICustomer customer)
         {
             _int1 = icontext;
             _int2 = int2;
+            _emailService = emailService;
+            _int3 = customer;
         }
         // GET: api/<OrderController>
         [HttpGet]
@@ -34,9 +38,16 @@ namespace Case_Study_RestAPI_1.Controllers
             return _int1.GetOrderByUserId(id);
         }
 
+        //[HttpGet]
+        //[Route("ordermail/{id}")]
+        //public Order GetById(int id)
+        //{
+        //    return _int1.GetOrderById(id);
+        //}
+
         // POST api/<OrderController>
         [HttpPost]
-        public void Post([FromBody] OrderRequestDTO value)
+        public async void Post([FromBody] OrderRequestDTO value)
         {
             var order =_int1.AddOrder(value);
             foreach (OrderItem item in value.OrderItemlist)
@@ -44,6 +55,8 @@ namespace Case_Study_RestAPI_1.Controllers
                 item.OrderId = order;
                 _int2.AddOrderItem(item);
             }
+            var mail = _int1.GetOrderById(order);
+            await SendEmail(mail.User.Email);
 
         }
 
@@ -59,6 +72,13 @@ namespace Case_Study_RestAPI_1.Controllers
         public void Delete(int id)
         {
             _int1.DeleteOrder(id);
+        }
+
+        private async Task SendEmail(string email)
+        {
+            string subject = "Order Placed!!";
+            string body = $"Dear User,<br/><br/>You have successfully placed order on Shopease.<br/> Find the order details below!!<br/>. Happy Shopease!!<br/><br/>Best regards,<br/>to SHOPEASE";
+            await _emailService.SendEmailAsync(email, subject, body);
         }
     }
 }

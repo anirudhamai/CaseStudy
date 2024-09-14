@@ -29,10 +29,11 @@ namespace DBLibrary.Repo
                 .ToList()
                 .Find(r => r.ReviewId == id );
         }
-        public void AddReview(Review w)
+        public Review AddReview(Review w)
         {
             _context.Reviews.Add(w);
             _context.SaveChanges();
+            return w;
         }
         public void DeleteReview(int id)
         {

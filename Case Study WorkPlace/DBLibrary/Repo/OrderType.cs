@@ -50,7 +50,7 @@ namespace DBLibrary.Repo
         }
         public Order GetOrderById(int id)
         {
-            return _context.Orders.Find(id);
+            return _context.Orders.Include(p=> p.User).ToList().Find(p => p.OrderId == id);
         }
         public int AddOrder(OrderRequestDTO w)
         {

@@ -26,12 +26,30 @@ namespace DBLibrary.Repo
                 .ToList();
         }
 
-        public IEnumerable<WishlistItem> GetWishlistItemById(int id)
+        public IEnumerable<WishlistItemDTO> GetWishlistItemById(int id)
         {
             return _context.WishlistItems
-                .Include(w => w.Product)
-                .ThenInclude(w => w.Category)
-                .Include(w => w.Product.Reviews)
+                .Select(w => new WishlistItemDTO
+                {
+                    WishlistItemId = w.WishlistItemId,
+                    WishlistId = w.WishlistId,
+                    ProductId = w.ProductId,
+                    Product = new WLProductDTO
+                    {
+                        ProductId = w.ProductId,
+                        Name = w.Product.Name,
+                        CategoryId = w.Product.CategoryId,
+                        Price = w.Product.Price,
+                        Image = w.Product.Image,
+                        Reviews = w.Product.Reviews,
+                        Category = new CategoryDTO
+                        {
+                            CategoryId = w.Product.CategoryId,
+                            CategoryName = w.Product.Category.CategoryName
+                        }
+                        
+                    }
+                })
                 .Where(c => c.WishlistId == id)
                 .ToList();
         }
@@ -39,10 +57,6 @@ namespace DBLibrary.Repo
         public WishlistItem GetWishlistItemByCompositeId(int pid, int wid)
         {
             return _context.WishlistItems
-                .Include(w => w.Product)
-                .ThenInclude(w => w.Category)
-                .Include(w => w.Product.Reviews)
-                .Where(c => c.WishlistId == wid)
                 .ToList()
                 .Find(c => c.ProductId == pid);
         }

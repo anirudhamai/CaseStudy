@@ -51,7 +51,14 @@ function RegisterPage() {
         Email: email,
         Password: password
       });
-      navigate('/login');
+      if (response.data == 0) {
+        alert("Email already exists. Please use different email id");
+        return;
+      }
+      else {
+        alert("registered succesfully!!");
+        navigate('/login');
+      }
     } catch (error) {
       setError('Failed to send OTP. Please try again.');
     } finally {

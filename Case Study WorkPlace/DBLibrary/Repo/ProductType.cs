@@ -33,7 +33,6 @@ namespace DBLibrary.Repo
                     WishlistItems = p.WishlistItems,
                     Reviews = p.Reviews,
                     OrderItems = p.OrderItems
-
                 })
                 .ToList();
         }

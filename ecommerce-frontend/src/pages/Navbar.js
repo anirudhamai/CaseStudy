@@ -187,11 +187,12 @@ function Navbar() {
           <ul className="suggestions-dropdown">
             {filteredSuggestions.map((suggestion, index) => (
               <li
-                key={index}
-                role="button"
-                onClick={() => { console.log(suggestion); handleSuggestionClick(suggestion) }}
-              >
-                {suggestion}
+                key={index}>
+                <div
+                  role='button'
+                  onClick={() => console.log(suggestion)}>
+                  {suggestion}
+                </div>
               </li>
             ))}
           </ul>

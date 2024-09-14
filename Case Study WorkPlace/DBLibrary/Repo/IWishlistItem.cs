@@ -10,7 +10,7 @@ namespace DBLibrary.Repo
     public interface IWishlistItem
     {
         public IEnumerable<WishlistItem> GetWishlistItem();
-        public IEnumerable<WishlistItem> GetWishlistItemById(int id);
+        public IEnumerable<WishlistItemDTO> GetWishlistItemById(int id);
         public WishlistItem GetWishlistItemByCompositeId(int pid, int wid);
         public void AddWishlistItem(WishlistItem c);
         public void UpdateWishlistItem(int id, WishlistItem c);

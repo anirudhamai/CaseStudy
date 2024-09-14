@@ -26,7 +26,7 @@ namespace Case_Study_RestAPI_1.Controllers
 
         // GET api/<WishlistItemController>/5
         [HttpGet("{id}")]
-        public IEnumerable<WishlistItem> Get(int id)
+        public IEnumerable<WishlistItemDTO> Get(int id)
         {
             return _int1.GetWishlistItemById(id);
         }

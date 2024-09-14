@@ -16,5 +16,6 @@ namespace DBLibrary.Models
         public string PaymentMethod { get; set; }
         public decimal Amount { get; set; }
         public IEnumerable<OrderItem> OrderItemlist { get; set; }
+
     }
 }

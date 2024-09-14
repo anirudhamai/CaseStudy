@@ -147,7 +147,7 @@ function WishlistPage() {
             {/* {console.log(wishlistItems)} */}
             {wishlistItems.map((wlitem) => (
               <div key={wlitem.$id} className="wishlist-item">
-                <img src={mac}/*{wlitem.product.image}*/ alt={wlitem.product.name} className="wishlist-item-image" />
+                <img src={`data:image/png;base64,${wlitem.product.image}`} alt={wlitem.product.name} className="wishlist-item-image" />
                 <div className="wishlist-item-details">
                   <h3 className="wishlist-item-name">{wlitem.product.name}</h3>
                   {/* <p className="wishlist-item-description">{product.description}</p> */}
@@ -166,10 +166,10 @@ function WishlistPage() {
                       Add to Cart
                     </button>
                     <div className="wishlist-item-actions-bottom">
-                      <button className="wishlist-item-remove" onClick={() => handleRemoveFromWishlist(wlitem.product.productId)}>
+                      <button className="wishlist-item-remove" onClick={() => handleRemoveFromWishlist(wlitem.productId)}>
                         Remove from Wishlist
                       </button>
-                      <button className="wishlist-item-view" onClick={() => navigate(`/category/electronics`, { state: { selectedProductId: wlitem.product.productId, categoryId: wlitem.product.categoryId, categoryName: wlitem.product.category.categoryName } })}>
+                      <button className="wishlist-item-view" onClick={() => navigate(`/category/electronics`, { state: { selectedProductId: wlitem.productId, categoryId: wlitem.product.categoryId, categoryName: wlitem.product.category.categoryName } })}>
                         View Details
                       </button>
                     </div>

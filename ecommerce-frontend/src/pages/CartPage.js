@@ -112,7 +112,7 @@ function CartPage() {
 
   const calculateSelectedTotal = () => {
     return cartItems.reduce((total, item) =>
-      selectedItems[item.cartItemId] ? total + item.product.price * item.quantity : total,
+      selectedItems[item.cartItemId] ? Math.floor((total + item.product.price * item.quantity) * 100) / 100 : total,
       0
     );
   };
