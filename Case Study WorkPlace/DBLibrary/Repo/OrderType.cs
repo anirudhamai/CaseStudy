@@ -91,9 +91,19 @@ namespace DBLibrary.Repo
             _context.Orders.Remove(ca);
             _context.SaveChanges();
         }
-        public void UpdateOrder(int id, Order w)
+        public void CancelOrder(int id)
         {
+            var w = _context.Orders.ToList().Find(o => o.OrderId == id);
+            w.Status = "Cancelled";
             _context.Orders.Update(w);
+            _context.SaveChanges();
+            _context.Shipments.ToList().Find(x => x.OrderId == w.OrderId).Status = w.Status;
+            _context.SaveChanges();
+        }
+
+        public void addBill(Order o)
+        {
+            _context.Orders.Update(o);
             _context.SaveChanges();
         }
     }

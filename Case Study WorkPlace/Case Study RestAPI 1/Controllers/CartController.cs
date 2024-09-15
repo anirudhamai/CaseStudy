@@ -44,8 +44,9 @@ namespace Case_Study_RestAPI_1.Controllers
                 {
                     UserId = value
                 };
-                var addedCart = _int1.AddCart(nc);
-                return addedCart.CartId;
+                _int1.AddCart(nc);
+                return nc.CartId;
+                //return 0;
             }
             else
             {

@@ -8,8 +8,8 @@ import './LoginPage.css'; // Import the updated CSS file
 
 const LoginPage = () => {
   const { userId, setUserId, setCartId, setWishlistId } = useContext(UserContext);
-  const [email, setEmail] = useState('ani@gmail.com');
-  const [password, setPassword] = useState('pass26');
+  const [email, setEmail] = useState('mr.gpr10@gmail.com');
+  const [password, setPassword] = useState('guru');
   const [showForgotPassword, setShowForgotPassword] = useState(false);
   const [forgotEmail, setForgotEmail] = useState('');
   const [otp, setOtp] = useState('');
@@ -28,7 +28,7 @@ const LoginPage = () => {
     setError('');
     try {
       // Implement authentication logic here
-      const response = await axios.post('http://localhost:5120/api/Customer/authenticate/', {
+      const response = await axios.post('http://localhost:5001/gateway/login', {
         email: email, Password: password
       });
       const token = response.data.token;

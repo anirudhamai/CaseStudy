@@ -25,7 +25,7 @@ function CartPage() {
 
           setLoading(true);
 
-          const url2 = `http://localhost:5120/api/Cart/${userId}`;
+          const url2 = `http://localhost:5001/gateway/cart/${userId}`;
           const response = await axios.post(url2, {
             headers: {
               Authorization: `Bearer${token}`
@@ -61,7 +61,7 @@ function CartPage() {
       }
       setLoading(false);
       try {
-        const url = `http://localhost:5120/api/CartItem/${cartId}`;
+        const url = `http://localhost:5001/gateway/cartItem/${cartId}`;
 
         const response = await axios.get(url, {
           headers: {

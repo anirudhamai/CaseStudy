@@ -19,7 +19,6 @@ const OrderDetailsPage = () => {
     const token = localStorage.getItem('token');
 
     useState(() => {
-        console.log(location.state.fromcart);
         setFromCart(location.state.fromcart);
     }, [location.state]);
 
@@ -39,6 +38,13 @@ const OrderDetailsPage = () => {
         Country: ''
     });
 
+    useEffect(() => {
+        if (location.state) {
+            setProducts(location.state.selectedProducts || []);
+            setAmount(location.state.amount || 0);
+        }
+    }, [location.state]);
+
     const handleAddressChange = (event) => {
         const addressId = event.target.value;
         // const selected = addresses.find(addr => addr.addressId === addressId);
@@ -56,7 +62,7 @@ const OrderDetailsPage = () => {
         } else {
             setShowAddressForm(false);
             try {
-                const addr = await axios.post(`http://localhost:5120/api/Address/`, newAddress, {
+                const addr = await axios.post(`http://localhost:5001/gateway/addAddress/`, newAddress, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                         'Content-Type': 'application/json'
@@ -92,7 +98,7 @@ const OrderDetailsPage = () => {
 
     useEffect(() => {
         const fetchAddress = async () => {
-            const response = await axios.get(`http://localhost:5120/api/Address/${userId}`, {
+            const response = await axios.get(`http://localhost:5001/gateway/address/${userId}`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     'Content-Type': 'application/json'
@@ -108,12 +114,7 @@ const OrderDetailsPage = () => {
 
     // Fetch orderItems
 
-    useEffect(() => {
-        if (location.state) {
-            setProducts(location.state.selectedProducts || []);
-            setAmount(location.state.amount || 0);
-        }
-    }, [location.state]);
+
 
     const finalPrice = amount;
 
@@ -201,7 +202,7 @@ const OrderDetailsPage = () => {
 
         if (flag) {
             try {
-                const url2 = `http://localhost:5120/api/Order`;
+                const url2 = `http://localhost:5001/gateway/order`;
                 await axios.post(url2, orderDTO, {
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -242,7 +243,7 @@ const OrderDetailsPage = () => {
                         {products.map((item) => (
                             <div key={item.$id} className={styles.productItem}>
                                 <div className={styles.productDetails}>
-                                    <img src={mac} /*{product.image}*/ alt={item.product.name} className={styles.productImage} />
+                                    <img src={`data:image/png;base64,${item.product.image}`} alt={item.product.name} className={styles.productImage} />
                                     <div className={styles.productInfo}>
                                         <h3>{item.product.name}</h3>
                                         <p className={styles.productPrice}>Price: ₹{item.product.price}</p>

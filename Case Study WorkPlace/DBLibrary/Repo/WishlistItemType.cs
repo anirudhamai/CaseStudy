@@ -58,7 +58,7 @@ namespace DBLibrary.Repo
         {
             return _context.WishlistItems
                 .ToList()
-                .Find(c => c.ProductId == pid);
+                .Find(c => c.ProductId == pid && c.WishlistId == wid);
         }
 
         public void AddWishlistItem(WishlistItem w)

@@ -1,0 +1,316 @@
+{
+  "Routes": [
+
+    { // address (address page)
+      "DownstreamPathTemplate": "/api/Address/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5120 // Ensure this is the correct port
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/addAddress/",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    { // address (address page)
+      "DownstreamPathTemplate": "/api/Address/{userId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5120 // Ensure this is the correct port
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/address/{userId}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+
+
+
+    //cart
+
+    { // cart userid(home page)
+      "DownstreamPathTemplate": "/api/Cart/{userId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5120 // Ensure this is the correct port
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/cart/{userId}",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+
+    {
+      //cart
+      "DownstreamPathTemplate": "/api/Cart",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5120 // Ensure this is correct
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/cart",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+
+    },
+
+
+    // catitem
+
+    {
+      "DownstreamPathTemplate": "/api/CartItem/{cartId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5120 // Ensure this is the correct port
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/cartItem/{cartId}",
+      "UpstreamHttpMethod": [ "GET", "POST" ]
+    },
+
+    {
+      //cart
+      "DownstreamPathTemplate": "/api/CartItem",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5120 // Ensure this is correct
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/CartItem",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+
+    },
+
+    {
+      //cart
+      "DownstreamPathTemplate": "/api/CartItem/{cartItemId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5120 // Ensure this is correct
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/CartItem/{cartItemId}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+
+    },
+
+    {
+      //cart
+      "DownstreamPathTemplate": "/api/CartItem/multi/{cartId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5120 // Ensure this is correct
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/emptycart/{cartId}",
+      "UpstreamHttpMethod": [ "DELETE" ]
+
+    },
+
+
+
+
+    { // products ( homepage)
+      "DownstreamPathTemplate": "/api/Product",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5120 // Ensure this is the correct port
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/product",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+
+    { // produc/getBycat/${categoryId} (electronicspage.js)
+      "DownstreamPathTemplate": "/api/Product/getBycat/{categoryId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5120 // Ensure this is the correct port
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/Product/getBycat/{categoryId}",
+      "UpstreamHttpMethod": [ "GET", "POST" ]
+    },
+
+
+
+    { // review (elwctronic page)
+      "DownstreamPathTemplate": "/api/Review",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5120 // Ensure this is the correct port
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/review",
+      "UpstreamHttpMethod": [ "GET", "POST" ]
+    },
+
+
+    { // wishlist /${userId} (home page) (wishlistpage)
+      "DownstreamPathTemplate": "/api/Wishlist/{userId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5120 // Ensure this is the correct port
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/wishlist/{userId}",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+
+
+
+    { // category (navbar.js)
+      "DownstreamPathTemplate": "/api/Category",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5120 // Ensure this is the correct port
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/category",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+
+
+    //order
+
+    { // order(order detail)
+      "DownstreamPathTemplate": "/api/Order",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5120 // Ensure this is the correct port
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/order",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET" ]
+    },
+    { // order/$userId} (orderpage.j)
+      "DownstreamPathTemplate": "/api/Order/{userId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5120 // Ensure this is the correct port
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/order/{userId}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+
+
+
+    //customer
+
+    { // customer (registerpage.js)
+      "DownstreamPathTemplate": "/api/Customer/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5120 // Ensure this is the correct port
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/customer",
+      "UpstreamHttpMethod": [ "GET", "POST" ]
+    },
+    { // customer /${userId} (user page)
+      "DownstreamPathTemplate": "/api/Customer/{userId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5120 // Ensure this is the correct port
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/customer/{userId}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Customer/authenticate/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5120 // Ensure this is the correct port
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/login",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+
+
+
+    //WishlistItem
+
+
+    { // WishlistItem
+      "DownstreamPathTemplate": "/api/WishlistItem",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5120 // Ensure this is the correct port
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/WishlistItem",
+      "UpstreamHttpMethod": [ "GET", "POST" ]
+    },
+
+    { // WishlistItem
+      "DownstreamPathTemplate": "/api/WishlistItem/{productId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5120 // Ensure this is the correct port
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/WishlistItem/{productId}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE" ]
+    },
+
+    { // WishlistItem/${wishlistId} (electronicspage.js) (wishlistpage)
+      "DownstreamPathTemplate": "/api/WishlistItem/{wishlistId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5120 // Ensure this is the correct port
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/WishlistItem/{wishlistId}",
+      "UpstreamHttpMethod": [ "GET", "POST" ]
+    }
+
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:5001"
+  }
+}
+
+
+

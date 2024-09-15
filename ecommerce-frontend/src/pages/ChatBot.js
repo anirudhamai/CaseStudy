@@ -1,19 +1,29 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect, useRef, useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import ChatHeader from './ChatHeader';
 import './ChatBot.css';
+import { CartContext } from '../context/CartContext';
+import { UserContext } from '../context/UserContext';
+import axios from 'axios';
+
 
 const ChatBot = () => {
     const [messages, setMessages] = useState([
         { text: "Hi! I'm ShopEase. How can I assist you today?", sender: "bot" },
         { text: "Can I know your name?", sender: "bot" }
     ]);
+    const navigate = useNavigate();
+    const { userId } = useContext(UserContext);
+    const { cartItems, wishlistItems } = useContext(CartContext);
+    const [orders, setOrders] = useState([]);
     const [input, setInput] = useState('');
     const [isNameAsked, setIsNameAsked] = useState(true);
     const [showAddressForm, setShowAddressForm] = useState(false);
     const [showRegisterForm, setShowRegisterForm] = useState(false);
     const [showProfileForm, setShowProfileForm] = useState(false);
     const [showOrders, setShowOrders] = useState(false);
+    const [showWl, setShowWl] = useState(false);
+    const [showCart, setShowCart] = useState(false);
     const [addressData, setAddressData] = useState({
         addressLine1: '',
         addressLine2: '',
@@ -31,10 +41,43 @@ const ChatBot = () => {
     });
 
     // Sample orders data
-    const sampleOrders = [
-        { orderId: '12345', date: '2024-09-01', total: '₹1500' },
-        { orderId: '67890', date: '2024-08-15', total: '₹2000' }
-    ];
+    useEffect(() => {
+        const getOrders = async () => {
+
+            const token = localStorage.getItem('token');
+            if (!token) {
+                navigate('/login');
+            }
+            // console.log(userId);
+            try {
+                const url = `http://localhost:5001/gateway/order/${userId}`;
+
+                const response = await axios.get(url, {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
+                setOrders(response.data.$values);
+            }
+            catch (error) {
+                if (error.status === 401) {
+                    alert("Your token expired or you are not authorized for this page");
+                    localStorage.removeItem('token');
+                    navigate('/login');
+                }
+                else if (error.code == "ERR_NETWORK") {
+                    alert(error.message);
+                    localStorage.removeItem('token');
+                    navigate('/login');
+                    console.log(error.message);
+                }
+                console.error('Error fetching products', error);
+            }
+        }
+        getOrders();
+    });
+
+
 
     const chatEndRef = useRef(null);
 
@@ -68,9 +111,8 @@ const ChatBot = () => {
                                 <button className="option-button" onClick={handleAddressClick}>Update Address</button>
                                 <button className="option-button" onClick={handleRegisterClick}>Register</button>
                                 <button className="option-button" onClick={handleOrdersClick}>My Orders</button>
-                                <Link to="/wishlist"><button className="option-button">My Wishlist</button></Link>
-                                <Link to="/cart"><button className="option-button">My Cart</button></Link>
-                                <Link to="/myorders"><button className="option-button">My Orders</button></Link>
+                                <button className="option-button" onClick={handleWlClick}>My Wishlist</button>
+                                <button className="option-button" onClick={handleCartClick}>My Cart</button>
                             </div>
                         ),
                         sender: "bot"
@@ -93,6 +135,8 @@ const ChatBot = () => {
         setShowAddressForm(false);
         setShowRegisterForm(false);
         setShowOrders(false);
+        setShowCart(false);
+        setShowWl(false);
         setMessages(prevMessages => [
             ...prevMessages,
             { text: "Please fill out your profile details:", sender: "bot" }
@@ -104,6 +148,8 @@ const ChatBot = () => {
         setShowAddressForm(true);
         setShowRegisterForm(false);
         setShowOrders(false);
+        setShowCart(false);
+        setShowWl(false);
         setMessages(prevMessages => [
             ...prevMessages,
             { text: "Please fill out your address details:", sender: "bot" }
@@ -115,6 +161,8 @@ const ChatBot = () => {
         setShowAddressForm(false);
         setShowRegisterForm(true);
         setShowOrders(false);
+        setShowCart(false);
+        setShowWl(false);
         setMessages(prevMessages => [
             ...prevMessages,
             { text: "Please fill out the registration form:", sender: "bot" }
@@ -126,15 +174,54 @@ const ChatBot = () => {
         setShowAddressForm(false);
         setShowRegisterForm(false);
         setShowOrders(true);
+        setShowCart(false);
+        setShowWl(false);
         setMessages(prevMessages => [
             ...prevMessages,
             { text: "Here are your previous orders:", sender: "bot" },
-            ...sampleOrders.map(order => ({
-                text: `Order ID: ${order.orderId}, Date: ${order.date}, Total: ${order.total}`,
+            ...orders.map(order => ({
+                text: `ID: ${order.orderId}${order.orderDate}, Status: ${order.status}, Total: ${order.totalAmount}`,
                 sender: "bot"
             }))
         ]);
     };
+
+    const handleWlClick = () => {
+        setShowProfileForm(false);
+        setShowAddressForm(false);
+        setShowRegisterForm(false);
+        setShowOrders(false);
+        setShowCart(false);
+        setShowWl(true);
+        setMessages(prevMessages => [
+            ...prevMessages,
+            { text: "Here are your wishlist items:", sender: "bot" },
+            ...wishlistItems.map(order => ({
+                text: `Item: ${order.product.name}, Price: ${order.product.price}`,
+                sender: "bot"
+            }))
+        ]);
+    };
+
+
+    const handleCartClick = () => {
+        setShowProfileForm(false);
+        setShowAddressForm(false);
+        setShowRegisterForm(false);
+        setShowOrders(false);
+        setShowCart(true);
+        setShowWl(false);
+        setMessages(prevMessages => [
+            ...prevMessages,
+            { text: "Here are your Cart Items:", sender: "bot" },
+            ...cartItems.map(order => ({
+                text: `Product name: ${order.product.name}, Price: ${order.product.price}, Quantity: ${order.quantity}`,
+                sender: "bot"
+            }))
+        ]);
+    };
+
+
 
     const handleAddressFormSubmit = (e) => {
         e.preventDefault();
@@ -298,18 +385,6 @@ const ChatBot = () => {
                     </div>
                 )}
 
-                {/* Orders */}
-                {showOrders && (
-                    <div className="orders-container">
-                        {sampleOrders.map((order, index) => (
-                            <div key={index} className="order-details">
-                                <p>Order ID: {order.orderId}</p>
-                                <p>Date: {order.date}</p>
-                                <p>Total: {order.total}</p>
-                            </div>
-                        ))}
-                    </div>
-                )}
 
                 <div ref={chatEndRef} />
             </div>

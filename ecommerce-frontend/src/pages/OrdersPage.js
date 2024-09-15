@@ -11,6 +11,8 @@ function OrdersPage() {
   const [orders, setOrders] = useState([]);
   const { userId } = useContext(UserContext);
   const [loading, setLoading] = useState(true);
+  const [disabledOrders, setDisabledOrders] = useState(new Set());
+  const token = localStorage.getItem('token');
 
   const navigate = useNavigate();
 
@@ -23,7 +25,7 @@ function OrdersPage() {
       }
       // console.log(userId);
       try {
-        const url = `http://localhost:5120/api/Order/${userId}`;
+        const url = `http://localhost:5001/gateway/order/${userId}`;
 
         const response = await axios.get(url, {
           headers: {
@@ -61,6 +63,59 @@ function OrdersPage() {
   }, [orders]);
 
 
+  const handleCancel = async (order) => {
+    if (order.status != "Cancelled" && order.status != "Delivered" && order.status != "Completed") {
+      const isConfirmed = window.confirm("Are you sure you want to cancel this order?");
+      if (isConfirmed) {
+        try {
+          console.log(order.status);
+          const url = `http://localhost:5001/gateway/order`;
+
+          const response = await axios.put(url, order.orderId, {
+            headers: {
+              Authorization: `Bearer ${token}`,
+              'Content-Type': 'application/json'
+            }
+          });
+          if (response.status == 200) {
+            setOrders(prev => prev.map(p => p.orderId === order.orderId ? { ...p, status: "Cancelled" } : p));
+            setDisabledOrders(prev => new Set(prev.add(order.orderId)));
+          }
+        }
+        catch (error) {
+          if (error.status === 401) {
+            alert("Your token expired or you are not authorized for this page");
+            localStorage.removeItem('token');
+            navigate('/login');
+          }
+          else if (error.code == "ERR_NETWORK") {
+            alert(error.message);
+            localStorage.removeItem('token');
+            navigate('/login');
+            console.log(error.message);
+          }
+          console.error('Error fetching products', error);
+        }
+      }
+    }
+    else {
+      alert("Order cant be cancelled now");
+      setDisabledOrders(prev => new Set(prev.add(order.orderId)));
+    }
+  }
+
+
+  const handlePdf = (order) => {
+    const blob = new Blob([order.pdf], { type: 'application/pdf' });
+    const urlBlob = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = urlBlob;
+    a.download = `Order_${order.orderId}_Bill.pdf`; // Set the file name
+    a.click();
+    window.URL.revokeObjectURL(urlBlob);
+  }
+
+
   if (!orders || orders.length === 0) {
     return (
       <div className="orders-container">
@@ -88,6 +143,7 @@ function OrdersPage() {
                 <th>Payment Method</th>
                 <th>Status</th>
                 <th>View PDF</th>
+                <th>Cancel Order</th>
               </tr>
             </thead>
             <tbody>
@@ -114,9 +170,16 @@ function OrdersPage() {
                     </span>
                   </td>
                   <td>
-                    <Link to={`/orders/${order.id}`} className="details-link">
-                      View Details
-                    </Link>
+                    <button onClick={() => handlePdf(order)} className="details-link">
+                      Bill
+                    </button>
+                  </td>
+                  <td>
+                    <button onClick={() => handleCancel(order)}
+                      disabled={["Cancelled", "Delivered", "Completed"].includes(order.status) || disabledOrders.has(order.orderId)}
+                      className={`details-link ${["Cancelled", "Delivered", "Completed"].includes(order.status) || disabledOrders.has(order.orderId) ? 'disabled' : ''}`}>
+                      Cancel
+                    </button>
                   </td>
                 </tr>
               ))}

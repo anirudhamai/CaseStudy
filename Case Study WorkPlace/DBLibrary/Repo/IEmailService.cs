@@ -6,6 +6,6 @@ namespace DBLibrary.Repo
 {
     public interface IEmailService
     {
-        Task SendEmailAsync(string email, string subject, string body);
+        Task SendEmailAsync(string email, string subject, string body, byte[] attachmentData = null);
     }
 }

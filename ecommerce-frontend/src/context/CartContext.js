@@ -23,7 +23,7 @@ export const CartProvider = ({ children }) => {
       const token = localStorage.getItem('token');
       // console.log(token);
       // console.log("response", product.productId );
-      const url1 = `http://localhost:5120/api/CartItem`;
+      const url1 = `http://localhost:5001/gateway/CartItem`;
       const cartItem = {
         CartId: cartId,
         ProductId: product.productId,
@@ -62,7 +62,7 @@ export const CartProvider = ({ children }) => {
     setCartItems(prevItems => prevItems.filter(item => item.cartItemId !== cartItemId));
     await new Promise(resolve => setTimeout(resolve, 0));
     try {
-      const url1 = `http://localhost:5120/api/CartItem/${cartItemId}`;
+      const url1 = `http://localhost:5001/gateway/CartItem/${cartItemId}`;
       await axios.delete(url1, {
         headers: {
           Authorization: `Bearer ${token}`
@@ -95,7 +95,7 @@ export const CartProvider = ({ children }) => {
   useEffect(() => {
     const updateCartItemsInServer = async () => {
       // console.log(cartItems);
-      const url1 = `http://localhost:5120/api/CartItem`;
+      const url1 = `http://localhost:5001/gateway/CartItem`;
       try {
         await axios.put(url1, cartItems, {
           headers: {
@@ -124,7 +124,7 @@ export const CartProvider = ({ children }) => {
     setCartItems([]);
 
     try {
-      const url1 = `http://localhost:5120/api/CartItem/multi/${cartId}`;
+      const url1 = `http://localhost:5001/gateway/emptycart/${cartId}`;
       await axios.delete(url1, {
         headers: {
           Authorization: `Bearer ${token}`
@@ -157,7 +157,7 @@ export const CartProvider = ({ children }) => {
     try {
       const token = localStorage.getItem('token');
       console.log(wishlistId, product.productId);
-      const url1 = `http://localhost:5120/api/WishlistItem`;
+      const url1 = `http://localhost:5001/gateway/WishlistItem`;
       const wishlistItem = {
         WishlistId: wishlistId,
         ProductId: product.productId
@@ -168,7 +168,8 @@ export const CartProvider = ({ children }) => {
           'Content-Type': 'application/json'
         }
       });
-      if (response2.data.status) return 1;
+      if (response2.data) return 1;
+      else return 2;
     }
     catch (error) {
       console.log(error);
@@ -192,7 +193,7 @@ export const CartProvider = ({ children }) => {
     setWishlistItems(prevItems => prevItems.filter(item => item.productId !== productId));
     await new Promise(resolve => setTimeout(resolve, 0));
     try {
-      const url1 = `http://localhost:5120/api/WishlistItem/${productId}`;
+      const url1 = `http://localhost:5001/gateway/WishlistItem/${productId}`;
       await axios.delete(url1, {
         headers: {
           Authorization: `Bearer ${token}`

@@ -14,6 +14,7 @@ public partial class Order
     public string? Status { get; set; } = null!;
 
     public decimal TotalAmount { get; set; }
+    public byte[]? Pdf {  get; set; }
 
     public virtual ICollection<OrderItem>? OrderItems { get; set; } = new List<OrderItem>();
 

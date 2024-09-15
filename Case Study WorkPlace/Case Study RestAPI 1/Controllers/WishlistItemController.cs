@@ -33,13 +33,15 @@ namespace Case_Study_RestAPI_1.Controllers
 
         // POST api/<WishlistItemController>
         [HttpPost]
-        public void Post([FromBody] WishlistItem value)
+        public int Post([FromBody] WishlistItem value)
         {
             var existing = _int1.GetWishlistItemByCompositeId(value.ProductId, value.WishlistId);
             if (existing == null)
             {
                 _int1.AddWishlistItem(value);
+                return value.WishlistItemId;
             }
+            return 0;
         }
 
         // PUT api/<WishlistItemController>/5

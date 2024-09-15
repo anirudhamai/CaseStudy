@@ -34,6 +34,7 @@ namespace DBLibrary.Extensions
             services.AddScoped<IWishlist, WishlistType>();
             services.AddScoped<IWishlistItem, WishlistItemType>();
             services.AddScoped<IEmailService, EmailService>();
+            services.AddScoped<IPdfService, PdfService>();
             return services;
         }
     }

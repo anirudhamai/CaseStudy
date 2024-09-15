@@ -46,7 +46,7 @@ function RegisterPage() {
 
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:5120/api/Customer/', {
+      const response = await axios.post('http://localhost:5001/gateway/customer/', {
         UserName: Fname + ' ' + Sname,
         Email: email,
         Password: password

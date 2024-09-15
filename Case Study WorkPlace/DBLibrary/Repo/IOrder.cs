@@ -13,7 +13,8 @@ namespace DBLibrary.Repo
         public IEnumerable<OrderDTO> GetOrderByUserId(int id);
         public Order GetOrderById(int id);
         public int AddOrder(OrderRequestDTO c);
-        public void UpdateOrder(int id, Order c);
+        public void CancelOrder(int id);
+        public void addBill(Order o);
         public void DeleteOrder(int id);
 
     }

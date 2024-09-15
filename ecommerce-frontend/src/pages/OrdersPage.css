@@ -163,6 +163,14 @@
   /* Slight scale effect on hover */
 }
 
+.order-page .details-link.disabled {
+  background-color: #d3d3d3;
+  /* Gray color for disabled button */
+  cursor: not-allowed;
+  color: #a9a9a9;
+  /* Slightly darker gray text */
+}
+
 /* Table Responsiveness */
 .order-page @media (max-width: 768px) {
 

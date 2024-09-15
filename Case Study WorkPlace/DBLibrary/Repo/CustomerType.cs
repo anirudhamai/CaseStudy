@@ -48,6 +48,22 @@ namespace DBLibrary.Repo
             {
                 _context.Customers.Add(customer);
                 _context.SaveChanges();
+
+                Cart cart = new Cart
+                {
+                    UserId = customer.UserId,
+                };
+
+                _context.Carts.Add(cart);
+                _context.SaveChanges();
+
+                Wishlist wl= new Wishlist
+                {
+                    UserId = customer.UserId,
+                };
+                _context.Wishlists.Add(wl);
+                _context.SaveChanges();
+
                 return 1;
             }
         }

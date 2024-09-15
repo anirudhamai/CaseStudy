@@ -43,7 +43,7 @@ const AddressForm = ({ onAddAddress }) => {
     });
     e.preventDefault();
     try {
-      await axios.post(`http://localhost:5120/api/Address/`, address, {
+      await axios.post(`http://localhost:5001/gateway/addAddress/`, address, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -101,7 +101,7 @@ const AddressPage = () => {
 
   useEffect(() => {
     const fetchAddress = async () => {
-      const response = await axios.get(`http://localhost:5120/api/Address/${userId}`, {
+      const response = await axios.get(`http://localhost:5001/gateway/address/${userId}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }

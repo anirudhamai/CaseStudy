@@ -26,7 +26,7 @@ function HomePage() {
         if (!token) {
           navigate('/login');
         }
-        const url = 'http://localhost:5120/api/Product';
+        const url = 'http://localhost:5001/gateway/product';
 
         const response = await axios.get(url, {
           headers: {
@@ -58,7 +58,7 @@ function HomePage() {
         navigate('/login');
       }
 
-      const url2 = `http://localhost:5120/api/Cart/${userId}`;
+      const url2 = `http://localhost:5001/gateway/cart/${userId}`;
       const response = await axios.post(url2, {
         headers: {
           Authorization: `Bearer${token}`
@@ -73,7 +73,7 @@ function HomePage() {
         navigate('/login');
       }
 
-      const url2 = `http://localhost:5120/api/Wishlist/${userId}`;
+      const url2 = `http://localhost:5001/gateway/wishlist/${userId}`;
       const response = await axios.post(url2, {
         headers: {
           Authorization: `Bearer${token}`
@@ -104,15 +104,14 @@ function HomePage() {
     navigate('/wishlist');
   };
 
-  const handleBuyNow = (p) => {
-    // const productCI = p.cartItems.$values.find(i => i.cartId == cartId);
+  const handleBuyNow = (p, img) => {
     const cartItem = {
       quantity: 1,
-      // cartItemId: productCI.cartItemId,
       product: {
         productId: p.productId,
         name: p.name,
-        price: p.price
+        price: p.price,
+        image: img
       }
     }
     const orderProducts = [cartItem];
@@ -122,7 +121,7 @@ function HomePage() {
 
 
   const navigateToProduct = (product) => {
-    navigate('category/electronics', { state: { selectedProductId: product.productId, categoryId: product.categoryId, categoryName: product.categoryName } });
+    navigate('category/electronics', { state: { selectedProductId: product.productId, selprod: product, categoryId: product.categoryId, categoryName: product.categoryName } });
   }
 
   return (
@@ -141,7 +140,7 @@ function HomePage() {
                   <img src={`data:image/png;base64,${product.image}`} alt={product.name} className="product-image-style" onClick={() => navigateToProduct(product)} />
                   <h3>{product.name}</h3>
                   <p className="price">₹{product.price}</p>
-                  <button className="buy-now" onClick={() => handleBuyNow(product)}>Buy Now</button>
+                  <button className="buy-now" onClick={() => handleBuyNow(product, product.image)}>Buy Now</button>
                   <div className="product-actions">
                     <button className="wish-list" onClick={() => handleAddToWishlist(product)}>Add to Wish List</button>
                     <button className="add-to-cart" onClick={() => handleAddToCart(product)}>Add to Cart</button>
@@ -152,27 +151,6 @@ function HomePage() {
           </div>
         </div>
 
-        {/* More Than 50% Off
-        <div className="product-row">
-          <h2>More Than 50% Off</h2>
-          <div className="products">
-            {productData.map(product => (
-              <div key={product.id} className="product-card">
-                <div className="product-info">
-                  <img src={`data:image/png;base64,${product.image}`} alt={product.name} className="product-image-style" onClick={() => navigateToProduct(product)} />
-                  <h3>{product.name}</h3>
-                  <p className="price">{product.price}</p>
-                  <button className="buy-now" onClick={() => handleBuyNow(product)}>Buy Now</button>
-                  <div className="product-actions">
-                    <button className="wish-list" onClick={() => handleAddToWishlist(product)}>Add to Wish List</button>
-                    <button className="add-to-cart" onClick={() => handleAddToCart(product)} >Add to Cart</button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div> */}
-
         {/* Featured Products */}
         <div className="product-row">
           <h2>Featured Products</h2>
@@ -182,8 +160,8 @@ function HomePage() {
                 <div className="product-info">
                   <img src={`data:image/png;base64,${product.image}`} alt={product.name} className="product-image-style" onClick={() => navigateToProduct(product)} />
                   <h3>{product.name}</h3>
-                  <p className="price">{product.price}</p>
-                  <button className="buy-now" onClick={() => handleBuyNow(product)}>Buy Now</button>
+                  <p className="price">₹{product.price}</p>
+                  <button className="buy-now" onClick={() => handleBuyNow(product, product.image)}>Buy Now</button>
                   <div className="product-actions">
                     <button className="wish-list" onClick={() => handleAddToWishlist(product)}>Add to Wish List</button>
                     <button className="add-to-cart" onClick={() => handleAddToCart(product)}>Add to Cart</button>

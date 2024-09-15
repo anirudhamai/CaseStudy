@@ -22,13 +22,15 @@ function ElectronicsPage() {
   const navigate = useNavigate();
   const location = useLocation();
   const { userId, cartId, wishlistId } = useContext(UserContext);
-  const { wishlistItems, addItemToCart, addToWishlist, addItemToWishlist } = useContext(CartContext);
+  const { wishlistItems, addItemToCart, addToWishlist, addItemToWishlist, removeFromWishlist } = useContext(CartContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [pr, setPr] = useState(null);
+  const [iswished, setIseWished] = useState([]);
+  const [call, setCall] = useState(false);
 
   useEffect(() => {
     const fetchCategoryProducts = async () => {
       const { categoryId } = location.state;
+      // const { selprodid } = location.state.selectedProductId;
       setselectedProductId(location.state.selectedProductId);
       setCategory(location.state.categoryName);
       // console.log(location.state.selectedProductId);
@@ -38,7 +40,7 @@ function ElectronicsPage() {
           navigate('/');
         }
 
-        const url2 = `http://localhost:5120/api/Product/getBycat/${categoryId}`;
+        const url2 = `http://localhost:5001/gateway/Product/getBycat/${categoryId}`;
         const response = await axios.get(url2, {
           headers: {
             Authorization: `Bearer ${token}`
@@ -64,29 +66,6 @@ function ElectronicsPage() {
     fetchCategoryProducts();
   }, [location.state]);
 
-
-  useEffect(() => {
-    if (selectedProductId != undefined) {
-      console.log(selectedProductId);
-      const prod = products.find(p => p.productId === selectedProductId);
-      console.log(products.find(p => p.productId === selectedProductId));
-      setPr(prod);
-    }
-  }, selectedProductId)
-
-  useEffect(() => {
-    if (pr != null) {
-      console.log(pr);
-      handleProductClick(pr);
-    }
-  }, [pr]);
-
-
-  const handleProductClick = (product) => {
-    setSelectedProduct(product);
-  };
-
-
   useEffect(() => {
     const fetchWishlistItems = async () => {
       const token = localStorage.getItem('token');
@@ -94,7 +73,7 @@ function ElectronicsPage() {
         navigate('/login');
       }
       try {
-        const url = `http://localhost:5120/api/WishlistItem/${wishlistId}`;
+        const url = `http://localhost:5001/gateway/WishlistItem/${wishlistId}`;
 
         const response = await axios.get(url, {
           headers: {
@@ -120,7 +99,28 @@ function ElectronicsPage() {
       }
     };
     fetchWishlistItems();
-  }, [category]);
+  }, [location.state, call]);
+
+
+  useEffect(() => {
+    const wish = products.reduce((acc, product) => {
+      if (wishlistItems.some(wishlistItem => wishlistItem.productId === product.productId)) {
+        acc[product.productId] = true;
+      }
+      return acc;
+    }, {});
+    setIseWished(wish);
+    handleProductClick(location.state.selprod);
+  }, [products, wishlistItems]);
+
+
+  const handleProductClick = (product) => {
+    if (product != 0 && product != 1) { setSelectedProduct(product); }
+    else if (product == 1) {
+      const p = products.find(item => item.productId === selectedProductId);
+      setSelectedProduct(p);
+    }
+  };
 
 
 
@@ -128,7 +128,7 @@ function ElectronicsPage() {
     try {
       const token = localStorage.getItem('token');
 
-      const url2 = `http://localhost:5120/api/Review`;
+      const url2 = `http://localhost:5001/gateway/review`;
       const reviewData = {
         UserId: userId,
         ProductId: productId,
@@ -166,11 +166,6 @@ function ElectronicsPage() {
   }
 
 
-  useEffect(() => {
-    console.log(products[0]);
-  }, products);
-
-
   const handleAddReview = (productId) => {
     const review = newReview.trim();
     const rating = ratings[productId] || 0;
@@ -193,7 +188,8 @@ function ElectronicsPage() {
       product: {
         productId: p.productId,
         name: p.name,
-        price: p.price
+        price: p.price,
+        image: p.image
       }
     }
     const orderProducts = [cartItem];
@@ -214,12 +210,17 @@ function ElectronicsPage() {
     if (resp == 0) {
       navigate('/login');
     }
-    alert('Added to Wishlist!');
+    else if (resp == 2) {
+      removeFromWishlist(product.productId);
+      alert('Removed from Wishlist!');
+    }
+    else {
+      setCall(true);
+      alert('Added to Wishlist!');
+      // navigate('/wishlist');
+    }
   };
 
-  const handleShare = () => {
-    return (<ShareButton />);
-  }
 
   const handleReviewChange = (e) => {
     setNewReview(e.target.value);
@@ -271,12 +272,12 @@ function ElectronicsPage() {
               />
               {isModalOpen && (
                 <ShareButton
-                  productUrl={location.pathname}
+                  productUrl={"localhost:3000".concat(location.pathname)}
                   closeModal={handleCloseShareModal} // Pass the close modal handler as a prop
                 />
               )}
               <FaHeart
-                className={`wishlist-icon ${wishlistItems.some(wishlistItem => wishlistItem.productId === selectedProduct.productId) ? 'added' : ''}`}
+                className={`wishlist-icon ${iswished[selectedProduct.productId] ? 'added' : ''}`}
                 onClick={() => handleAddToWishlist(selectedProduct)}
               />
             </div>
@@ -376,7 +377,7 @@ function ElectronicsPage() {
                       <span className="rating-number">({calculateAverageRating(product.reviews)}/5)</span>
                     </div>
                     <button className="wishlist-button" onClick={(e) => { e.stopPropagation(); handleAddToWishlist(product); }}>
-                      <FaHeart className={`icon ${wishlistItems.some(wishlistItem => wishlistItem.productId === product.productId) ? 'added' : ''}`} />
+                      <FaHeart className={`icon ${iswished[product.productId] ? 'added' : ''}`} />
                     </button>
                   </div>
                 ))}
@@ -390,143 +391,3 @@ function ElectronicsPage() {
 }
 
 export default ElectronicsPage;
-
-
-
-
-
-
-
-
-
-
-
-
-
-// return (
-//   <div className="electronics-page">
-//     <h2 className="page-title">{category}</h2>
-//     {selectedProduct ? (
-//       <div className="product-details">
-//         <button className="back-button" onClick={() => setSelectedProduct(null)}>← Back to Products</button>
-//         <div className="product-detail-container">
-//         <div className="product-image-container">
-//             <img
-//               src = {mac}
-//               //  src=  {selectedProduct.image}
-//               alt={selectedProduct.name}
-//               className="product-image-large"
-//             />
-//             <div className="product-actions">
-//               <button className="action-button cart-button" onClick={() => handleAddToCart(selectedProduct)}>
-//                 <FaCartPlus className="icon" /> Add to Cart
-//               </button>
-//               <button className="action-button buy-button" onClick={() => alert('Buy Now clicked')}>
-//                 <FaShoppingBag className="icon" /> Buy Now
-//               </button>
-//             </div>
-//             <FaHeart
-//               className={`wishlist-icon ${wishlist.has(selectedProduct.$id) ? 'added' : ''}`}
-//               onClick={() => handleAddToWishlist(selectedProduct.wishlistId)}
-//             />
-//           </div>
-//           <div className="product-info">
-//             <h3>{selectedProduct.name}</h3>
-//         <p className="price">₹{selectedProduct.price} ({selectedProduct.discounts.$values.map((discount) => (<span>{discount.discountPercentage}</span>))}% off)</p>
-//         <div className="rating-stars-style">
-//           {[...Array(5)].map((_, index) => (
-//             <FaStar
-//               key={index}
-//               color={index + 1 <= Math.round(calculateAverageRating(selectedProduct.reviews)) ? "#ffc107" : "#e4e5e9"}
-//               size={20}
-//             />
-//           ))}
-//           <span className="rating-number">({calculateAverageRating(selectedProduct.reviews)}/5)</span>
-//         </div>
-//         <div className="action-buttons">
-//           <button className="cart-button" onClick={() => handleAddToCart(selectedProduct)}>
-//             <FaCartPlus className="icon" /> Add to Cart
-//           </button>
-//           <button className="buy-button" onClick={() => alert('Buy Now clicked')}>
-//             <FaShoppingBag className="icon" /> Buy Now
-//           </button>
-//         </div>
-
-//         <div className="reviews-section">
-//           <h4>Reviews:</h4>
-//           {selectedProduct.reviews.$values.length === 0 ? (
-//             <p>No reviews yet.</p>
-//           ) : (
-//             selectedProduct.reviews.$values.map((review) => (
-//               <div key={review.$id} className="review-item">
-//                 <p>{review.comment}</p>
-//                 <div className="rating-stars-style">
-//                   {[...Array(5)].map((_, index) => (
-//                     <FaStar
-//                       key={index}
-//                       color={index + 1 <= review.rating ? "#ffc107" : "#e4e5e9"}
-//                       size={20}
-//                     />
-//                   ))}
-//                   <span className="rating-number">({review.rating}/5)</span>
-//                 </div>
-//               </div>
-//             ))
-//           )}
-//         </div>
-
-//         <div className="add-review-section">
-//           <h4>Add a Review:</h4>
-//           <div className="review-stars-style">
-//             {[...Array(5)].map((_, index) => {
-//               const ratingValue = index + 1;
-//               return (
-//                 <label key={index}>
-//                   <input
-//                     type="radio"
-//                     name={`rating-${selectedProduct.productId}`}
-//                     value={ratingValue}
-//                     onClick={() => handleRatingChange(selectedProduct.productId, ratingValue)}
-//                     style={{ display: 'none' }}
-//                   />
-//                   <FaStar
-//                     color={ratingValue <= (ratings[selectedProduct.productId] || 0) ? "#ffc107" : "#e4e5e9"}
-//                     size={30}
-//                     style={{ cursor: 'pointer' }}
-//                   />
-//                 </label>
-//               );
-//             })}
-//           </div>
-//           <textarea
-//             placeholder="Write your review here..."
-//             value={newReview}
-//             onChange={handleReviewChange}
-//             className="review-textarea"
-//           />
-//           <button className="submit-review-button" onClick={() => handleAddReview(selectedProduct.productId)}>Submit Review</button>
-//         </div>
-//       </div>
-//     ) : (
-//       <div className="grid-style">
-//         {products.map((product) => (
-//           <div key={product.$id} className="product-card-style" onClick={() => handleProductClick(product)}>
-//             {/* <img src={product.image} alt={product.name} className="product-image-style" /> */}
-//             <h4>{product.name}</h4>
-//             <p className="price">₹{product.price}  ({product.discounts.$values.map((discount) => (<span>{discount.discountPercentage}</span>))}% off)</p>
-//             <div className="rating-stars-style">
-//               {[...Array(5)].map((_, index) => (
-//                 <FaStar
-//                   key={index}
-//                   color={index + 1 <= Math.round(calculateAverageRating(product.reviews)) ? "#ffc107" : "#e4e5e9"}
-//                   size={20}
-//                 />
-//               ))}
-//               <span className="rating-number">({calculateAverageRating(product.reviews)}/5)</span>
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//     )}
-//   </div>
-// );

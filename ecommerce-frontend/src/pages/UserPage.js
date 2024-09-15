@@ -17,7 +17,7 @@ function UserPage() {
   useEffect(() => {
     console.log("in userpage: ", userId);
     const getUserdata = async () => {
-      const response = await axios.get(`http://localhost:5120/api/Customer/${userId}`, {
+      const response = await axios.get(`http://localhost:5001/gateway/customer/${userId}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -35,7 +35,7 @@ function UserPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5120/api/Customer/${userId}`, userDetails, {
+      await axios.put(`http://localhost:5001/gateway/customer/${userId}`, userDetails, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json'

@@ -28,7 +28,7 @@ function WishlistPage() {
 
           setLoading(true);
 
-          const url2 = `http://localhost:5120/api/Wishlist/${userId}`;
+          const url2 = `http://localhost:5001/gateway/wishlist/${userId}`;
           const response = await axios.post(url2, {
             headers: {
               Authorization: `Bearer${token}`
@@ -63,7 +63,7 @@ function WishlistPage() {
         navigate('/login');
       }
       try {
-        const url = `http://localhost:5120/api/WishlistItem/${wishlistId}`;
+        const url = `http://localhost:5001/gateway/WishlistItem/${wishlistId}`;
 
         const response = await axios.get(url, {
           headers: {
@@ -130,7 +130,6 @@ function WishlistPage() {
 
   const calculateAverageRating = (product) => {
     const reviews = product.reviews;
-    // console.log(reviews);
     if (reviews.$values.length === 0) return 0;
     const total = reviews.$values.reduce((sum, review) => sum + review.rating, 0);
     return (total / reviews.$values.length).toFixed(1);
@@ -151,7 +150,7 @@ function WishlistPage() {
                 <div className="wishlist-item-details">
                   <h3 className="wishlist-item-name">{wlitem.product.name}</h3>
                   {/* <p className="wishlist-item-description">{product.description}</p> */}
-                  <p className="wishlist-item-price">${wlitem.product.price}</p>
+                  <p className="wishlist-item-price">₹{wlitem.product.price}</p>
                   <div className="wishlist-item-rating">
                     {[...Array(5)].map((_, index) => (
                       <FaStar
@@ -169,7 +168,7 @@ function WishlistPage() {
                       <button className="wishlist-item-remove" onClick={() => handleRemoveFromWishlist(wlitem.productId)}>
                         Remove from Wishlist
                       </button>
-                      <button className="wishlist-item-view" onClick={() => navigate(`/category/electronics`, { state: { selectedProductId: wlitem.productId, categoryId: wlitem.product.categoryId, categoryName: wlitem.product.category.categoryName } })}>
+                      <button className="wishlist-item-view" onClick={() => navigate(`/category/electronics`, { state: { selectedProductId: wlitem.productId, selprod: 1, categoryId: wlitem.product.categoryId, categoryName: wlitem.product.category.categoryName } })}>
                         View Details
                       </button>
                     </div>

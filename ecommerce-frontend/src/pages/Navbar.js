@@ -32,7 +32,7 @@ function Navbar() {
         if (!token) {
           navigate('/');
         }
-        const url = 'http://localhost:5120/api/Category';
+        const url = 'http://localhost:5001/gateway/category';
         const response = await axios.get(url, {
           headers: {
             Authorization: `Bearer ${token}`
@@ -61,7 +61,7 @@ function Navbar() {
         if (!token) {
           navigate('/login');
         }
-        const url = 'http://localhost:5120/api/Product';
+        const url = 'http://localhost:5001/gateway/product';
 
         const response = await axios.get(url, {
           headers: {
@@ -103,7 +103,7 @@ function Navbar() {
     const selectedCategory = CategoryData.find(category => category.categoryId == selectedCategoryId);
     setSearchCategory(selectedCategory);
     if (selectedCategory) {
-      navigate(`/category/electronics`, { state: { selectedProductId: null, categoryId: selectedCategory.categoryId, categoryName: selectedCategory.categoryName } });
+      navigate(`/category/electronics`, { state: { selectedProductId: null, selprod: 0, categoryId: selectedCategory.categoryId, categoryName: selectedCategory.categoryName } });
     }
   };
 
