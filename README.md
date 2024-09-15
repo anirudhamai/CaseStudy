@@ -11,6 +11,7 @@ Step 3: Start react app
 > Goto ecommerce-frontend
 > Run npm i
 > Run npm start to start the server
+
 Step 4: Access from browser ()usually on port 3000 or 3001).
 > sample landing page url: localhost:3000/login
 
