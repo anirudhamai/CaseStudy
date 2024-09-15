@@ -1,0 +1,254 @@
+﻿@*@model IEnumerable<Admin.Models.Review>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Rating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReviewDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReviewDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.ProductId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.UserId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ReviewId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ReviewId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ReviewId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table> *@
+
+@model IEnumerable<Admin.Models.Review>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- Styles -->
+<style>
+    body {
+        background: linear-gradient(135deg, #e0f7fa 0%, #ffffff 100%); /* Light cyan gradient for background */
+        padding: 0;
+        margin: 0;
+    }
+
+    .container {
+        margin-top: 20px;
+    }
+
+    .card {
+        background-color: #ffffff; /* Clean white background for the card */
+        border-radius: 15px; /* Rounded corners */
+        padding: 20px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Soft shadow for subtle 3D effect */
+        transform: translateY(-10px); /* Slight lift for 3D effect */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transition */
+    }
+
+        .card:hover {
+            transform: translateY(-15px); /* Lift on hover */
+            box-shadow: 0 16px 24px rgba(0, 0, 0, 0.12); /* Deepen shadow on hover */
+        }
+
+    h1 {
+        color: #00796b; /* Teal color for page header */
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 8px;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: center;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        text-decoration: none;
+    }
+
+    .btn-primary {
+        background-color: #4dd0e1; /* Light cyan for primary button */
+        border: none;
+        color: #ffffff;
+    }
+
+        .btn-primary:hover {
+            background-color: #00acc1; /* Darker cyan on hover */
+        }
+
+    .btn-secondary {
+        background-color: #e0f7fa; /* Light cyan for secondary button */
+        border: none;
+        color: #00796b;
+    }
+
+        .btn-secondary:hover {
+            background-color: #b2ebf2; /* Darker cyan on hover */
+        }
+
+    .btn-action {
+        display: inline-block;
+        padding: 6px 12px;
+        font-size: 14px;
+        border-radius: 4px;
+        color: #ffffff;
+        text-align: center;
+        text-decoration: none;
+        margin: 0 5px;
+        font-weight: normal;
+        border: none;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .btn-edit {
+        background-color: #00acc1; /* Cyan background for Edit button */
+    }
+
+        .btn-edit:hover {
+            background-color: #00796b; /* Darker cyan on hover */
+        }
+
+    .btn-details {
+        background-color: #00796b; /* Teal background for Details button */
+    }
+
+        .btn-details:hover {
+            background-color: #004d40; /* Darker teal on hover */
+        }
+
+    .btn-delete {
+        background-color: #e53935; /* Red background for Delete button */
+    }
+
+        .btn-delete:hover {
+            background-color: #c62828; /* Darker red on hover */
+        }
+
+    table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+        background-color: #ffffff; /* White background for the table */
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    th, td {
+        padding: 12px;
+        text-align: left;
+        color: #000000; /* Black text for table cells */
+    }
+
+    th {
+        background-color: #ffffff; /* White background for headers */
+        color: #000000; /* Black text for headers */
+        font-weight: bold;
+        border-bottom: 2px solid #000000; /* Black border for separation */
+    }
+
+    tr:nth-child(even) {
+        background-color: #f1f1f1; /* Alternating row colors */
+    }
+
+    tr:hover {
+        background-color: #e0f7fa; /* Highlight row on hover */
+    }
+
+    .actions-cell {
+        text-align: center; /* Center-align actions column */
+    }
+
+    a {
+        color: #ffffff; /* White color for action buttons */
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+        a:hover {
+            color: #ffffff; /* Ensure link color stays white on hover */
+        }
+</style>
+
+<div class="container">
+    <div class="card">
+        <h1>Reviews</h1>
+
+        <p class="text-center">
+            <a asp-action="Create" class="btn btn-primary">Create New</a>
+            <a asp-action="Analysis" class="btn btn-primary">Analysis</a>
+        </p>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Rating)</th>
+                    <th>@Html.DisplayNameFor(model => model.Comment)</th>
+                    <th>@Html.DisplayNameFor(model => model.ReviewDate)</th>
+                    <th>@Html.DisplayNameFor(model => model.Product)</th>
+                    <th>@Html.DisplayNameFor(model => model.User)</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Rating)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Comment)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ReviewDate)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Product.ProductId)</td>
+                        <td>@Html.DisplayFor(modelItem => item.User.UserId)</td>
+                        <td class="actions-cell">
+                            <a asp-action="Edit" asp-route-id="@item.ReviewId" class="btn btn-action btn-edit">Edit</a>
+                            <a asp-action="Details" asp-route-id="@item.ReviewId" class="btn btn-action btn-details">Details</a>
+                            <a asp-action="Delete" asp-route-id="@item.ReviewId" class="btn btn-action btn-delete">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

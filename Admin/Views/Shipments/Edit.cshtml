@@ -1,0 +1,190 @@
+﻿@*@model Admin.Models.Shipment
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Shipment</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ShipmentId" />
+            <div class="form-group">
+                <label asp-for="OrderId" class="control-label"></label>
+                <select asp-for="OrderId" class="form-control" asp-items="ViewBag.OrderId"></select>
+                <span asp-validation-for="OrderId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AddressId" class="control-label"></label>
+                <select asp-for="AddressId" class="form-control" asp-items="ViewBag.AddressId"></select>
+                <span asp-validation-for="AddressId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Carrier" class="control-label"></label>
+                <input asp-for="Carrier" class="form-control" />
+                <span asp-validation-for="Carrier" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShipmentDate" class="control-label"></label>
+                <input asp-for="ShipmentDate" class="form-control" />
+                <span asp-validation-for="ShipmentDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <input asp-for="Status" class="form-control" />
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+*@
+
+
+                @model Admin.Models.Shipment
+
+@{
+    ViewData["Title"] = "Edit Shipment";
+}
+
+<!-- Same Styles as Create and Delete Pages -->
+<style>
+    body {
+        background: linear-gradient(135deg, #e0f7fa 0%, #ffffff 100%); /* Light cyan gradient for background */
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .card {
+        background-color: #ffffff; /* Clean white background for the card */
+        border-radius: 15px; /* Rounded corners */
+        padding: 30px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Soft shadow for subtle 3D effect */
+        transform: translateY(-10px); /* Slight lift for 3D effect */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transition */
+    }
+
+        .card:hover {
+            transform: translateY(-15px); /* Lift on hover */
+            box-shadow: 0 16px 24px rgba(0, 0, 0, 0.12); /* Deepen shadow on hover */
+        }
+
+    .card-header {
+        background-color: #00acc1; /* Same cyan color for the header */
+        color: #ffffff; /* White text for contrast */
+        text-align: center;
+        padding: 10px;
+        border-radius: 10px 10px 0 0;
+        font-weight: bold;
+    }
+
+    h1 {
+        color: #00796b; /* Teal color for page header */
+        text-align: center;
+    }
+
+    h4, .form-group label {
+        color: #00796b; /* Same teal color for labels */
+    }
+
+    .form-control {
+        border: 1px solid #b2ebf2; /* Light cyan border */
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .btn-primary {
+        background-color: #4dd0e1; /* Light cyan for primary button */
+        border-color: #00acc1;
+    }
+
+        .btn-primary:hover {
+            background-color: #00acc1; /* Darker cyan on hover */
+            border-color: #00838f;
+        }
+
+    .btn-secondary {
+        background-color: #e0f7fa; /* Light cyan for secondary button */
+        border-color: #b2ebf2;
+    }
+
+        .btn-secondary:hover {
+            background-color: #b2ebf2; /* Darker cyan on hover */
+            border-color: #4dd0e1;
+        }
+</style>
+
+<!-- Centered Container for Edit Form -->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg border-0">
+                <div class="card-header">
+                    <h4>Edit Shipment</h4>
+                </div>
+                <div class="card-body">
+                    <h1>Edit Shipment</h1>
+                    <hr />
+                    <form asp-action="Edit">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="ShipmentId" />
+                        <div class="form-group">
+                            <label asp-for="OrderId" class="control-label"></label>
+                            <select asp-for="OrderId" class="form-control" asp-items="ViewBag.OrderId"></select>
+                            <span asp-validation-for="OrderId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="AddressId" class="control-label"></label>
+                            <select asp-for="AddressId" class="form-control" asp-items="ViewBag.AddressId"></select>
+                            <span asp-validation-for="AddressId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Carrier" class="control-label"></label>
+                            <input asp-for="Carrier" class="form-control" />
+                            <span asp-validation-for="Carrier" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ShipmentDate" class="control-label"></label>
+                            <input asp-for="ShipmentDate" class="form-control" />
+                            <span asp-validation-for="ShipmentDate" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Status" class="control-label"></label>
+                            <input asp-for="Status" class="form-control" />
+                            <span asp-validation-for="Status" class="text-danger"></span>
+                        </div>
+                        <div class="form-group text-center">
+                            <input type="submit" value="Save" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-center">
+                    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

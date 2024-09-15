@@ -1,0 +1,196 @@
+﻿@*@model Admin.Models.Shipment
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Shipment</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="OrderId" class="control-label"></label>
+                <select asp-for="OrderId" class ="form-control" asp-items="ViewBag.OrderId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="AddressId" class="control-label"></label>
+                <select asp-for="AddressId" class ="form-control" asp-items="ViewBag.AddressId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Carrier" class="control-label"></label>
+                <input asp-for="Carrier" class="form-control" />
+                <span asp-validation-for="Carrier" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShipmentDate" class="control-label"></label>
+                <input asp-for="ShipmentDate" class="form-control" />
+                <span asp-validation-for="ShipmentDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <input asp-for="Status" class="form-control" />
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}*@
+
+
+@model Admin.Models.Shipment
+
+@{
+    ViewData["Title"] = "Create Shipment";
+}
+
+<!-- Background and Card Styling with Increased Intensity -->
+<style>
+    body {
+        background: linear-gradient(135deg, #b2ebf2 0%, #e0f7fa 100%); /* More intense light blue to white gradient */
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .card {
+        background-color: #ffffff; /* Clean white background for the card */
+        border-radius: 15px; /* Rounded corners */
+        padding: 30px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Soft shadow for subtle 3D effect */
+        transform: translateY(-10px); /* Slight lift for 3D effect */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transition */
+    }
+
+        .card:hover {
+            transform: translateY(-15px); /* Lift on hover */
+            box-shadow: 0 16px 24px rgba(0, 0, 0, 0.12); /* Deepen shadow on hover */
+        }
+
+    .card-header {
+        background-color: #80deea; /* Slightly more intense light blue header */
+        color: #004d40; /* Dark green text for contrast */
+        text-align: center;
+        padding: 10px;
+        border-radius: 10px 10px 0 0;
+        font-weight: bold;
+    }
+
+    h4, .form-group label {
+        color: #00796b; /* Teal color for text to contrast with background */
+    }
+
+    .form-control {
+        border: 1px solid #4fc3f7; /* More intense light blue border */
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .btn-primary {
+        background-color: #29b6f6; /* More intense soft blue for buttons */
+        border-color: #0288d1;
+    }
+
+        .btn-primary:hover {
+            background-color: #0288d1; /* Darker blue on hover */
+            border-color: #0277bd;
+        }
+
+    .btn-secondary {
+        background-color: #4dd0e1; /* More intense teal for secondary button */
+        border-color: #00acc1;
+    }
+
+        .btn-secondary:hover {
+            background-color: #00acc1;
+            border-color: #00838f;
+        }
+
+    .text-danger {
+        color: #d32f2f; /* Red color for validation errors */
+    }
+</style>
+
+<!-- Centered Container for Form -->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg border-0">
+                <div class="card-header">
+                    <h4>Create New Shipment</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                        <!-- OrderId Dropdown -->
+                        <div class="form-group mb-3">
+                            <label asp-for="OrderId" class="control-label"></label>
+                            <select asp-for="OrderId" class="form-control"></select>
+                        </div>
+
+                        <!-- AddressId Dropdown -->
+                        <div class="form-group mb-3">
+                            <label asp-for="AddressId" class="control-label"></label>
+                            <select asp-for="AddressId" class="form-control"></select>
+                        </div>
+
+                        <!-- Carrier Input -->
+                        <div class="form-group mb-3">
+                            <label asp-for="Carrier" class="control-label"></label>
+                            <input asp-for="Carrier" class="form-control" placeholder="Enter carrier name" />
+                            <span asp-validation-for="Carrier" class="text-danger"></span>
+                        </div>
+
+                        <!-- ShipmentDate Input -->
+                        <div class="form-group mb-3">
+                            <label asp-for="ShipmentDate" class="control-label"></label>
+                            <input asp-for="ShipmentDate" class="form-control" placeholder="Select a date" type="date" />
+                            <span asp-validation-for="ShipmentDate" class="text-danger"></span>
+                        </div>
+
+                        <!-- Status Input -->
+                        <div class="form-group mb-4">
+                            <label asp-for="Status" class="control-label"></label>
+                            <input asp-for="Status" class="form-control" placeholder="Enter shipment status" />
+                            <span asp-validation-for="Status" class="text-danger"></span>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="text-center">
+                            <input type="submit" value="Create Shipment" class="btn btn-primary btn-lg" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Larger Back to List Button -->
+            <div class="text-center mt-3">
+                <a asp-action="Index" class="btn btn-secondary btn-lg">Back to List</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+

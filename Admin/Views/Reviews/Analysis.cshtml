@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Admin.Models.Review>
+
+@{
+    ViewData["Title"] = "Review Analysis";
+}
+
+<!-- Styles -->
+<style>
+    /* Add any custom styles here */
+</style>
+
+<!-- Google Charts Loader -->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+    // Load the Visualization API and the corechart package.
+    google.charts.load('current', { packages: ['corechart'] });
+
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        // Create the data table
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Rating Category');
+        data.addColumn('number', 'Count');
+
+        // Populate the data table
+        data.addRows([
+            ['Good', @Model.Count(r => r.Rating >= 4)],
+            ['Average', @Model.Count(r => r.Rating >= 3 && r.Rating < 4)],
+            ['Bad', @Model.Count(r => r.Rating < 3)]
+        ]);
+
+        // Set chart options
+        var options = {
+            title: 'Review Ratings Analysis',
+            pieHole: 0.4,
+            colors: ['#4caf50', '#ffeb3b', '#f44336']
+        };
+
+        // Instantiate and draw the chart
+        var chart = new google.visualization.PieChart(document.getElementById('donut_chart'));
+        chart.draw(data, options);
+    }
+</script>
+
+<div class="container">
+    <div class="card">
+        <h1>Review Ratings Analysis</h1>
+        <div id="donut_chart" style="width: 100%; height: 500px;"></div>
+    </div>
+</div>
+

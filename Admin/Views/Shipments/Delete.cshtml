@@ -1,0 +1,176 @@
+﻿@*@model Admin.Models.Shipment
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Shipment</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Carrier)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Carrier)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ShipmentDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ShipmentDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Address.AddressId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Order)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Order.OrderId)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ShipmentId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>*@
+
+@model Admin.Models.Shipment
+
+@{
+    ViewData["Title"] = "Delete Shipment";
+}
+
+<!-- Same Styles as Create Shipment -->
+<style>
+    body {
+        background: linear-gradient(135deg, #e0f7fa 0%, #ffffff 100%); /* Light cyan gradient for background */
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .card {
+        background-color: #ffffff; /* Clean white background for the card */
+        border-radius: 15px; /* Rounded corners */
+        padding: 30px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Soft shadow for subtle 3D effect */
+        transform: translateY(-10px); /* Slight lift for 3D effect */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transition */
+    }
+
+        .card:hover {
+            transform: translateY(-15px); /* Lift on hover */
+            box-shadow: 0 16px 24px rgba(0, 0, 0, 0.12); /* Deepen shadow on hover */
+        }
+
+    .card-header {
+        background-color: #00acc1; /* Same cyan color for the header */
+        color: #ffffff; /* White text for contrast */
+        text-align: center;
+        padding: 10px;
+        border-radius: 10px 10px 0 0;
+        font-weight: bold;
+    }
+
+    h3 {
+        color: #00796b; /* Teal color for confirmation text */
+        text-align: center;
+    }
+
+    h4, .form-group label {
+        color: #00796b; /* Same teal color for labels */
+    }
+
+    .form-control {
+        border: 1px solid #b2ebf2; /* Light cyan border */
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .btn-danger {
+        background-color: #ffab91; /* Light coral for delete button */
+        border-color: #d32f2f;
+    }
+
+        .btn-danger:hover {
+            background-color: #d32f2f; /* Darker red on hover */
+            border-color: #c62828;
+        }
+
+    .btn-secondary {
+        background-color: #4dd0e1; /* Same light cyan for secondary button */
+        border-color: #00acc1;
+    }
+
+        .btn-secondary:hover {
+            background-color: #00acc1; /* Darker cyan on hover */
+            border-color: #00838f;
+        }
+</style>
+
+<!-- Centered Container for Delete Confirmation -->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg border-0">
+                <div class="card-header">
+                    <h4>Confirm Delete</h4>
+                </div>
+                <div class="card-body">
+                    <h3>Are you sure you want to delete this shipment?</h3>
+                    <dl class="row mt-4">
+                        <dt class="col-sm-4">Carrier</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Carrier)</dd>
+
+                        <dt class="col-sm-4">Shipment Date</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.ShipmentDate)</dd>
+
+                        <dt class="col-sm-4">Status</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Status)</dd>
+
+                        <dt class="col-sm-4">Address ID</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Address.AddressId)</dd>
+
+                        <dt class="col-sm-4">Order ID</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Order.OrderId)</dd>
+                    </dl>
+
+                    <form asp-action="Delete" class="mt-4">
+                        <input type="hidden" asp-for="ShipmentId" />
+
+                        <!-- Larger Delete Button -->
+                        <div class="text-center">
+                            <input type="submit" value="Delete" class="btn btn-danger btn-lg" />
+                            <a asp-action="Index" class="btn btn-secondary btn-lg ml-3">Back to List</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
